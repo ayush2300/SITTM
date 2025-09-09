@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce347d082874e2640aeb78b9b2dcc7bf, type: 3}
+  m_Name: SolarSystem
+  m_EditorClassIdentifier: 
+  weaponName: SolarSystem
+  weaponPrefab: {fileID: 2201000893742412666, guid: ca1458103ae1acc4c9b64728376927db, type: 3}
+  cooldown: 5
+  activeDuration: 5
