@@ -171,7 +171,7 @@ MonoBehaviour:
   moveSpeed: 3
   damage: 5
   pauseTime: 1
-  timeBeforePause: 2
+  timeBeforePause: 5
   spawnObjectPrefab: {fileID: 6215855760254089622, guid: 28f6dab3a3dc30447aa96de40db9888d, type: 3}
   puddleSpawnPoint: {fileID: 72701292770926437}
 --- !u!114 &3790697723707788936

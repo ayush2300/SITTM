@@ -1,13 +1,13 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserWeapon : MonoBehaviour
 {
     [Header("Laser Settings")]
     public GameObject laserPrefab;  // Assign the cube prefab
-    public float laserLength = 10f; // Distance to the sides
+    public float laserLength = 10f; // Total length of each laser
     public float laserThickness = 0.5f;
     public float damage = 20f;
+    public float spawnOffset = 1f;  // Distance gap from player center
 
     private Transform player;
     private GameObject leftLaser;
@@ -33,12 +33,12 @@ public class LaserWeapon : MonoBehaviour
     {
         if (player == null) return;
 
-        // Keep lasers following the player
+        // Keep lasers following the player with the offset
         if (leftLaser != null)
-            leftLaser.transform.position = player.position + Vector3.left * (laserLength / 2);
+            leftLaser.transform.position = player.position + Vector3.left * (spawnOffset + laserLength / 2);
 
         if (rightLaser != null)
-            rightLaser.transform.position = player.position + Vector3.right * (laserLength / 2);
+            rightLaser.transform.position = player.position + Vector3.right * (spawnOffset + laserLength / 2);
     }
 
     void SpawnLasers()
