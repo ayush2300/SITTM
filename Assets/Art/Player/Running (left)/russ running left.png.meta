@@ -113,10 +113,10 @@ TextureImporter:
       name: russ running left_0
       rect:
         serializedVersion: 2
-        x: 262
-        y: 1356
-        width: 723
-        height: 900
+        x: 209
+        y: 1240
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: russ running left_1
       rect:
         serializedVersion: 2
-        x: 1337
-        y: 1268
-        width: 712
-        height: 991
+        x: 1308
+        y: 1240
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: russ running left_4
       rect:
         serializedVersion: 2
-        x: 2570
-        y: 1256
-        width: 642
-        height: 1021
+        x: 1308
+        y: 0
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,13 +173,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running left_55
+      name: russ running left_2
       rect:
         serializedVersion: 2
-        x: 391
-        y: 195
-        width: 866
-        height: 912
+        x: 2407
+        y: 1240
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fc88518c0153634881f2900b42c3e8b
-      internalID: -1668278779
+      spriteID: e61da31418b269240b621079d8882744
+      internalID: 1015016463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running left_56
+      name: russ running left_3
       rect:
         serializedVersion: 2
-        x: 1614
-        y: 129
-        width: 733
-        height: 983
+        x: 209
+        y: 0
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7162a31b4b0cb1d45b8d2d455d6d4932
-      internalID: -1175665477
+      spriteID: 688b9753d48c7a6438ebfc84a2270ef6
+      internalID: 364623813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running left_59
+      name: russ running left_5
       rect:
         serializedVersion: 2
-        x: 2607
-        y: 116
-        width: 660
-        height: 993
+        x: 2407
+        y: 0
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,92 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a576803510415be4cbcf566f1fed9057
-      internalID: -800329794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ running left_95
-      rect:
-        serializedVersion: 2
-        x: 379
-        y: 341
-        width: 5
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc0c92aafb1233d4bbff7a0e7ceff3b3
-      internalID: 1046980582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ running left_96
-      rect:
-        serializedVersion: 2
-        x: 601
-        y: 186
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8d8d53f611e33147adbf37c229f8a15
-      internalID: -2108092093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ running left_97
-      rect:
-        serializedVersion: 2
-        x: 599
-        y: 178
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c66891f30b90ba40af3775fe9d34896
-      internalID: -432491584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ running left_98
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 164
-        width: 28
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97656562a31f3cc4a9ad4678d263272b
-      internalID: -293333032
+      spriteID: ffca223306589604b9eb944dcc71f79c
+      internalID: 1316769339
       vertices: []
       indices: 
       edges: []
@@ -332,103 +248,10 @@ TextureImporter:
     nameFileIdTable:
       russ running left_0: -970680118
       russ running left_1: -1991836318
-      russ running left_10: -1080108955
-      russ running left_11: 828225842
-      russ running left_12: 117611413
-      russ running left_13: 1480990924
-      russ running left_14: -1821074479
-      russ running left_15: 1956693489
-      russ running left_16: 2136362801
-      russ running left_17: 1123667305
-      russ running left_18: -281697712
-      russ running left_19: 1057478752
       russ running left_2: 1015016463
-      russ running left_20: 629509015
-      russ running left_21: 2114930740
-      russ running left_22: -1665222333
-      russ running left_23: -643768875
-      russ running left_24: -2025278710
-      russ running left_25: -547827269
-      russ running left_26: -1415193948
-      russ running left_27: 737699392
-      russ running left_28: 1536524706
-      russ running left_29: 580885617
       russ running left_3: 364623813
-      russ running left_30: 195947164
-      russ running left_31: 396592310
-      russ running left_32: -383855142
-      russ running left_33: 2127361303
-      russ running left_34: 660531607
-      russ running left_35: -2010034092
-      russ running left_36: -1336116914
-      russ running left_37: -676637868
-      russ running left_38: 842325412
-      russ running left_39: 395621653
       russ running left_4: 1807737911
-      russ running left_40: -165488387
-      russ running left_41: 965197597
-      russ running left_42: -614218627
-      russ running left_43: 150273951
-      russ running left_44: -725967675
-      russ running left_45: -411173377
-      russ running left_46: 1381339093
-      russ running left_47: 1275569082
-      russ running left_48: -1718480039
-      russ running left_49: -1288294255
       russ running left_5: 1316769339
-      russ running left_50: 1943286013
-      russ running left_51: -1067983961
-      russ running left_52: 190399278
-      russ running left_53: -2114020885
-      russ running left_54: 1370662758
-      russ running left_55: -1668278779
-      russ running left_56: -1175665477
-      russ running left_57: -1157276758
-      russ running left_58: 743608879
-      russ running left_59: -800329794
-      russ running left_6: 119310753
-      russ running left_60: -316890121
-      russ running left_61: 369765750
-      russ running left_62: -384321824
-      russ running left_63: -539908312
-      russ running left_64: -1528013585
-      russ running left_65: -555301057
-      russ running left_66: -1496226598
-      russ running left_67: 1010942117
-      russ running left_68: -771339352
-      russ running left_69: -2121799586
-      russ running left_7: 709588900
-      russ running left_70: -408525803
-      russ running left_71: -1913357989
-      russ running left_72: -1552714957
-      russ running left_73: 961104944
-      russ running left_74: 1115330895
-      russ running left_75: 156860031
-      russ running left_76: -1240178015
-      russ running left_77: -2122431638
-      russ running left_78: 1448872092
-      russ running left_79: -790477899
-      russ running left_8: 1761431566
-      russ running left_80: -2082128985
-      russ running left_81: 1448692933
-      russ running left_82: -62419606
-      russ running left_83: -1092535513
-      russ running left_84: 103783216
-      russ running left_85: 1399496378
-      russ running left_86: 1954053743
-      russ running left_87: 797604572
-      russ running left_88: -176471395
-      russ running left_89: -270736274
-      russ running left_9: -2077741619
-      russ running left_90: -1368963174
-      russ running left_91: -49979081
-      russ running left_92: 1718628290
-      russ running left_93: -213586104
-      russ running left_94: -110336576
-      russ running left_95: 1046980582
-      russ running left_96: -2108092093
-      russ running left_97: -432491584
-      russ running left_98: -293333032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
