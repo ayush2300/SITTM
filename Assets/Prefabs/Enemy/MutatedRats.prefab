@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6103298450237558073}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: PuddleSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3790697723707788936}
   - component: {fileID: 3893774505266634281}
   - component: {fileID: -3867779745170387050}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MutatedRats
   m_TagString: Enemy
   m_Icon: {fileID: 0}

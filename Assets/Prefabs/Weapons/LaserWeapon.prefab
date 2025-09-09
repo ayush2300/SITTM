@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 5269059411032035, guid: b2ac8efe9c65e2d40893844ba03894c2, type: 3}
-  laserLength: 4.5
+  laserLength: 3
   laserThickness: 1
   damage: 20
   spawnOffset: 1.5

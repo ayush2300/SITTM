@@ -4549,7 +4549,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.11372548, g: 0.28235295, b: 0.1256531, a: 1}
+  m_Color: {r: 0, g: 0.41960785, b: 0.85490197, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6127,7 +6127,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -22633,7 +22633,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1829735646}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 5
     NearClipPlane: 0
     FarClipPlane: 1000
     Dutch: 0
