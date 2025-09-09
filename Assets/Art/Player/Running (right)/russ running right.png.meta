@@ -113,10 +113,10 @@ TextureImporter:
       name: russ running right_0
       rect:
         serializedVersion: 2
-        x: 435
-        y: 1460
-        width: 722
-        height: 901
+        x: 209
+        y: 1240
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: russ running right_2
       rect:
         serializedVersion: 2
-        x: 1517
-        y: 1361
-        width: 712
-        height: 983
+        x: 2407
+        y: 1240
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: russ running right_4
       rect:
         serializedVersion: 2
-        x: 2518
-        y: 1325
-        width: 628
-        height: 1024
+        x: 1308
+        y: 0
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,76 +173,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running right_52
-      rect:
-        serializedVersion: 2
-        x: 190
-        y: 183
-        width: 866
-        height: 902
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 363273292f61e20489066c7cd957260d
-      internalID: 1621054920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ running right_55
-      rect:
-        serializedVersion: 2
-        x: 1346
-        y: 93
-        width: 754
-        height: 980
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05f990f9dd0112d41b1dea37759a3613
-      internalID: 2106539055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ running right_58
-      rect:
-        serializedVersion: 2
-        x: 2477
-        y: 86
-        width: 719
-        height: 1025
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 161f7a2ce50ebbc419379d10529121ae
-      internalID: 1410333163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: russ running right_1
       rect:
         serializedVersion: 2
-        x: 435
-        y: 1460
-        width: 722
-        height: 901
+        x: 1308
+        y: 1240
+        width: 1099.6666
+        height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,6 +189,48 @@ TextureImporter:
       bones: []
       spriteID: 7430035f7efe67f479b867346ead35f5
       internalID: -17039623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: russ running right_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 1099.6666
+        height: 1240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9e15cd50c344c4fa5f9caed04bf972
+      internalID: 2121878352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: russ running right_5
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 0
+        width: 1099.6666
+        height: 1240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f112d454c3a31499f218dea7008441
+      internalID: 673874434
       vertices: []
       indices: 
       edges: []
@@ -269,83 +248,10 @@ TextureImporter:
     nameFileIdTable:
       russ running right_0: -1101301683
       russ running right_1: -17039623
-      russ running right_10: -1633961134
-      russ running right_11: 605162584
-      russ running right_12: 135150652
-      russ running right_13: -976031424
-      russ running right_14: -1783276001
-      russ running right_15: -979388030
-      russ running right_16: -751693473
-      russ running right_17: -190061139
-      russ running right_18: 587227668
-      russ running right_19: -539765511
       russ running right_2: 1374155493
-      russ running right_20: 585522142
-      russ running right_21: 718145929
-      russ running right_22: 2078746666
-      russ running right_23: -977560148
-      russ running right_24: 65943294
-      russ running right_25: 1181773681
-      russ running right_26: -698353713
-      russ running right_27: -942932890
-      russ running right_28: -183431410
-      russ running right_29: 1266430470
       russ running right_3: 2121878352
-      russ running right_30: -32214092
-      russ running right_31: 1876893821
-      russ running right_32: -1326232781
-      russ running right_33: 1590525257
-      russ running right_34: -673031469
-      russ running right_35: -1578879958
-      russ running right_36: -1968677739
-      russ running right_37: 1831526007
-      russ running right_38: 998704413
-      russ running right_39: 1420807621
       russ running right_4: 821862727
-      russ running right_40: -1602712764
-      russ running right_41: -1530925160
-      russ running right_42: 178825590
-      russ running right_43: 1121639632
-      russ running right_44: -2031846040
-      russ running right_45: 1416152862
-      russ running right_46: 2020092211
-      russ running right_47: 1107407945
-      russ running right_48: 673518113
-      russ running right_49: 622195496
       russ running right_5: 673874434
-      russ running right_50: 2092053835
-      russ running right_51: 1429036700
-      russ running right_52: 1621054920
-      russ running right_53: 1085429991
-      russ running right_54: -870431444
-      russ running right_55: 2106539055
-      russ running right_56: -584319177
-      russ running right_57: -873267836
-      russ running right_58: 1410333163
-      russ running right_59: -696338420
-      russ running right_6: 1331938609
-      russ running right_60: -724894882
-      russ running right_61: 1521164917
-      russ running right_62: -1490643963
-      russ running right_63: 1796997891
-      russ running right_64: 2093885532
-      russ running right_65: -911651465
-      russ running right_66: -403583395
-      russ running right_67: -2024879170
-      russ running right_68: 1210689428
-      russ running right_69: 1693203430
-      russ running right_7: 1788649480
-      russ running right_70: 1846199371
-      russ running right_71: 1821312668
-      russ running right_72: -1340958845
-      russ running right_73: -1509853505
-      russ running right_74: 501894972
-      russ running right_75: 1411484589
-      russ running right_76: -535972126
-      russ running right_77: 1412043204
-      russ running right_78: 1087237789
-      russ running right_8: 1683941525
-      russ running right_9: 1307807827
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
