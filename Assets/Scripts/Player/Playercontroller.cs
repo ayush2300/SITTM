@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,29 +43,9 @@ public class PlayerController : MonoBehaviour, IDamagable
         else if (moveInput.x < -0.1f)
             lastHorizontalDir = -1f;
 
-        // Reset animator bools
-        animator.SetBool("IdleRight", false);
-        animator.SetBool("IdleLeft", false);
-        animator.SetBool("RunRight", false);
-        animator.SetBool("RunLeft", false);
-
-        // Logic for animations
-        if (!isMoving)
-        {
-            animator.SetInteger("move", 0); // Idle
-            
-        }
-        else
-        {
-            if (moveInput.x > 0.1f) // Moving right
-                animator.SetBool("isright", true);
-
-            else if (moveInput.x < -0.1f) // Moving left
-                animator.SetBool("isright", false);
-
-            animator.SetInteger("move", 1); // Running
-
-        }
+        // Update animator parameters
+        animator.SetInteger("move", isMoving ? 1 : 0);
+        animator.SetFloat("facing", lastHorizontalDir);
     }
 
     void FixedUpdate()

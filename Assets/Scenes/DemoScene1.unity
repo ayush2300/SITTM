@@ -6127,7 +6127,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -7078,6 +7078,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1068292841}
+  - {fileID: 1712109092}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359629457
@@ -10383,7 +10384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &591873682
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17286,11 +17287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tier1EnemyPrefabs:
-  - {fileID: 4601090494470127176, guid: fe00ded5c8681ac478e9fa8d7a58bbdb, type: 3}
-  - {fileID: 9218378631689471632, guid: ae621db869d987e469a6e3501de5b5da, type: 3}
-  - {fileID: 697667846041065664, guid: f78110c58e9754440ba06ea8da038a17, type: 3}
-  tier2EnemyPrefabs:
-  - {fileID: 5059984075136547299, guid: a3dd8416df45d3d4d9972fd2d5421190, type: 3}
+  - {fileID: 5379114070179349195, guid: 8ded200727c9f50418002c167e896022, type: 3}
+  tier2EnemyPrefabs: []
   poolSizePerEnemy: 10
   spawnInterval: 2
   spawnDistance: 0
@@ -22635,7 +22633,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1829735646}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 5
     NearClipPlane: 0
     FarClipPlane: 1000
     Dutch: 0
@@ -30383,6 +30381,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1712109091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1712109092}
+  - component: {fileID: 1712109093}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1712109092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712109091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 354043084}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1712109093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712109091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75cbedae90516f447bfee8ea6824c469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSpawner: {fileID: 591873681}
+  timer: 30
+  SceneChangeTimer: 45
 --- !u!1 &1721613530
 GameObject:
   m_ObjectHideFlags: 0
@@ -33312,7 +33357,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbef1dc700f04614fab4cc23bdf9426a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: []
+  weapons:
+  - weaponPrefab: {fileID: 7562244164608955188, guid: 42911a0ec48646d4e81f9a296dc0c66f, type: 3}
+    cooldown: 5
+    activeDuration: 5
 --- !u!1 &1832376302
 GameObject:
   m_ObjectHideFlags: 0
