@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   weaponName: Laser
-  weaponPrefab: {fileID: 7376238421216266973, guid: bcc5e6c58d663ad4caa864df2db83ebb, type: 3}
+  weaponPrefab: {fileID: 7562244164608955188, guid: 42911a0ec48646d4e81f9a296dc0c66f, type: 3}
   cooldown: 5
   activeDuration: 5

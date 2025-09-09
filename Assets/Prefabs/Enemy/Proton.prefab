@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4965155749996874373}
   - component: {fileID: 2679356674436485218}
   - component: {fileID: 6712091648386345741}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Proton
   m_TagString: Enemy
   m_Icon: {fileID: 0}

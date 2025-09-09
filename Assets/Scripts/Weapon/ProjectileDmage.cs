@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlanetColidDamage : MonoBehaviour
+public class ProjectileDamage : MonoBehaviour
 {
     public float damage = 10f; // This can be set by SolarSystem script if needed
 
