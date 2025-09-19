@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6e89b6004bf1ba4c9f005d42c4c368f
+guid: 036a806797274bf4a8ad53449f387fa2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: russ running left_0
+      name: russ running left (updated)_0
       rect:
         serializedVersion: 2
-        x: 209
+        x: 0
         y: 1240
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa1696812c6eac4695656099d631439
-      internalID: -970680118
+      spriteID: 057a26b020b17214d877fcef463f5792
+      internalID: -1221849889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running left_1
+      name: russ running left (updated)_1
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 1169
         y: 1240
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,40 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dac40d5380d13e45b6108a74b6d0332
-      internalID: -1991836318
+      spriteID: 7e4e53ccf1280b542885c8ec1bdf82f1
+      internalID: 1525009903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running left_4
+      name: russ running left (updated)_2
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 0
-        width: 1099.6666
-        height: 1240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f46776d71dae6c7408abc51a59a5ca47
-      internalID: 1807737911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ running left_2
-      rect:
-        serializedVersion: 2
-        x: 2407
+        x: 2338
         y: 1240
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e61da31418b269240b621079d8882744
-      internalID: 1015016463
+      spriteID: 5da3c2f330ac95d43b758450fa40782b
+      internalID: 1551928298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running left_3
+      name: russ running left (updated)_3
       rect:
         serializedVersion: 2
-        x: 209
+        x: 0
         y: 0
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 688b9753d48c7a6438ebfc84a2270ef6
-      internalID: 364623813
+      spriteID: f72204f4792f2454c88c7bb3c8b518da
+      internalID: 2134738228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running left_5
+      name: russ running left (updated)_4
       rect:
         serializedVersion: 2
-        x: 2407
+        x: 1169
         y: 0
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,8 +208,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffca223306589604b9eb944dcc71f79c
-      internalID: 1316769339
+      spriteID: f29bc2c4ffa2d604b9876de9305d16c9
+      internalID: 1790324744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: russ running left (updated)_5
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 0
+        width: 1169.3334
+        height: 1240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b481a95db131ca947b97905ad8dc32f6
+      internalID: 1611667802
       vertices: []
       indices: 
       edges: []
@@ -238,7 +238,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 984829d5a8732e449bc0574d529218bc
     internalID: 0
     vertices: []
     indices: 
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      russ running left_0: -970680118
-      russ running left_1: -1991836318
-      russ running left_2: 1015016463
-      russ running left_3: 364623813
-      russ running left_4: 1807737911
-      russ running left_5: 1316769339
+      russ running left (updated)_0: -1221849889
+      russ running left (updated)_1: 1525009903
+      russ running left (updated)_2: 1551928298
+      russ running left (updated)_3: 2134738228
+      russ running left (updated)_4: 1790324744
+      russ running left (updated)_5: 1611667802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

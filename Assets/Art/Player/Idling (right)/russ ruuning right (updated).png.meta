@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0e8051619afee104daff2fd76526c546
+guid: 026b61915699d6345810fb8e9d4cf746
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: russ running right_0
+      name: russ ruuning right (updated)_0
       rect:
         serializedVersion: 2
-        x: 209
+        x: 0
         y: 1240
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c0dca27eac606e4cb8459ca8ba59b69
-      internalID: -1101301683
+      spriteID: 97979cf7d5b060e40bbc22f162fcf5db
+      internalID: -1483645650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running right_2
+      name: russ ruuning right (updated)_1
       rect:
         serializedVersion: 2
-        x: 2407
+        x: 1169
         y: 1240
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,40 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c029c68e8e75604a9d4d2c27b07f804
-      internalID: 1374155493
+      spriteID: 03cfd4356ce7e9a42a4d9197fd984265
+      internalID: 862758451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running right_4
+      name: russ ruuning right (updated)_2
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 0
-        width: 1099.6666
-        height: 1240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f3a77f8b20b74f4e9c6bc8ef4d3062b
-      internalID: 821862727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ running right_1
-      rect:
-        serializedVersion: 2
-        x: 1308
+        x: 2338
         y: 1240
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7430035f7efe67f479b867346ead35f5
-      internalID: -17039623
+      spriteID: 157d52acb7c8b0f4c80e801dbe2db88f
+      internalID: 1020739153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running right_3
+      name: russ ruuning right (updated)_3
       rect:
         serializedVersion: 2
-        x: 209
+        x: 0
         y: 0
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a9e15cd50c344c4fa5f9caed04bf972
-      internalID: 2121878352
+      spriteID: d65cf94e50b84f6458b8169fa17da8aa
+      internalID: -319742497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ running right_5
+      name: russ ruuning right (updated)_4
       rect:
         serializedVersion: 2
-        x: 2407
+        x: 1169
         y: 0
-        width: 1099.6666
+        width: 1169.3334
         height: 1240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,8 +208,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59f112d454c3a31499f218dea7008441
-      internalID: 673874434
+      spriteID: 5f133515bf1203f469a9ca87a11420be
+      internalID: -2089544674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: russ ruuning right (updated)_5
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 0
+        width: 1169.3334
+        height: 1240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d29c7add28c534c9743978ed95235b
+      internalID: -41190683
       vertices: []
       indices: 
       edges: []
@@ -238,7 +238,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ee454efabeb93e84bb501c7d5873c4b2
     internalID: 0
     vertices: []
     indices: 
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      russ running right_0: -1101301683
-      russ running right_1: -17039623
-      russ running right_2: 1374155493
-      russ running right_3: 2121878352
-      russ running right_4: 821862727
-      russ running right_5: 673874434
+      russ ruuning right (updated)_0: -1483645650
+      russ ruuning right (updated)_1: 862758451
+      russ ruuning right (updated)_2: 1020739153
+      russ ruuning right (updated)_3: -319742497
+      russ ruuning right (updated)_4: -2089544674
+      russ ruuning right (updated)_5: -41190683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

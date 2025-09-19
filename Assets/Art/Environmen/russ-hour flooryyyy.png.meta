@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf1c3ec8c17945a4999c18edecc7f668
+guid: 1d5cadb95e39f7c4d8e89918d4091998
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: russ idling left_0
+      name: russ-hour flooryyyy_0
       rect:
         serializedVersion: 2
-        x: 259
-        y: 1247
-        width: 737
-        height: 1013
+        x: 0
+        y: 1504
+        width: 3508
+        height: 421
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a13cfff0cd5e40048a76d3146247cacb
-      internalID: 2461216
+      spriteID: a2936efbb651e2e4291149198f87e948
+      internalID: 1991753475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ idling left_1
+      name: russ-hour flooryyyy_1
       rect:
         serializedVersion: 2
-        x: 1279
-        y: 1249
-        width: 736
-        height: 1023
+        x: 0
+        y: 1080
+        width: 3508
+        height: 421
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa8b07b5cb0b61a4f91bbbdcd75f0745
-      internalID: -478276703
+      spriteID: 89cc7eb6be6d83a45944388d09781a99
+      internalID: -87982550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: russ idling left_3
+      name: russ-hour flooryyyy_2
       rect:
         serializedVersion: 2
-        x: 2338
-        y: 1265
-        width: 746
-        height: 1025
+        x: 0
+        y: 711
+        width: 3508
+        height: 369
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,71 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8443f225ebb74f4d820a461f8c8e10c
-      internalID: -571880527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ idling left_12
-      rect:
-        serializedVersion: 2
-        x: 365
-        y: 69
-        width: 744
-        height: 1025
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86df1135a13ba3446805cd30836c5e2a
-      internalID: -1895868284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ idling left_13
-      rect:
-        serializedVersion: 2
-        x: 1382
-        y: 68
-        width: 758
-        height: 1020
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dc41dc1a2777d64cbdf7bcf0c090e64
-      internalID: -311310238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: russ idling left_15
-      rect:
-        serializedVersion: 2
-        x: 2460
-        y: 108
-        width: 735
-        height: 1014
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91b44068dfae4b5499b1c2fff7fdafc2
-      internalID: -728272462
+      spriteID: 425f801fba1121847ac2c7b84d18c6d7
+      internalID: -2007252336
       vertices: []
       indices: 
       edges: []
@@ -238,7 +175,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: cfc6faa8c8377d54985d74905ecae525
     internalID: 0
     vertices: []
     indices: 
@@ -246,29 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      russ idling left_0: 2461216
-      russ idling left_1: -478276703
-      russ idling left_10: 1856179236
-      russ idling left_11: 2065831871
-      russ idling left_12: -1895868284
-      russ idling left_13: -311310238
-      russ idling left_14: -2114758733
-      russ idling left_15: -728272462
-      russ idling left_16: -1107080622
-      russ idling left_17: -392939065
-      russ idling left_18: 847970545
-      russ idling left_19: -1946298054
-      russ idling left_2: 1432387110
-      russ idling left_20: 526011196
-      russ idling left_21: 547045230
-      russ idling left_22: -1433227815
-      russ idling left_3: -571880527
-      russ idling left_4: -578210895
-      russ idling left_5: 1916664052
-      russ idling left_6: -1195914542
-      russ idling left_7: -1769056804
-      russ idling left_8: 1761898735
-      russ idling left_9: 1310165498
+      russ-hour flooryyyy_0: 1991753475
+      russ-hour flooryyyy_1: -87982550
+      russ-hour flooryyyy_2: -2007252336
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
