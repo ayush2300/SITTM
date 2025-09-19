@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
@@ -23,7 +23,17 @@ public class CardUI : MonoBehaviour
 
     private void OnCardClicked()
     {
-        weaponManager.AddWeaponFromSO(weaponData);
+        // If player already has this weapon → upgrade it
+        if (weaponManager.HasWeapon(weaponData))
+        {
+            weaponManager.UpgradeWeapon(weaponData);
+        }
+        else
+        {
+            // Otherwise, add new weapon at level 0
+            weaponManager.AddWeaponFromSO(weaponData, 0);
+        }
+
         cardSpawner.OnCardSelected();
     }
 }

@@ -1,10 +1,27 @@
+﻿using System.Collections.Generic;
+using JetBrains.Annotations;
+using OpenCover.Framework.Model;
 using UnityEngine;
+
+[System.Serializable] // ✅ makes it visible in Inspector
+public class Timings
+{
+    public float coolDownTime;
+    public float activeTime;
+}
+
+[System.Serializable]
+public class Levels
+{
+    public Timings time;                // cooldown & active time per level
+    public GameObject weaponLevelPrefab; // prefab per level
+}
 
 [CreateAssetMenu(fileName = "NewWeapon", menuName = "Weapons/Weapon")]
 public class WeaponSO : ScriptableObject
 {
     public string weaponName;
-    public GameObject weaponPrefab;
-    public float cooldown = 2f;
-    public float activeDuration = 5f;
+
+    [Header("Per Level Settings")]
+    public List<Levels> levels;
 }

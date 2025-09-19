@@ -9,7 +9,6 @@ public class SolarSystem : MonoBehaviour
     public float maxOrbitRadius = 4f;      // Radius of last planet
     public float minOrbitSpeed = 30f;
     public float maxOrbitSpeed = 100f;
-    public float damage = 10f;
 
     private Transform player;
     private List<PlanetData> planets = new List<PlanetData>();

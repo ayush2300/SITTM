@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2201000893742412666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4374696687861412333}
+  - component: {fileID: 7129952460286876795}
+  m_Layer: 0
+  m_Name: Level 9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4374696687861412333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201000893742412666}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7652383, y: 0.07061298, z: 0.24819319}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7129952460286876795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201000893742412666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba62c1f4f3a62d747a720227063fe7f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetPrefabs:
+  - {fileID: 7160473064376943296, guid: 2aea5ce6179f1014fbbc976c32c1d3e1, type: 3}
+  - {fileID: 5551477417522590790, guid: 166c270811d6f8748b74b59b7175398b, type: 3}
+  - {fileID: 5065662985208813257, guid: 09206795c89c0554ab457f3906286b81, type: 3}
+  - {fileID: 4316691681990621305, guid: 75e48caf7a7b6b34987aed25ea3a7008, type: 3}
+  - {fileID: 226084002381363129, guid: bc0bc6429772a3f42abd4b47ba025f76, type: 3}
+  - {fileID: 3103742535280430142, guid: 500a1e6cc52691c4daf2d4446371bf30, type: 3}
+  - {fileID: 4089389922828847479, guid: 2b967625afab0cf46bb9adc29e914c9f, type: 3}
+  - {fileID: 5636321818583013746, guid: 14b8fe8024a037f42b3fdb5580ae0db0, type: 3}
+  - {fileID: 59503315583690353, guid: 4db7e955d6624cc44afd3bf61c774121, type: 3}
+  minOrbitRadius: 0.5
+  maxOrbitRadius: 3
+  minOrbitSpeed: 30
+  maxOrbitSpeed: 100
+  damage: 10
