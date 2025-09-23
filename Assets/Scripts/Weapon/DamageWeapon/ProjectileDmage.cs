@@ -6,11 +6,11 @@ public class ProjectileDamage : MonoBehaviour
 {
     public float damage = 10f; // This can be set by SolarSystem script if needed
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            IDamagable enemy = other.GetComponent<IDamagable>();
+            IDamagable enemy = other.gameObject.GetComponent<IDamagable>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
