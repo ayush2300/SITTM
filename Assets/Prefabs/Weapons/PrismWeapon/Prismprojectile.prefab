@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4493893754617096656}
   - component: {fileID: 6824252343761254388}
   - component: {fileID: 8480179657430815739}
-  - component: {fileID: 6684170591842595007}
+  - component: {fileID: -4507238429904915992}
+  - component: {fileID: 2118719189894273271}
   m_Layer: 0
   m_Name: Prismprojectile
   m_TagString: Untagged
@@ -98,9 +99,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61aece97291fd9d46ba3d14bbb2d2243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 2
+  curveDuration: 0.5
+  damage: 10
+  lifeTime: 3
   curveDelay: 1
---- !u!96 &6684170591842595007
+--- !u!58 &-4507238429904915992
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254304910891147395}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!96 &2118719189894273271
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -142,7 +180,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2
+  m_Time: 5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -152,7 +190,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.10077667
+        value: 0.13178253
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -160,7 +198,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.5134424
+        time: 0.50001466
         value: 0
         inSlope: 0
         outSlope: 0
@@ -175,20 +213,20 @@ TrailRenderer:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 1, g: 1, b: 1, a: 0}
-      key3: {r: 1, g: 1, b: 1, a: 0}
-      key4: {r: 1, g: 1, b: 1, a: 0}
-      key5: {r: 1, g: 1, b: 1, a: 0}
-      key6: {r: 1, g: 1, b: 1, a: 0}
-      key7: {r: 1, g: 1, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 65535
-      ctime3: 65535
-      ctime4: 65535
-      ctime5: 65535
-      ctime6: 65535
-      ctime7: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
       atime0: 0
       atime1: 65535
       atime2: 0
@@ -198,7 +236,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0

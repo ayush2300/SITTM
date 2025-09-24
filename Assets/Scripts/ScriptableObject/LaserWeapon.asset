@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce347d082874e2640aeb78b9b2dcc7bf, type: 3}
-  m_Name: PrismWeapon
+  m_Name: LaserWeapon
   m_EditorClassIdentifier: 
-  weaponName: PrismWeapon
+  weaponName: LaserWeapon
   levels:
   - time:
       coolDownTime: 5
-      activeTime: 1
-    weaponLevelPrefab: {fileID: 2475080911847173880, guid: b54f62df95efa5640860311f6ccd27ee, type: 3}
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 7562244164608955188, guid: 42911a0ec48646d4e81f9a296dc0c66f, type: 3}

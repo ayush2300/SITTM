@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWeapons:
-  - {fileID: 11400000, guid: a3985a466b6af904fabeba758a025e61, type: 2}
+  - {fileID: 11400000, guid: b91e8ff84aab57440b23b5766cd022c7, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

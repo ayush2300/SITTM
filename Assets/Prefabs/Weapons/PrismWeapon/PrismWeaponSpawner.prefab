@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7562244164608955188
+--- !u!1 &2475080911847173880
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5133068651144878815}
-  - component: {fileID: 886755335656870345}
+  - component: {fileID: 5062826036978179062}
+  - component: {fileID: -1457602474876516602}
   m_Layer: 0
-  m_Name: LaserWeapon
+  m_Name: PrismWeaponSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5133068651144878815
+--- !u!4 &5062826036978179062
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7562244164608955188}
+  m_GameObject: {fileID: 2475080911847173880}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0208693, y: 0.003239613, z: 0.2822047}
+  m_LocalPosition: {x: -1.6523439, y: -1.679524, z: 0.23934938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &886755335656870345
+--- !u!114 &-1457602474876516602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7562244164608955188}
+  m_GameObject: {fileID: 2475080911847173880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1254f696ff192d4a927fb206e46f320, type: 3}
+  m_Script: {fileID: 11500000, guid: c080f7af7febc9441bfe475847e1c949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
-  laserPrefab: {fileID: 5269059411032035, guid: b2ac8efe9c65e2d40893844ba03894c2, type: 3}
-  targetLength: 6
-  laserWidth: 2
-  growDuration: 1
-  offsetRight: 1
-  offsetLeft: 1
-  offsetUp: 1
-  offsetDown: 1
-  deg: 15
-  swingSpeed: 2
+  WeaponPrefab: {fileID: 7393424903972071204, guid: 9054883abdfb6554189503e901863aa5, type: 3}

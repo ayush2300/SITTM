@@ -64,11 +64,11 @@ public class PrismProjectile : MonoBehaviour
         }
 
         // Move forward
-        transform.position += (Vector3)(direction.normalized * speed * Time.deltaTime);
+        transform.localPosition += (Vector3)(direction.normalized * speed * Time.deltaTime);
 
         // Rotate sprite to match direction
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        transform.localRotation = Quaternion.Euler(0f, 0f, angle);
 
         // Update trail color (only when sprite color changed)
         if (sr != null && trail != null)

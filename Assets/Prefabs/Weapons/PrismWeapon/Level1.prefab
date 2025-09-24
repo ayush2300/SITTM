@@ -101,7 +101,7 @@ MonoBehaviour:
   prismCenter: {fileID: 8505988838405086397}
   fireRate: 1
   projectileSpeed: 2
-  spawnOffset: 0.5
-  spawnDelay: 0.15
+  spawnOffset: 1
+  spawnDelay: 0.2
   curveDelayStep: 0.1
   projectileCount: 7
