@@ -44,14 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1254f696ff192d4a927fb206e46f320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
+  range: 4
   laserPrefab: {fileID: 5269059411032035, guid: b2ac8efe9c65e2d40893844ba03894c2, type: 3}
   targetLength: 6
   laserWidth: 2
   growDuration: 1
-  offsetRight: 1
-  offsetLeft: 1
-  offsetUp: 1
-  offsetDown: 1
-  deg: 15
-  swingSpeed: 2
+  offsetRight: 1.5
+  offsetLeft: 1.5
+  offsetUp: 1.5
+  offsetDown: 1.5
+  deg: 30
+  swingSpeed: 20

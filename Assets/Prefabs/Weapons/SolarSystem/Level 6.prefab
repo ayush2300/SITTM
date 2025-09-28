@@ -51,8 +51,7 @@ MonoBehaviour:
   - {fileID: 4316691681990621305, guid: 75e48caf7a7b6b34987aed25ea3a7008, type: 3}
   - {fileID: 226084002381363129, guid: bc0bc6429772a3f42abd4b47ba025f76, type: 3}
   - {fileID: 3103742535280430142, guid: 500a1e6cc52691c4daf2d4446371bf30, type: 3}
-  minOrbitRadius: 0.5
-  maxOrbitRadius: 3
+  minOrbitRadius: 1
+  maxOrbitRadius: 4
   minOrbitSpeed: 30
   maxOrbitSpeed: 100
-  damage: 10
