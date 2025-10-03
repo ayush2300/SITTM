@@ -1,0 +1,387 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+guid: ec6a12b04adcabe4c84e7654f1110a25
+========
+guid: 3f9ad9f5a6dacb543a60b12da31cff74
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+  spritePixelsToUnits: 200
+========
+  spritePixelsToUnits: 100
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+    maxTextureSize: 2048
+========
+    maxTextureSize: 1024
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+      name: russ running left (updated)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1240
+        width: 1169.3334
+        height: 1240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057a26b020b17214d877fcef463f5792
+      internalID: -1221849889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: russ running left (updated)_1
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1240
+        width: 1169.3334
+        height: 1240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e4e53ccf1280b542885c8ec1bdf82f1
+      internalID: 1525009903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: russ running left (updated)_2
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 1240
+        width: 1169.3334
+        height: 1240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da3c2f330ac95d43b758450fa40782b
+      internalID: 1551928298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: russ running left (updated)_3
+========
+      name: skeleton-idle_0
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+        width: 1169.3334
+        height: 1240
+========
+        width: 24
+        height: 32
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+      spriteID: f72204f4792f2454c88c7bb3c8b518da
+      internalID: 2134738228
+========
+      spriteID: bbd1debdbca46e241ba3ab210492ef4e
+      internalID: 1101831121
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+      name: russ running left (updated)_4
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 0
+        width: 1169.3334
+        height: 1240
+========
+      name: skeleton-idle_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 24
+        height: 33
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+      spriteID: f29bc2c4ffa2d604b9876de9305d16c9
+      internalID: 1790324744
+========
+      spriteID: 1e02df965249c91409f5b396595e9a7e
+      internalID: 1000058829
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+      name: russ running left (updated)_5
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 0
+        width: 1169.3334
+        height: 1240
+========
+      name: skeleton-idle_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 24
+        height: 33
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+      spriteID: b481a95db131ca947b97905ad8dc32f6
+      internalID: 1611667802
+========
+      spriteID: c0ec5135d69e11c4d939a8661325ed43
+      internalID: 1419459729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton-idle_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8507fc90dfb524498f2c5f47f145d26
+      internalID: -751670511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton-idle_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab51d98f41388dc4199024cf8d59021d
+      internalID: 355909867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton-idle_5
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f64b239075021b4eb4a74c83097e129
+      internalID: -1119427296
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 984829d5a8732e449bc0574d529218bc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+<<<<<<<< HEAD:Assets/Art/Player/Running (left)/russ running left (updated).png.meta
+      russ running left (updated)_0: -1221849889
+      russ running left (updated)_1: 1525009903
+      russ running left (updated)_2: 1551928298
+      russ running left (updated)_3: 2134738228
+      russ running left (updated)_4: 1790324744
+      russ running left (updated)_5: 1611667802
+========
+      skeleton-idle_0: 1101831121
+      skeleton-idle_1: 1000058829
+      skeleton-idle_2: 1419459729
+      skeleton-idle_3: -751670511
+      skeleton-idle_4: 355909867
+      skeleton-idle_5: -1119427296
+>>>>>>>> Ninu:Assets/Art/Enemies/skeleton-idle.png.meta
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
