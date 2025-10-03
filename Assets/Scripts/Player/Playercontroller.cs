@@ -1,102 +1,95 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour, IDamagable
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(WeaponManager))]
+public class PlayerController2D : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    public float moveSpeed = 5f;
+    [Header("Movement")]
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float rollForce = 8f;
+    [SerializeField] private float rollCooldown = 1f;
 
-    [Header("Health Settings")]
-    public float maxHealth = 100f;
-    private float currentHealth;
+    private Rigidbody2D rb;
+    private Vector2 inputDirection;
+    private float lastRollTime;
+    private bool isRolling;
 
-    [Header("UI")]
-    public Slider healthSlider;
+    [SerializeField] private KeyCode rollKeyCode = KeyCode.Space;
 
-    [Header("Components")]
-    public Rigidbody2D rb;
-    public Animator animator;
+    private Animator animator;
 
-    private Vector2 moveInput;
-    private float lastHorizontalDir = 1f; // 1 = right, -1 = left
+    private float speedModifier = 1f;
+    private Coroutine speedCoroutine;
 
-    void Start()
+    private void Start()
     {
-        currentHealth = maxHealth;
-        UpdateHealthUI();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
-        // Movement Input
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-        moveInput.Normalize();
+        HandleInput();
+        if (!isRolling)
+            AnimateMovement();
 
-        bool isMoving = moveInput.sqrMagnitude > 0.01f;
+        if (Input.GetKeyDown(rollKeyCode) && Time.time > lastRollTime + rollCooldown)
+            StartCoroutine(PerformRoll());
+    }
 
-        // Track last horizontal direction if there is X movement
-        if (moveInput.x > 0.1f)
-            lastHorizontalDir = 1f;
-        else if (moveInput.x < -0.1f)
-            lastHorizontalDir = -1f;
+    private void FixedUpdate()
+    {
+        if (!isRolling)
+            Move();
+    }
 
-        // Reset animator bools
-        animator.SetBool("IdleRight", false);
-        animator.SetBool("IdleLeft", false);
-        animator.SetBool("RunRight", false);
-        animator.SetBool("RunLeft", false);
+    private void HandleInput()
+    {
+        inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+    }
 
-        // Logic for animations
-        if (!isMoving)
+    private void Move()
+    {
+        Vector2 movement = inputDirection * moveSpeed * speedModifier * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + movement);
+    }
+
+    private void AnimateMovement()
+    {
+        if (animator != null)
+            animator.SetBool("Run", inputDirection != Vector2.zero);
+    }
+
+    private IEnumerator PerformRoll()
+    {
+        isRolling = true;
+        lastRollTime = Time.time;
+        float timer = 0.2f;
+        Vector2 rollDir = inputDirection;
+        while (timer > 0f)
         {
-            animator.SetInteger("move", 0); // Idle
-            
+            rb.MovePosition(rb.position + rollDir * rollForce * Time.fixedDeltaTime);
+            timer -= Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
         }
-        else
-        {
-            if (moveInput.x > 0.1f) // Moving right
-                animator.SetBool("isright", true);
-
-            else if (moveInput.x < -0.1f) // Moving left
-                animator.SetBool("isright", false);
-
-            animator.SetInteger("move", 1); // Running
-
-        }
+        isRolling = false;
     }
 
-    void FixedUpdate()
+    public void ApplyTemporarySpeedModifier(float modifier, float duration)
     {
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        if (speedCoroutine != null)
+            StopCoroutine(speedCoroutine);
+
+        speedCoroutine = StartCoroutine(TemporarySpeedModifierRoutine(modifier, duration));
     }
 
-    public void TakeDamage(float damage)
+    private IEnumerator TemporarySpeedModifierRoutine(float modifier, float duration)
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log($"Player took {damage} damage. Current Health: {currentHealth}");
-        UpdateHealthUI();
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    void UpdateHealthUI()
-    {
-        if (healthSlider != null)
-        {
-            healthSlider.value = currentHealth / maxHealth;
-        }
-    }
-
-    void Die()
-    {
-        Debug.Log("Player Died!");
+        speedModifier = modifier;
+        yield return new WaitForSeconds(duration);
+        speedModifier = 1f;
+        speedCoroutine = null;
     }
 }
