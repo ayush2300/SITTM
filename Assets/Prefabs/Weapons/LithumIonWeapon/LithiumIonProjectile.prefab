@@ -125,7 +125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7950a9dd563ef418da7ca286ac9d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerSecond: 10
-  deathAfterSec: 3
+  radius: 0.5
+  minDamage: 10
+  midDamage: 20
+  maxDamage: 40
+  lifeTime: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
   fuseTime: 1.5
   armedSprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
