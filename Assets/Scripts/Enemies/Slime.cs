@@ -16,7 +16,7 @@ public class Slime2D : MonoBehaviour
             if (playerController != null)
             {
                 float modifier = 1f - slowAmount;
-                playerController.ApplyTemporarySpeedModifier(modifier, slowDuration);
+                //playerController.ApplyTemporarySpeedModifier(modifier, slowDuration);
             }
 
             if (playerHealth != null && damageOnCollision > 0)

@@ -79,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25a9e862f8a29e8429617872b5697e50, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c10df10c912c174c81a12df33c00ff5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
   contactDamage: 15
-  acidParticlePrefab: {fileID: 112986, guid: 39272dba83cef4048828b735f48b233d, type: 3}
-  acidSpritePrefab: {fileID: 3904308360467140003, guid: 00675abea12fad24c86052efec28ddb1, type: 3}
+  acidParticlePrefab: {fileID: 0}
+  acidSpritePrefab: {fileID: 3904308360467140003, guid: e85ae5f0cf155554ca7e8d58b014d3de, type: 3}
   spawnRadius: 3
   acidSpawnInterval: 2
 --- !u!58 &3391313754715533149

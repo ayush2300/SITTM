@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Art/Brain/Text-Box-PNG-Free-Image.png.meta
-guid: 5b64f807b6be1d54fa630317506dfe3c
-========
-guid: 3af7556f8de2f07439a17c7dbcf1f2d1
->>>>>>>> Ninu:Assets/Art/Enemies/2-2-bone-png-picture.png.meta
+guid: 1a055e8b00b1b9342abcf1e658514dc4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -73,11 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-<<<<<<<< HEAD:Assets/Art/Brain/Text-Box-PNG-Free-Image.png.meta
-    maxTextureSize: 2048
-========
     maxTextureSize: 1024
->>>>>>>> Ninu:Assets/Art/Enemies/2-2-bone-png-picture.png.meta
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
