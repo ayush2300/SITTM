@@ -9,7 +9,7 @@ public class PrismProjectile : MonoBehaviour
     private float speed;
     private float targetBendAngle; // total bend angle (degrees)
     public float curveDuration = 0.5f; // how long it takes to complete the bend
-    public float damage = 10;
+    public int damage = 10;
 
     public float lifeTime = 3f;
     public float curveDelay = 0.3f; // time before bending starts
@@ -123,10 +123,10 @@ public class PrismProjectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            IDamagable enemy = other.gameObject.GetComponent<IDamagable>();
+            HealthSystem enemy = other.gameObject.GetComponent<HealthSystem>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.Damage(damage);
             }
         }
     }

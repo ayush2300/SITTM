@@ -58,7 +58,7 @@ public class FallingItem : MonoBehaviour
                 healthSys.Damage(Mathf.RoundToInt(damage));
             var playerCtrl = collision.collider.GetComponent<PlayerController2D>();
             if (playerCtrl != null)
-                playerCtrl.TakeDamage(damage);
+                //playerCtrl.TakeDamage(damage);
 
             if (destroyOnFall)
                 Destroy(gameObject);

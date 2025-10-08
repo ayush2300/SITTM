@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,9 +6,9 @@ public class BlastDamage : MonoBehaviour
 {
     [Header("Blast Damage Settings")]
     public float radius = 5f;
-    public float minDamage = 10f;
-    public float midDamage = 20f;
-    public float maxDamage = 40f;
+    public int minDamage = 10;
+    public int midDamage = 20;
+    public int maxDamage = 40;
 
     [Tooltip("How long before this blast disappears")]
     public float lifeTime = 0.2f;
@@ -31,11 +32,11 @@ public class BlastDamage : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            IDamagable enemy = hit.GetComponent<IDamagable>();
+            HealthSystem enemy = hit.GetComponent<HealthSystem>();
             if (enemy != null)
             {
                 float distance = Vector2.Distance(transform.position, hit.transform.position);
-                float damageToDeal;
+                int damageToDeal;
 
                 // Calculate band thresholds
                 float innerRadius = radius * 0.33f; // 0–33% of radius
@@ -54,7 +55,7 @@ public class BlastDamage : MonoBehaviour
                     damageToDeal = minDamage;
                 }
 
-                enemy.TakeDamage(damageToDeal);
+                enemy.Damage(damageToDeal);
             }
         }
     }
