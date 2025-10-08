@@ -776,12 +776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008318045bea8094ca52bb9c5935634d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tier1EnemyPrefabs:
-  - {fileID: 5379114070179349195, guid: 8ded200727c9f50418002c167e896022, type: 3}
-  tier2EnemyPrefabs: []
-  poolSizePerEnemy: 20
-  spawnInterval: 2
-  spawnDistance: 0
 --- !u!1 &1250060828
 GameObject:
   m_ObjectHideFlags: 3
@@ -1100,10 +1094,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  maxHealth: 100
-  healthSlider: {fileID: 374010915}
-  rb: {fileID: 1829735642}
-  animator: {fileID: 1829735643}
+  rollForce: 8
+  rollCooldown: 1
+  rollKeyCode: 32
 --- !u!212 &1829735645
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1229,7 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWeapons:
-  - {fileID: 11400000, guid: b91e8ff84aab57440b23b5766cd022c7, type: 2}
+  - {fileID: 11400000, guid: 15d34c5fd85b23d489d54167eae1cadc, type: 2}
 --- !u!1001 &3800072937184289668
 PrefabInstance:
   m_ObjectHideFlags: 0
