@@ -1,24 +1,33 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class FallingItem : MonoBehaviour
 {
     [Header("Chance Settings")]
+    [Tooltip("Base chance for the item to fall when player approaches.")]
     public float fallChance = 0.1f;
+
+    [Tooltip("Increment to the fall chance each time the player approaches.")]
     public float chanceMultiplier = 0.05f;
 
     [Header("Damage Settings")]
-    public float damage = 10f;
+    [Tooltip("Damage dealt to the player on hit.")]
+    public int damage = 10;
 
-    [Header("Ground Settings")]
-    public string groundTag = "Ground"; // Editable in inspector
+    [Header("Fall Animation Settings")]
+    [Tooltip("Transform position where the item falls to.")]
+    public Transform fallTarget;
+
+    [Tooltip("Duration of the fall animation.")]
+    public float fallDuration = 1.0f;
 
     [Header("Behavior Settings")]
+    [Tooltip("Destroy item after falling and hitting player or ground.")]
     public bool destroyOnFall = true;
-    public float gravityOnFall = 2f;
 
     private bool hasFallen = false;
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -26,42 +35,50 @@ public class FallingItem : MonoBehaviour
 
             if (!hasFallen && Random.value < fallChance)
             {
-                Fall();
+                StartFall();
             }
         }
     }
 
-    void Fall()
+    private void StartFall()
     {
         hasFallen = true;
-        var rb = gameObject.GetComponent<Rigidbody2D>();
-        if (rb == null)
-            rb = gameObject.AddComponent<Rigidbody2D>();
-        rb.gravityScale = gravityOnFall;
+
+        Vector3 targetPosition = fallTarget != null ? fallTarget.position : transform.position;
+
+        transform.DOMove(targetPosition, fallDuration)
+            .SetEase(Ease.InQuad)
+            .OnComplete(() =>
+            {
+                ApplyDamageAtTarget();
+                if (destroyOnFall)
+                {
+                    Destroy(gameObject);
+                }
+            });
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void ApplyDamageAtTarget()
     {
-        // Check if hit ground
-        if (hasFallen && collision.collider.CompareTag(groundTag))
-        {
-            // Optionally do something when hitting ground (e.g., stop falling)
-            if (destroyOnFall)
-                Destroy(gameObject);
-        }
+        // Check all colliders overlapping the target position
+        Collider2D[] collidersAtTarget = Physics2D.OverlapPointAll(transform.position);
 
-        // Check if hit player
-        if (hasFallen && collision.collider.CompareTag("Player"))
+        foreach (Collider2D col in collidersAtTarget)
         {
-            var healthSys = collision.collider.GetComponent<HealthSystem>();
-            if (healthSys != null)
-                healthSys.Damage(Mathf.RoundToInt(damage));
-            var playerCtrl = collision.collider.GetComponent<PlayerController2D>();
-            if (playerCtrl != null)
-                //playerCtrl.TakeDamage(damage);
+            if (col.CompareTag("Player"))
+            {
+                HealthSystem healthSystem = col.GetComponent<HealthSystem>();
+                if (healthSystem != null)
+                {
+                    healthSystem.Damage(damage);
+                }
 
-            if (destroyOnFall)
-                Destroy(gameObject);
+                PlayerController2D playerController = col.GetComponent<PlayerController2D>();
+                if (playerController != null)
+                {
+                    playerController.ApplyTemporarySpeedModifier(0.5f, 1f); // Optional slow effect
+                }
+            }
         }
     }
 }
