@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour, IDamagable
+public class PlayerController2D : MonoBehaviour, IDamagable
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
