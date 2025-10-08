@@ -45,11 +45,6 @@ public class PlayerController2D : MonoBehaviour
             Move();
     }
 
-<<<<<<< HEAD
-        // Update animator parameters
-        animator.SetInteger("move", isMoving ? 1 : 0);
-        animator.SetFloat("facing", lastHorizontalDir);
-=======
     private void HandleInput()
     {
         inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
@@ -80,7 +75,6 @@ public class PlayerController2D : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         isRolling = false;
->>>>>>> Ninu
     }
 
     public void ApplyTemporarySpeedModifier(float modifier, float duration)
