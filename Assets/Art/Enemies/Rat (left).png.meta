@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Art/Brain/brain_sprite.png.meta
 guid: 2c10df10c912c174c81a12df33c00ff5
-========
-guid: 25a9e862f8a29e8429617872b5697e50
->>>>>>>> 38bb75f8f5b2d7bfede094e3d7468ef396671393:Assets/Art/Enemies/Rat (left).png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -73,11 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-<<<<<<<< HEAD:Assets/Art/Brain/brain_sprite.png.meta
-    maxTextureSize: 2048
-========
     maxTextureSize: 1024
->>>>>>>> 38bb75f8f5b2d7bfede094e3d7468ef396671393:Assets/Art/Enemies/Rat (left).png.meta
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1

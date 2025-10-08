@@ -44,7 +44,7 @@ public class PlayerController2D : MonoBehaviour, IDamagable
             lastHorizontalDir = -1f;
 
         // Update animator parameters
-        animator.SetInteger("move", isMoving ? 1 : 0);
+        animator.SetInteger("move", isMoving ? 1 : 0); 
         animator.SetFloat("facing", lastHorizontalDir);
     }
 
