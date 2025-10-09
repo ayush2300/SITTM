@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
@@ -11,6 +12,8 @@ public class EnemyAI : MonoBehaviour
     private float attackCooldownTimer = 0f;
     private bool isDead = false;
     private NavMeshAgent agent;
+
+    public GameObject xpOrbPrefab;
 
     private void Awake()
     {
@@ -71,7 +74,16 @@ public class EnemyAI : MonoBehaviour
     {
         isDead = true;
 
-        // Drop experience, play effects, etc.
+        // Drop XP orb
+        if (xpOrbPrefab != null)
+        {
+            GameObject xpOrb = Instantiate(xpOrbPrefab, transform.position, Quaternion.identity);
+            XPOrb orb = xpOrb.GetComponent<XPOrb>();
+            if (orb != null)
+            {
+                orb.xpAmount = expDrop;
+            }
+        }
 
         // Disable agent and deactivate for pooling
         if (agent != null)
