@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlastDamage : MonoBehaviour
@@ -16,31 +14,48 @@ public class BlastDamage : MonoBehaviour
     [Header("Layers")]
     public LayerMask enemyLayer;
 
+    [Header("Debug")]
+    public bool debug = false;
+
     void Start()
     {
-        // Apply blast damage instantly
+        // Apply blast damage instantly for non-projectile blasts
+        // (projectiles like LitIonProjectile usually override Start, so they won't call this)
         ApplyBlastDamage();
 
-        // Destroy blast object after applying damage
+        // Cleanup
         Destroy(gameObject, lifeTime);
     }
 
-    protected void ApplyBlastDamage()
+    protected virtual void ApplyBlastDamage()
     {
-        // Detect all enemies within radius
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius, enemyLayer);
+        // Ensure we operate on the 2D plane (Z = 0)
+        Vector3 blastPos = new Vector3(transform.position.x, transform.position.y, 0f);
+
+        // Overlap search
+        Collider2D[] hits = Physics2D.OverlapCircleAll(blastPos, radius, enemyLayer);
+
+        if (debug)
+        {
+            Debug.Log($"[BlastDamage] Explosion at {blastPos} | radius: {radius} | hits: {hits.Length}");
+            Debug.DrawLine(blastPos, blastPos + Vector3.up * 0.1f, Color.red, 1f);
+        }
+
+        // Band thresholds
+        float innerRadius = radius * 0.33f; // 0–33%
+        float midRadius = radius * 0.66f;   // 33–66%
 
         foreach (Collider2D hit in hits)
         {
-            HealthSystem enemy = hit.GetComponent<HealthSystem>();
-            if (enemy != null)
-            {
-                float distance = Vector2.Distance(transform.position, hit.transform.position);
-                int damageToDeal;
+            // Try to find HealthSystem on the collider or its parents
+            HealthSystem health = hit.GetComponent<HealthSystem>();
+            if (health == null)
+                health = hit.GetComponentInParent<HealthSystem>();
 
-                // Calculate band thresholds
-                float innerRadius = radius * 0.33f; // 0–33% of radius
-                float midRadius = radius * 0.66f;   // 33–66% of radius
+            if (health != null)
+            {
+                float distance = Vector2.Distance(new Vector2(blastPos.x, blastPos.y), hit.transform.position);
+                int damageToDeal;
 
                 if (distance <= innerRadius)
                 {
@@ -55,14 +70,30 @@ public class BlastDamage : MonoBehaviour
                     damageToDeal = minDamage;
                 }
 
-                enemy.Damage(damageToDeal);
+                // Call the existing HealthSystem method
+                health.Damage(damageToDeal);
+
+                if (debug)
+                    Debug.Log($"[BlastDamage] Damaged '{hit.name}' for {damageToDeal} (dist={distance:F2})");
+
+                if (debug)
+                    Debug.DrawLine(blastPos, hit.transform.position, Color.yellow, 1f);
+            }
+            else
+            {
+                if (debug)
+                    Debug.Log($"[BlastDamage] No HealthSystem on '{hit.name}' or parents.");
             }
         }
+
+        // Note: we don't Destroy() here if a caller (like a projectile) handles cleanup,
+        // but Start() above will destroy by lifeTime for non-projectile uses.
     }
 
-    // Draw Gizmos for radius visualization
+#if UNITY_EDITOR
     void OnDrawGizmosSelected()
     {
+        // Draw outer -> mid -> inner with colors similar to your old script
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
 
@@ -72,4 +103,5 @@ public class BlastDamage : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, radius * 0.33f);
     }
+#endif
 }

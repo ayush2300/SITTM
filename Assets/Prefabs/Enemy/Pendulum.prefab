@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 2792584028712334268}
   - component: {fileID: 1355446808857704533}
   - component: {fileID: 6739887845055771223}
-  m_Layer: 0
+  - component: {fileID: -1017736596779775944}
+  m_Layer: 6
   m_Name: Pendulum
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +153,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2.9449997
   m_BaseOffset: 1.4724998
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1355446808857704533
 MonoBehaviour:
@@ -241,3 +242,35 @@ PolygonCollider2D:
       - {x: 1.0115939, y: -1.1579556}
       - {x: 1.0054264, y: -1.1517881}
   m_UseDelaunayMesh: 0
+--- !u!114 &-1017736596779775944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148986130981883437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  canDestroyOnDeath: 0
+  isPlayer: 0
+  allowRevive: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onPostDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  deathEffect: {fileID: 0}
+  jumpPower: 0.6
+  jumpNum: 1
+  jumpDuration: 0.45
+  scaleDuration: 0.4
+  scaleEase: 8
+  hurtCooldown: 0.1

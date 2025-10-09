@@ -11,11 +11,11 @@ public class HealthSystem : MonoBehaviour
     [Header("Settings")]
     public bool canDestroyOnDeath = true;
     public bool isPlayer = false;
-    public bool allowRevive = false; // optional revive mechanic
+    public bool allowRevive = false;
 
     [Header("Death / Damage Events")]
     public UnityEvent onDeath;
-    public UnityEvent onPostDeath; // called after death sequence finishes
+    public UnityEvent onPostDeath;
     public UnityEvent onDamageTaken;
 
     [Header("Effects")]
@@ -28,13 +28,16 @@ public class HealthSystem : MonoBehaviour
     public float scaleDuration = 0.40f;
     public Ease scaleEase = Ease.InCubic;
 
+    [Header("Hurt Settings")]
+    public float hurtCooldown = 0.1f; // Minimum time between visual hurt effects
+
     private bool isDead = false;
+    private float lastHurtTime = -1f;
     private SpriteRenderer sr;
     private Material mat;
     private Vector3 originalScale;
     private Sequence hurtSeq;
 
-    // Shader property IDs
     private static readonly int FlashAmountID = Shader.PropertyToID("_FlashAmount");
     private static readonly int ExposureID = Shader.PropertyToID("_Exposure");
     private static readonly int RedOverlayID = Shader.PropertyToID("_RedOverlay");
@@ -75,25 +78,12 @@ public class HealthSystem : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-
-            if (isPlayer && allowRevive)
-            {
-                allowRevive = false;
-                onDeath?.Invoke(); // let revive ability handle it
-                return;
-            }
-
             Die();
         }
         else
         {
             PlayHurtEffect();
             onDamageTaken?.Invoke();
-        }
-
-        if (isPlayer)
-        {
-            // Hook your health UI here
         }
     }
 
@@ -103,11 +93,6 @@ public class HealthSystem : MonoBehaviour
             return;
 
         currentHealth = Mathf.Min(maxHealth, currentHealth + healAmount);
-
-        if (isPlayer)
-        {
-            // Update UI here
-        }
     }
 
     private void Die()
@@ -121,14 +106,10 @@ public class HealthSystem : MonoBehaviour
         if (deathEffect)
             Instantiate(deathEffect, transform.position, Quaternion.identity);
 
-        // cancel hurt tweens
         hurtSeq?.Kill();
         transform.DOKill();
-
-        // reset scale
         transform.localScale = originalScale;
 
-        // build death sequence
         Sequence deathSeq = DOTween.Sequence().SetUpdate(true);
 
         deathSeq.Join(
@@ -147,8 +128,10 @@ public class HealthSystem : MonoBehaviour
         {
             onPostDeath?.Invoke();
 
-            if (canDestroyOnDeath)
+            if (isPlayer && canDestroyOnDeath)
                 Destroy(gameObject);
+            else if (!isPlayer)
+                gameObject.SetActive(false);
             else
                 gameObject.SetActive(false);
         });
@@ -156,11 +139,16 @@ public class HealthSystem : MonoBehaviour
 
     private void PlayHurtEffect()
     {
+        if (Time.time - lastHurtTime < hurtCooldown) return;
+        lastHurtTime = Time.time;
+
         if (sr == null || mat == null) return;
 
         hurtSeq?.Kill();
         sr.DOKill();
         transform.DOKill();
+
+        transform.localScale = originalScale; // Reset scale before punch
 
         float tIn = 0.05f;
         float hold = 0.05f;

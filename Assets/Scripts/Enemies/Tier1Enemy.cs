@@ -7,7 +7,7 @@ public class Tier1Enemy : MonoBehaviour
     public EnemyType enemyType;
 
     [Header("Settings")]
-    public float moveSpeed = 4.5f; // Increased for snappier feel
+    public float moveSpeed = 4.5f;
     public int damage = 10;
     public float combineRange = 1.5f;
 
@@ -17,13 +17,12 @@ public class Tier1Enemy : MonoBehaviour
     // Track active Tier1 enemies for combination logic
     private static List<Tier1Enemy> activeEnemies = new List<Tier1Enemy>();
 
-    // ✅ Prevent multiple combinations at once
     private bool isCombining = false;
 
     void OnEnable()
     {
         if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         if (rb == null)
             rb = GetComponent<Rigidbody2D>();
@@ -48,7 +47,6 @@ public class Tier1Enemy : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
-        // ✅ Direct snapping movement like Vampire Survivors
         Vector2 targetPosition = Vector2.MoveTowards(rb.position, player.position, moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(targetPosition);
     }
@@ -79,7 +77,7 @@ public class Tier1Enemy : MonoBehaviour
     {
         isCombining = true;
 
-        // ✅ Disable only Proton, Neutron, Electron in range
+        // Deactivate only the combined Tier1 enemies
         foreach (Tier1Enemy enemy in nearbyEnemies)
         {
             if (enemy.enemyType == EnemyType.Proton || enemy.enemyType == EnemyType.Neutron || enemy.enemyType == EnemyType.Electron)
@@ -88,16 +86,21 @@ public class Tier1Enemy : MonoBehaviour
             }
         }
 
-        // ✅ Spawn new Tier2 enemy from Tier2 pool
-        if (EnemySpawner.Instance != null)
-        {
-            // 0 = First Tier2 enemy in list (you can change index for different Tier2 types)
-            GameObject newEnemy = EnemySpawner.Instance.SpawnTier2Enemy(0, transform.position);
-            if (newEnemy != null)
-            {
-                newEnemy.SetActive(true);
-            }
-        }
+        // Spawn Tier2 enemy from current active phase pools
+        //if (EnemySpawner.Instance != null && EnemySpawner.Instance.CurrentPools.Count > 0)
+        //{
+        //    // Assumes the first pool in CurrentPools is the Tier2 enemy pool
+        //    foreach (var pool in EnemySpawner.Instance.CurrentPools)
+        //    {
+        //        if (pool.EnemyData.enemyPrefab != null) // basic check
+        //        {
+        //            GameObject newEnemy = pool.Get();
+        //            newEnemy.transform.position = transform.position;
+        //            newEnemy.SetActive(true);
+        //            break; // spawn only one
+        //        }
+        //    }
+        //}
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -111,5 +114,4 @@ public class Tier1Enemy : MonoBehaviour
             }
         }
     }
-
 }

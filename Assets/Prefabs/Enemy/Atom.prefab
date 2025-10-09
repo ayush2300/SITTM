@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: -5680870213639239265}
   - component: {fileID: 561017459816956103}
   - component: {fileID: 1673288738089122336}
-  m_Layer: 0
+  - component: {fileID: 8438849726224143363}
+  m_Layer: 6
   m_Name: Atom
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +57,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &6258133313003359613
 MonoBehaviour:
@@ -176,3 +177,35 @@ MonoBehaviour:
   explosionDamage: 30
   explosionEffect: {fileID: 1414779434264708, guid: cbe69e90d604e37429f9a7c8fb4c811a, type: 3}
   proximityRadius: 2
+--- !u!114 &8438849726224143363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117651411527206627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  canDestroyOnDeath: 0
+  isPlayer: 0
+  allowRevive: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onPostDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  deathEffect: {fileID: 0}
+  jumpPower: 0.6
+  jumpNum: 1
+  jumpDuration: 0.45
+  scaleDuration: 0.4
+  scaleEase: 8
+  hurtCooldown: 0.1

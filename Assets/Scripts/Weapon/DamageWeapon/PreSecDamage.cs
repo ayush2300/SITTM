@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class PreSecDamage : MonoBehaviour
 {
-    public int damagePerSecond = 10; // Damage dealt per second
+    [Header("Damage Settings")]
+    public float damagePerFrame = 1f; // Damage applied every frame
+    [Tooltip("Debug or display only: equivalent damage per second")]
+    public float damagePerSecond => damagePerFrame / Time.deltaTime;
+
     public float deathAfterSec = 3f;
 
     private readonly List<HealthSystem> enemiesInRange = new List<HealthSystem>();
@@ -16,7 +20,7 @@ public class PreSecDamage : MonoBehaviour
 
     void Update()
     {
-        float damageThisFrame = damagePerSecond * Time.deltaTime;
+        float damageThisFrame = damagePerFrame;
 
         for (int i = enemiesInRange.Count - 1; i >= 0; i--)
         {

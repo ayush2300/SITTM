@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 6333612064184335406}
   - component: {fileID: -333062252967407297}
   - component: {fileID: 1867706625461616748}
-  m_Layer: 0
+  - component: {fileID: -2488125985045985958}
+  m_Layer: 6
   m_Name: MutatedRat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +191,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 5.1199994
   m_BaseOffset: 2.5599997
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &-333062252967407297
 MonoBehaviour:
@@ -208,6 +209,38 @@ MonoBehaviour:
   attackCooldown: 1
   expDrop: 10
 --- !u!114 &1867706625461616748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677058516892065867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  canDestroyOnDeath: 0
+  isPlayer: 0
+  allowRevive: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onPostDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  deathEffect: {fileID: 0}
+  jumpPower: 0.6
+  jumpNum: 1
+  jumpDuration: 0.45
+  scaleDuration: 0.4
+  scaleEase: 8
+  hurtCooldown: 0.1
+--- !u!114 &-2488125985045985958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,3 +271,4 @@ MonoBehaviour:
   jumpDuration: 0.45
   scaleDuration: 0.4
   scaleEase: 8
+  hurtCooldown: 0.1

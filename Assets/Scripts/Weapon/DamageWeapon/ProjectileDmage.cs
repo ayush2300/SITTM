@@ -17,4 +17,15 @@ public class ProjectileDamage : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            HealthSystem enemy = other.gameObject.GetComponent<HealthSystem>();
+            if (enemy != null)
+            {
+                enemy.Damage(damage);
+            }
+        }
+    }
 }
