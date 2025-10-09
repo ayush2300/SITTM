@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRadius: 1
   explosionDamage: 30
-  explosionEffect: {fileID: 1414779434264708, guid: cbe69e90d604e37429f9a7c8fb4c811a, type: 3}
+  explosionEffect: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
   proximityRadius: 2
 --- !u!114 &8438849726224143363
 MonoBehaviour:
