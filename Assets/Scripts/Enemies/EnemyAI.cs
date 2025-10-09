@@ -78,7 +78,7 @@ public class EnemyAI : MonoBehaviour
         if (xpOrbPrefab != null)
         {
             GameObject xpOrb = Instantiate(xpOrbPrefab, transform.position, Quaternion.identity);
-            XPOrb orb = xpOrb.GetComponent<XPOrb>();
+            XpDrop orb = xpOrb.GetComponent<XpDrop>();
             if (orb != null)
             {
                 orb.xpAmount = expDrop;

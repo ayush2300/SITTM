@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class XPDrop : MonoBehaviour
+public class XpDrop : MonoBehaviour
 {
     public int xpAmount = 10;
     public float pickupRange = 1.5f;
