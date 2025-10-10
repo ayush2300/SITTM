@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class XpDrop : MonoBehaviour
@@ -35,7 +36,7 @@ public class XpDrop : MonoBehaviour
                 xpSystem.AddXP(xpAmount);
             }
 
-            gameObject.SetActive(false); // or Destroy(gameObject);
+            Destroy(gameObject); // or Destroy(gameObject);
         }
     }
 }
