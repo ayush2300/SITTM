@@ -55,26 +55,26 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    public void Die()
-    {
-        Debug.Log("Enemy Dead");
-        isDead = true;
+    //public void Die()
+    //{
+    //    Debug.Log("Enemy Dead");
+    //    isDead = true;
 
-        //    Drop XP orb
-        if (XpOrbPrefab != null)
-        {
-            GameObject xpOrb = Instantiate(XpOrbPrefab, transform.position, Quaternion.identity);
-            XpDrop orb = xpOrb.GetComponent<XpDrop>();
-            if (orb != null)
-            {
-                orb.xpAmount = expDrop;
-            }
-        }
+    //    //    Drop XP orb
+    //    if (XpOrbPrefab != null)
+    //    {
+    //        GameObject xpOrb = Instantiate(XpOrbPrefab, transform.position, Quaternion.identity);
+    //        XpDrop orb = xpOrb.GetComponent<XpDrop>();
+    //        if (orb != null)
+    //        {
+    //            orb.xpAmount = expDrop;
+    //        }
+    //    }
 
-        //    Disable agent and deactivate for pooling
-        if (agent != null)
-                agent.ResetPath();
+    //    //    Disable agent and deactivate for pooling
+    //    if (agent != null)
+    //            agent.ResetPath();
 
-        gameObject.SetActive(false);
-    }
+    //    gameObject.SetActive(false);
+    //}
 }
