@@ -52,7 +52,7 @@ public class ParticleEnemy : MonoBehaviour
             ParticleEnemy p = collider.GetComponent<ParticleEnemy>();
             if (p != null)
             {
-                Debug.Log($"Detected particle: {p.type} at {p.transform.position}");
+                
                 switch (p.type)
                 {
                     case ParticleType.Proton:

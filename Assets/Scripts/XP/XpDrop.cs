@@ -29,7 +29,7 @@ public class XpDrop : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerXP xpSystem = other.GetComponent<PlayerXP>();
+            PlayerXp xpSystem = other.GetComponent<PlayerXp>();
             if (xpSystem != null)
             {
                 xpSystem.AddXP(xpAmount);
