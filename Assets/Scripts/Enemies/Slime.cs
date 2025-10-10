@@ -11,25 +11,13 @@ public class Slime2D : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             var playerController = collision.gameObject.GetComponent<PlayerController2D>();
-            var playerHealth = collision.gameObject.GetComponent<HealthSystem>();
 
             if (playerController != null)
             {
                 float modifier = 1f - slowAmount;
-                //playerController.ApplyTemporarySpeedModifier(modifier, slowDuration);
+                playerController.ApplyTemporarySpeedModifier(modifier, slowDuration);
             }
-
-            if (playerHealth != null && damageOnCollision > 0)
-            {
-                playerHealth.Damage(damageOnCollision);
-            }
-
-            Die();
         }
     }
 
-    private void Die()
-    {
-        gameObject.SetActive(false);
-    }
 }

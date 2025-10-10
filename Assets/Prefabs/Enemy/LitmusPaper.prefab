@@ -123,7 +123,7 @@ MonoBehaviour:
   moveSpeed: 3
   attackCooldown: 1
   expDrop: 10
-  xpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
+  XpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
 --- !u!50 &6365162885047968328
 Rigidbody2D:
   serializedVersion: 4
