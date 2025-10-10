@@ -6,8 +6,11 @@ public class InteractiveFallingItem : MonoBehaviour
     [Header("Prefab Settings")]
     public GameObject prefabToSpawn;
 
+
     [Header("Chance Settings")]
-    public float fallChance = 0.2f;
+    [Tooltip("Initial fall chance (0 to 1, e.g. 0.4 for 40%)")]
+public float fallChance = 0.4f;
+    [Tooltip("Chance multiplier added on each failed fall attempt (e.g. 0.05 for 5%)")]
     public float chanceMultiplier = 0.05f;
 
     [Header("Detection Settings")]
@@ -32,6 +35,9 @@ public class InteractiveFallingItem : MonoBehaviour
     private bool hasFallen = false;
     private Vector3 originalScale;
     private Quaternion originalRotation;
+
+    // Track whether player is inside detection radius in last frame
+    private bool playerInsidePrevFrame = false;
 
     private void Awake()
     {
@@ -65,22 +71,38 @@ public class InteractiveFallingItem : MonoBehaviour
 
     void Update()
     {
-        if (!hasFallen)
+        if (hasFallen) return;
+
+        // Detect if player is currently inside detection radius
+        bool playerInsideNow = false;
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
+        foreach (var col in hits)
         {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
-            foreach (var col in hits)
+            if (col.CompareTag("Player"))
             {
-                if (col.CompareTag("Player"))
-                {
-                    fallChance += chanceMultiplier;
-                    if (Random.value < fallChance)
-                    {
-                        StartPopAndFall();
-                    }
-                    break;
-                }
+                playerInsideNow = true;
+                break;
             }
         }
+
+        // Detect player entering the detection radius (rising edge)
+        if (playerInsideNow && !playerInsidePrevFrame)
+        {
+            // Player just entered
+            if (Random.value < fallChance)
+            {
+                StartPopAndFall();
+            }
+            else
+            {
+                // Increase chance by multiplier on failed fall, clamp max 1 (100%)
+                fallChance += chanceMultiplier;
+                fallChance = Mathf.Clamp01(fallChance);
+            }
+        }
+
+        // Update previous frame flag
+        playerInsidePrevFrame = playerInsideNow;
     }
 
     void StartPopAndFall()

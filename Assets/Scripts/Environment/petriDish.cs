@@ -21,7 +21,7 @@ public class ShakeAndSpawnDamage : MonoBehaviour
     public float damageCheckInterval = 0.5f;  // Interval between damage applications while particle active
     public float damageParticleRadius = 1f;   // Radius around particle to detect and damage players
 
-    private bool playerDetected = false;
+    private bool playerDetectedPrevFrame = false;  // Tracks if player was inside last frame
     private bool hasSpawned = false;
 
     private Sequence shakeSequence;
@@ -34,23 +34,32 @@ public class ShakeAndSpawnDamage : MonoBehaviour
 
     void Update()
     {
-        if (!playerDetected && !hasSpawned)
+        if (hasSpawned) return;
+
+        bool playerDetectedNow = false;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
+        foreach (var col in hits)
         {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
-            foreach (var col in hits)
+            if (col.CompareTag(playerTag))
             {
-                if (col.CompareTag(playerTag))
-                {
-                    StartShakeAndSpawn();
-                    break;
-                }
+                playerDetectedNow = true;
+                break;
             }
         }
+
+        // Trigger only on player entering detection radius (rising edge)
+        if (playerDetectedNow && !playerDetectedPrevFrame)
+        {
+            StartShakeAndSpawn();
+        }
+
+        playerDetectedPrevFrame = playerDetectedNow;
     }
 
     void StartShakeAndSpawn()
     {
-        playerDetected = true;
+        hasSpawned = true;
 
         shakeSequence = DOTween.Sequence();
         shakeSequence.Append(transform.DOPunchRotation(new Vector3(0, 0, shakeStrength), shakeDuration, shakeVibrato));
@@ -66,10 +75,8 @@ public class ShakeAndSpawnDamage : MonoBehaviour
         {
             GameObject particle = Instantiate(damageParticlePrefab, transform.position, Quaternion.identity);
             Destroy(particle, damageDuration);
-            // Start damage coroutine to apply damage over damageDuration
             StartCoroutine(DealDamageOverTime(particle.transform));
         }
-        hasSpawned = true;
     }
 
     IEnumerator DealDamageOverTime(Transform particleTransform)
@@ -77,7 +84,8 @@ public class ShakeAndSpawnDamage : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < damageDuration)
         {
-            // Detect players inside damage radius around particle
+            if (particleTransform == null) yield break;
+
             Collider2D[] hits = Physics2D.OverlapCircleAll(particleTransform.position, damageParticleRadius);
             foreach (var col in hits)
             {

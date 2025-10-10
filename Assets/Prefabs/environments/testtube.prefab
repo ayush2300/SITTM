@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1819604541013342421}
   - component: {fileID: 6388217902417778661}
   - component: {fileID: 5446686722852350495}
-  - component: {fileID: 8312758370775546989}
+  - component: {fileID: 5165704879065638044}
   m_Layer: 7
-  m_Name: petridish
+  m_Name: testtube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 42596df3b485e944bbb48e39c3125654, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84332baaa7819d742995037a80633e8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.984615, y: 10.24}
   m_EdgeRadius: 0
---- !u!114 &8312758370775546989
+--- !u!114 &5165704879065638044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,16 +140,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2972764583300703140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7bedd2bf175664d8b4843c44e2f4cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 203082875a18a00469ab2c0496e4fad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 0}
+  tiltChance: 0.2
+  chanceMultiplier: 0.05
   detectionRadius: 1
-  playerTag: Player
-  shakeDuration: 3
-  shakeStrength: 20
-  shakeVibrato: 20
-  damageParticlePrefab: {fileID: 4318940320840401929, guid: 842eb98046e1ca348b3c0807fcfe362d, type: 3}
-  damageDuration: 3
-  damageAmount: 10
-  damageCheckInterval: 0.1
-  damageParticleRadius: 1
+  tiltTarget: {fileID: 0}
+  tiltDuration: 1
+  targetRotationEuler: {x: 45, y: 45, z: 0}
+  damage: 10
+  destroyOnTilt: 1

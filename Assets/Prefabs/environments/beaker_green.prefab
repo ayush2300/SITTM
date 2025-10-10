@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1819604541013342421}
   - component: {fileID: 6388217902417778661}
-  - component: {fileID: 1765159202135148091}
   - component: {fileID: 5446686722852350495}
+  - component: {fileID: 1765159202135148091}
   m_Layer: 7
   m_Name: beaker_green
   m_TagString: Untagged
@@ -86,30 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1765159202135148091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2972764583300703140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 247e6439467266b49a9c60b1da0dcc57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 3904308360467140003, guid: 8876f0a347b6b664fbb5c0368f14e80b, type: 3}
-  fallChance: 0.2
-  chanceMultiplier: 0.005
-  detectionRadius: 2
-  fallTarget: {fileID: 0}
-  fallDuration: 1
-  arcHeight: 2.24
-  popScale: 1.25
-  popDuration: 0.5
-  targetRotationEuler: {x: 0, y: 0, z: 240}
-  damage: 10
-  destroyOnFall: 1
 --- !u!61 &5446686722852350495
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,3 +131,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.984615, y: 10.24}
   m_EdgeRadius: 0
+--- !u!114 &1765159202135148091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2972764583300703140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247e6439467266b49a9c60b1da0dcc57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 3904308360467140003, guid: 8876f0a347b6b664fbb5c0368f14e80b, type: 3}
+  fallChance: 0.2
+  chanceMultiplier: 0.005
+  detectionRadius: 2
+  fallTarget: {fileID: 0}
+  fallDuration: 1
+  arcHeight: 2.24
+  popScale: 1.25
+  popDuration: 0.5
+  targetRotationEuler: {x: 0, y: 0, z: 240}
+  damage: 10
+  destroyOnFall: 1
