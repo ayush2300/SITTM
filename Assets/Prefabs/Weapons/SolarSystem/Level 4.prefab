@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 5551477417522590790, guid: 166c270811d6f8748b74b59b7175398b, type: 3}
   - {fileID: 5065662985208813257, guid: 09206795c89c0554ab457f3906286b81, type: 3}
   - {fileID: 4316691681990621305, guid: 75e48caf7a7b6b34987aed25ea3a7008, type: 3}
-  minOrbitRadius: 1
-  maxOrbitRadius: 4
-  minOrbitSpeed: 30
-  maxOrbitSpeed: 100
+  minOrbitRadius: 2
+  gapBetweenPlanets: 0.5
+  maxOrbitSpeed: 80
+  speedSubtractor: 10

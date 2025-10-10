@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetPrefabs:
   - {fileID: 7160473064376943296, guid: 2aea5ce6179f1014fbbc976c32c1d3e1, type: 3}
-  minOrbitRadius: 1
-  maxOrbitRadius: 1
-  minOrbitSpeed: 30
-  maxOrbitSpeed: 30
+  minOrbitRadius: 2
+  gapBetweenPlanets: 0.5
+  maxOrbitSpeed: 80
+  speedSubtractor: 10

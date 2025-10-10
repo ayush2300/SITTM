@@ -1,81 +1,65 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour, IDamagable
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
+public class PlayerController2D : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
 
-    [Header("Health Settings")]
-    public float maxHealth = 100f;
-    private float currentHealth;
-
-    [Header("UI")]
-    public Slider healthSlider;
-
-    [Header("Components")]
-    public Rigidbody2D rb;
-    public Animator animator;
-
+    private Rigidbody2D rb;
+    private Animator animator;
     private Vector2 moveInput;
     private float lastHorizontalDir = 1f; // 1 = right, -1 = left
 
-    void Start()
+    public float speedModifier;
+    private Coroutine speedCoroutine;
+
+    private void Awake()
     {
-        currentHealth = maxHealth;
-        UpdateHealthUI();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
-        // Movement Input
+        // Read movement input
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput.Normalize();
 
         bool isMoving = moveInput.sqrMagnitude > 0.01f;
 
-        // Track last horizontal direction if there is X movement
+        // Track last horizontal direction for animation facing
         if (moveInput.x > 0.1f)
             lastHorizontalDir = 1f;
         else if (moveInput.x < -0.1f)
             lastHorizontalDir = -1f;
 
-        // Update animator parameters
+        // Update animator
         animator.SetInteger("move", isMoving ? 1 : 0);
         animator.SetFloat("facing", lastHorizontalDir);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+        // Move the player
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
-
-    public void TakeDamage(float damage)
+    public void ApplyTemporarySpeedModifier(float modifier, float duration)
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log($"Player took {damage} damage. Current Health: {currentHealth}");
-        UpdateHealthUI();
+        if (speedCoroutine != null)
+            StopCoroutine(speedCoroutine);
 
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        speedCoroutine = StartCoroutine(TemporarySpeedModifierRoutine(modifier, duration));
     }
 
-    void UpdateHealthUI()
+    private IEnumerator TemporarySpeedModifierRoutine(float modifier, float duration)
     {
-        if (healthSlider != null)
-        {
-            healthSlider.value = currentHealth / maxHealth;
-        }
-    }
-
-    void Die()
-    {
-        Debug.Log("Player Died!");
+        speedModifier = modifier;
+        yield return new WaitForSeconds(duration);
+        speedModifier = 1f;
+        speedCoroutine = null;
     }
 }

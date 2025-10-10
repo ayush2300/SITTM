@@ -1,37 +1,60 @@
+using System.Collections;
 using UnityEngine;
 
-public class LitIonProjectile : PreSecDamage
+public class LitIonProjectile : BlastDamage
 {
-    [Header("Lithium Ion Settings")]
-    public float fuseTime = 1.5f;         // Time before activating AoE damage
-    public Sprite armedSprite;            // Sprite to switch to when active
+    [Header("Lithium Ion Projectile Settings")]
+    public float fuseTime = 2f; // Time before it explodes
+    public Sprite armedSprite;  // Sprite to show when armed
 
-    private SpriteRenderer sr;
-    private bool isArmed = false;
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
+    private bool hasExploded = false;
 
-    protected new void Start()
+    protected void Awake()
     {
-        base.Start(); // keep PreSecDamage setup (like destroy after sec)
-        sr = GetComponent<SpriteRenderer>();
-
-        // Disable damage at start
-        enabled = false;
-
-        // Start fuse countdown
-        Invoke(nameof(ArmProjectile), fuseTime);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void ArmProjectile()
+    private void Start()
     {
-        isArmed = true;
+        // Start the fuse countdown
+        StartCoroutine(FuseTimer());
+    }
 
-        // Change sprite
-        if (sr != null && armedSprite != null)
+    private IEnumerator FuseTimer()
+    {
+        // Wait fuse time
+        yield return new WaitForSeconds(fuseTime);
+
+        // Stop movement completely
+        if (rb != null)
         {
-            sr.sprite = armedSprite;
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.isKinematic = true; // freezes it so it won't move anymore
         }
 
-        // Enable PreSecDamage logic
-        enabled = true;
+        // Change to armed sprite if provided
+        if (armedSprite != null && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = armedSprite;
+        }
+
+        // Small delay to show armed state (optional)
+        yield return new WaitForSeconds(0.2f);
+
+        // Trigger blast
+        Explode();
+    }
+
+    private void Explode()
+    {
+        if (hasExploded) return;
+        hasExploded = true;
+
+        ApplyBlastDamage(); // Call the inherited blast logic
+        Destroy(gameObject, lifeTime); // Cleanup after
     }
 }

@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class ProjectileDamage : MonoBehaviour
 {
-    public float damage = 10f; // This can be set by SolarSystem script if needed
+    public int damage = 10; // This can be set by SolarSystem script if needed
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            IDamagable enemy = other.gameObject.GetComponent<IDamagable>();
+            HealthSystem enemy = other.gameObject.GetComponent<HealthSystem>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.Damage(damage);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            HealthSystem enemy = other.gameObject.GetComponent<HealthSystem>();
+            if (enemy != null)
+            {
+                enemy.Damage(damage);
             }
         }
     }

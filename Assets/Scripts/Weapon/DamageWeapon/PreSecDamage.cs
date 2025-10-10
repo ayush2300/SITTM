@@ -1,26 +1,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PreSecDamage: MonoBehaviour
+public class PreSecDamage : MonoBehaviour
 {
-    public float damagePerSecond = 10f; // Damage dealt per second
+    [Header("Damage Settings")]
+    public float damagePerFrame = 1f; // Damage applied every frame
+    [Tooltip("Debug or display only: equivalent damage per second")]
+    public float damagePerSecond => damagePerFrame / Time.deltaTime;
+
     public float deathAfterSec = 3f;
 
-    private readonly List<IDamagable> enemiesInRange = new List<IDamagable>();
+    private readonly List<HealthSystem> enemiesInRange = new List<HealthSystem>();
+    private Dictionary<HealthSystem, float> damageBuffer = new Dictionary<HealthSystem, float>();
 
-    protected void Start()
+    void Start()
     {
-        Destroy(gameObject,deathAfterSec);
+        Destroy(gameObject, deathAfterSec);
     }
 
     void Update()
     {
-        // Apply DPS every frame
-        for (int i = 0; i < enemiesInRange.Count; i++)
+        float damageThisFrame = damagePerFrame;
+
+        for (int i = enemiesInRange.Count - 1; i >= 0; i--)
         {
-            if (enemiesInRange[i] != null)
+            HealthSystem enemy = enemiesInRange[i];
+            if (enemy == null)
             {
-                enemiesInRange[i].TakeDamage(damagePerSecond * Time.deltaTime);
+                enemiesInRange.RemoveAt(i);
+                continue;
+            }
+
+            // Accumulate fractional damage
+            if (!damageBuffer.ContainsKey(enemy))
+                damageBuffer[enemy] = 0f;
+
+            damageBuffer[enemy] += damageThisFrame;
+
+            // Apply only whole number damage
+            int intDamage = Mathf.FloorToInt(damageBuffer[enemy]);
+            if (intDamage > 0)
+            {
+                enemy.Damage(intDamage);
+                damageBuffer[enemy] -= intDamage;
             }
         }
     }
@@ -29,10 +51,11 @@ public class PreSecDamage: MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            IDamagable enemy = other.GetComponent<IDamagable>();
+            HealthSystem enemy = other.GetComponent<HealthSystem>();
             if (enemy != null && !enemiesInRange.Contains(enemy))
             {
                 enemiesInRange.Add(enemy);
+                damageBuffer[enemy] = 0f;
             }
         }
     }
@@ -41,10 +64,11 @@ public class PreSecDamage: MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            IDamagable enemy = other.GetComponent<IDamagable>();
+            HealthSystem enemy = other.GetComponent<HealthSystem>();
             if (enemy != null && enemiesInRange.Contains(enemy))
             {
                 enemiesInRange.Remove(enemy);
+                damageBuffer.Remove(enemy);
             }
         }
     }

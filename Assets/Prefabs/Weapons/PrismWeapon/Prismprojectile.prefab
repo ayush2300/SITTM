@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveDuration: 0.5
-  damage: 10
+  damage: 50
   lifeTime: 3
   curveDelay: 1
 --- !u!58 &-4507238429904915992

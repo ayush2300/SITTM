@@ -1,67 +1,95 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Spawn Settings")]
-    public List<GameObject> tier1EnemyPrefabs; // Tier1 enemies (Proton, Neutron, Electron)
-    public List<GameObject> tier2EnemyPrefabs; // Tier2 enemies (spawned after combination)
+    [Header("Phase Setup")]
+    public List<SpawnPhaseSO> spawnPhases;
 
-    public int poolSizePerEnemy = 10;
-    public float spawnInterval = 3f;
+    [Header("Spawn Settings")]
     public float spawnDistance = 10f;
+    public Transform poolParent;
 
     private Camera mainCamera;
-    private float timer;
+    private float elapsedTime = 0f;
+    private int currentPhaseIndex = -1;
 
-    private List<EnemyPooler> tier1Pools = new List<EnemyPooler>();
-    private List<EnemyPooler> tier2Pools = new List<EnemyPooler>();
-
-    public static EnemySpawner Instance; // Singleton for easy access
-
-    void Awake()
-    {
-        Instance = this;
-    }
+    private List<EnemyPooler> currentPools = new List<EnemyPooler>();
+    private Dictionary<EnemyPooler, float> spawnTimers = new Dictionary<EnemyPooler, float>();
+    private Dictionary<EnemyPooler, float> elapsedPoolTime = new Dictionary<EnemyPooler, float>();
 
     void Start()
     {
         mainCamera = Camera.main;
-
-        // Create pools for Tier1 enemies
-        foreach (var prefab in tier1EnemyPrefabs)
-        {
-            tier1Pools.Add(new EnemyPooler(prefab, poolSizePerEnemy, transform));
-        }
-
-        // Create pools for Tier2 enemies
-        foreach (var prefab in tier2EnemyPrefabs)
-        {
-            tier2Pools.Add(new EnemyPooler(prefab, poolSizePerEnemy, transform));
-        }
-
-        timer = spawnInterval;
+        if (spawnPhases.Count > 0)
+            ActivatePhase(0);
     }
 
     void Update()
     {
-        timer -= Time.deltaTime;
+        elapsedTime += Time.deltaTime;
 
-        if (timer <= 0f)
+        // Check for next phase
+        if (currentPhaseIndex + 1 < spawnPhases.Count &&
+            elapsedTime >= spawnPhases[currentPhaseIndex + 1].startTime)
         {
-            SpawnRandomTier1Enemy();
-            timer = spawnInterval;
+            ActivatePhase(currentPhaseIndex + 1);
+        }
+
+        // Spawn enemies for each pool
+        foreach (var pool in currentPools)
+        {
+            if (!spawnTimers.ContainsKey(pool))
+            {
+                spawnTimers[pool] = 0f;
+                elapsedPoolTime[pool] = 0f;
+            }
+
+            elapsedPoolTime[pool] += Time.deltaTime;
+
+            // Compute current spawn rate
+            var data = pool.EnemyData;
+            float t = Mathf.Clamp01(elapsedPoolTime[pool] / data.timeToIncrease);
+            float currentSpawnRate = Mathf.Lerp(data.minSpawnRate, data.maxSpawnRate, t);
+            float interval = 1f / currentSpawnRate;
+
+            spawnTimers[pool] -= Time.deltaTime;
+            if (spawnTimers[pool] <= 0f)
+            {
+                SpawnFromPool(pool);
+                spawnTimers[pool] = interval;
+            }
         }
     }
 
-    void SpawnRandomTier1Enemy()
+    void ActivatePhase(int phaseIndex)
     {
-        if (tier1Pools.Count == 0) return;
+        currentPhaseIndex = phaseIndex;
+        var phase = spawnPhases[phaseIndex];
 
-        // Pick a random Tier1 pool
-        EnemyPooler selectedPool = tier1Pools[Random.Range(0, tier1Pools.Count)];
-        GameObject enemy = selectedPool.Get();
+        // Clear old pools if not keeping previous enemies alive
+        if (!phase.keepPreviousEnemiesAlive)
+        {
+            foreach (var pool in currentPools)
+                pool.ClearPool();
 
+            currentPools.Clear();
+            spawnTimers.Clear();
+            elapsedPoolTime.Clear();
+        }
+
+        // Create pools for new enemies
+        foreach (var enemyData in phase.enemiesToSpawn)
+        {
+            EnemyPooler pool = new EnemyPooler(enemyData.enemyPrefab, enemyData.poolSize, poolParent);
+            pool.EnemyData = enemyData;
+            currentPools.Add(pool);
+        }
+    }
+
+    void SpawnFromPool(EnemyPooler pool)
+    {
+        GameObject enemy = pool.Get();
         enemy.transform.position = GetRandomPositionOutsideCamera();
         enemy.SetActive(true);
     }
@@ -71,43 +99,11 @@ public class EnemySpawner : MonoBehaviour
         float camHeight = 2f * mainCamera.orthographicSize;
         float camWidth = camHeight * mainCamera.aspect;
 
-        int edge = Random.Range(0, 4);
-        float x = 0, y = 0;
-
-        switch (edge)
-        {
-            case 0: // Top
-                x = Random.Range(-camWidth / 2, camWidth / 2);
-                y = camHeight / 2 + spawnDistance;
-                break;
-            case 1: // Bottom
-                x = Random.Range(-camWidth / 2, camWidth / 2);
-                y = -camHeight / 2 - spawnDistance;
-                break;
-            case 2: // Left
-                x = -camWidth / 2 - spawnDistance;
-                y = Random.Range(-camHeight / 2, camHeight / 2);
-                break;
-            case 3: // Right
-                x = camWidth / 2 + spawnDistance;
-                y = Random.Range(-camHeight / 2, camHeight / 2);
-                break;
-        }
+        int side = Random.Range(0, 2); // 0 = left, 1 = right
+        float x = side == 0 ? -camWidth / 2 - spawnDistance : camWidth / 2 + spawnDistance;
+        float y = Random.Range(-camHeight / 2, camHeight / 2);
 
         Vector3 cameraPos = mainCamera.transform.position;
         return new Vector3(cameraPos.x + x, cameraPos.y + y, 0f);
-    }
-
-    // ✅ Spawn Tier2 Enemy at a specific position (called by Tier1Enemy)
-    public GameObject SpawnTier2Enemy(int index, Vector3 position)
-    {
-        if (index < 0 || index >= tier2Pools.Count)
-            return null;
-
-        GameObject enemy = tier2Pools[index].Get();
-        enemy.transform.position = position;
-        enemy.SetActive(true);
-
-        return enemy;
     }
 }

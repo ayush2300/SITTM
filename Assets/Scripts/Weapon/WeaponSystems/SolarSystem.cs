@@ -5,13 +5,15 @@ public class SolarSystem : MonoBehaviour
 {
     [Header("Solar System Settings")]
     public List<GameObject> planetPrefabs; // Assign different planet prefabs in Inspector
-    public float minOrbitRadius = 2f;      // Radius of first planet
-    public float maxOrbitRadius = 4f;      // Radius of last planet
-    public float minOrbitSpeed = 30f;
-    public float maxOrbitSpeed = 100f;
+    public float minOrbitRadius = 2f;      // Radius of the first planet
+    public float gapBetweenPlanets = 1.5f; // Constant gap between each orbit
+
+    [Header("Speed Settings")]
+    public float maxOrbitSpeed = 100f;     // Speed of first planet
+    public float speedSubtractor = 10f;    // How much slower each next planet gets
 
     private Transform player;
-    private List<PlanetData> planets = new List<PlanetData>();
+    private readonly List<PlanetData> planets = new List<PlanetData>();
 
     [System.Serializable]
     private class PlanetData
@@ -19,39 +21,39 @@ public class SolarSystem : MonoBehaviour
         public GameObject planet;
         public float angle;
         public float speed;
-        public float radius; // Unique radius for this planet
+        public float radius;
     }
 
     void Start()
     {
         player = transform.parent; // Weapon is attached to Player
 
-        if (planetPrefabs.Count == 0)
+        if (planetPrefabs == null || planetPrefabs.Count == 0)
         {
             Debug.LogWarning("No planet prefabs assigned to SolarSystem!");
             return;
         }
 
-        int numberOfPlanets = planetPrefabs.Count;
-        float radiusStep = (numberOfPlanets == 1) ? 0f : (maxOrbitRadius - minOrbitRadius) / (numberOfPlanets - 1);
-
-        for (int i = 0; i < numberOfPlanets; i++)
+        for (int i = 0; i < planetPrefabs.Count; i++)
         {
-            float angle = (360f / numberOfPlanets) * i;
-            float radius = minOrbitRadius + radiusStep * i;
+            float angle = (360f / planetPrefabs.Count) * i;
+            float radius = minOrbitRadius + gapBetweenPlanets * i;
+
+            // First planet keeps max speed; others get reduced speed
+            float calculatedSpeed = (i == 0)
+                ? maxOrbitSpeed
+                : maxOrbitSpeed - (speedSubtractor * i);
 
             Vector3 position = player.position + Quaternion.Euler(0, 0, angle) * Vector3.right * radius;
             GameObject planet = Instantiate(planetPrefabs[i], position, Quaternion.identity, transform);
 
-            PlanetData data = new PlanetData
+            planets.Add(new PlanetData
             {
                 planet = planet,
                 angle = angle,
-                speed = Random.Range(minOrbitSpeed, maxOrbitSpeed),
+                speed = calculatedSpeed,
                 radius = radius
-            };
-
-            planets.Add(data);
+            });
         }
     }
 
@@ -59,14 +61,13 @@ public class SolarSystem : MonoBehaviour
     {
         if (player == null) return;
 
-        // Update positions of each planet individually
-        foreach (var planetData in planets)
+        foreach (var data in planets)
         {
-            planetData.angle += planetData.speed * Time.deltaTime;
-            if (planetData.angle > 360f) planetData.angle -= 360f;
+            data.angle += data.speed * Time.deltaTime;
+            if (data.angle > 360f) data.angle -= 360f;
 
-            Vector3 offset = Quaternion.Euler(0, 0, planetData.angle) * Vector3.right * planetData.radius;
-            planetData.planet.transform.position = player.position + offset;
+            Vector3 offset = Quaternion.Euler(0, 0, data.angle) * Vector3.right * data.radius;
+            data.planet.transform.position = player.position + offset;
         }
     }
 }

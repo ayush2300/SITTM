@@ -26,7 +26,23 @@ public class CardSpawner : MonoBehaviour
     {
         if (allWeapons.Count == 0 || cardsToSpawn <= 0) return;
 
-        List<WeaponSO> tempList = new List<WeaponSO>(allWeapons);
+        // Filter weapons: only spawn if player doesn't have it OR it has levels left
+        List<WeaponSO> tempList = new List<WeaponSO>();
+        foreach (var weapon in allWeapons)
+        {
+            if (weaponManager.HasWeapon(weapon))
+            {
+                int currentLevel = weaponManager.GetWeaponLevel(weapon);
+                if (currentLevel < weapon.levels.Count - 1) // still has levels left
+                    tempList.Add(weapon);
+            }
+            else
+            {
+                tempList.Add(weapon); // player doesn't have it
+            }
+        }
+
+        if (tempList.Count == 0) return; // nothing to spawn
 
         for (int i = 0; i < cardsToSpawn; i++)
         {
@@ -46,6 +62,8 @@ public class CardSpawner : MonoBehaviour
             }
         }
     }
+
+
 
     public void OnCardSelected()
     {
