@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -29,7 +30,10 @@ public class HealthSystem : MonoBehaviour
     public Ease scaleEase = Ease.InCubic;
 
     [Header("Hurt Settings")]
-    public float hurtCooldown = 0.1f; // Minimum time between visual hurt effects
+    public float hurtCooldown = 0.1f;
+
+    [Header("UI")]
+    public Slider healthSlider;
 
     private bool isDead = false;
     private float lastHurtTime = -1f;
@@ -66,6 +70,8 @@ public class HealthSystem : MonoBehaviour
         }
 
         originalScale = transform.localScale;
+
+        UpdateHealthUI();
     }
 
     public void Damage(int damageAmount)
@@ -74,10 +80,12 @@ public class HealthSystem : MonoBehaviour
             return;
 
         currentHealth -= damageAmount;
+        currentHealth = Mathf.Max(0, currentHealth);
+
+        UpdateHealthUI();
 
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
             Die();
         }
         else
@@ -93,6 +101,7 @@ public class HealthSystem : MonoBehaviour
             return;
 
         currentHealth = Mathf.Min(maxHealth, currentHealth + healAmount);
+        UpdateHealthUI();
     }
 
     private void Die()
@@ -130,8 +139,6 @@ public class HealthSystem : MonoBehaviour
 
             if (isPlayer && canDestroyOnDeath)
                 Destroy(gameObject);
-            else if (!isPlayer)
-                gameObject.SetActive(false);
             else
                 gameObject.SetActive(false);
         });
@@ -148,7 +155,7 @@ public class HealthSystem : MonoBehaviour
         sr.DOKill();
         transform.DOKill();
 
-        transform.localScale = originalScale; // Reset scale before punch
+        transform.localScale = originalScale;
 
         float tIn = 0.05f;
         float hold = 0.05f;
@@ -203,12 +210,25 @@ public class HealthSystem : MonoBehaviour
         isDead = false;
         transform.localScale = originalScale;
         gameObject.SetActive(true);
+
+        UpdateHealthUI();
     }
 
     public void SetMaxHealth(int newMaxHealth, bool resetCurrentHealth = true)
     {
         maxHealth = newMaxHealth;
         if (resetCurrentHealth)
+        {
             currentHealth = maxHealth;
+            UpdateHealthUI();
+        }
+    }
+
+    private void UpdateHealthUI()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.value = (float)currentHealth / maxHealth;
+        }
     }
 }

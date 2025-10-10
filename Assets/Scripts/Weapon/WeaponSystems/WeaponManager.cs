@@ -93,6 +93,13 @@ public class WeaponManager : MonoBehaviour
 
         activeWeapons.Add(activeWeapon);
     }
+    public int GetWeaponLevel(WeaponSO weaponSO)
+    {
+        var activeWeapon = activeWeapons.Find(w => w.weaponSO == weaponSO);
+        if (activeWeapon != null)
+            return activeWeapon.currentLevel;
+        return -1; // weapon not owned
+    }
 
     /// <summary>
     /// Upgrade an existing weapon to the next level

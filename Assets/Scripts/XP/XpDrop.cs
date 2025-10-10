@@ -25,17 +25,17 @@ public class XpDrop : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        //PlayerXP xpSystem = other.GetComponent<PlayerXP>();
-    //        if (xpSystem != null)
-    //        {
-    //            xpSystem.AddXP(xpAmount);
-    //        }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerXp xpSystem = other.GetComponent<PlayerXp>();
+            if (xpSystem != null)
+            {
+                xpSystem.AddXP(xpAmount);
+            }
 
-    //        gameObject.SetActive(false); // or Destroy(gameObject);
-    //    }
-    //}
+            gameObject.SetActive(false); // or Destroy(gameObject);
+        }
+    }
 }

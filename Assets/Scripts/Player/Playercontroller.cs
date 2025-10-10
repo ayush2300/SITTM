@@ -1,29 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(WeaponManager))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController2D : MonoBehaviour
 {
-    [Header("Movement")]
+    [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float rollForce = 8f;
-    [SerializeField] private float rollCooldown = 1f;
 
     private Rigidbody2D rb;
-    private Vector2 inputDirection;
-    private float lastRollTime;
-    private bool isRolling;
-
-    [SerializeField] private KeyCode rollKeyCode = KeyCode.Space;
-
     private Animator animator;
+    private Vector2 moveInput;
+    private float lastHorizontalDir = 1f; // 1 = right, -1 = left
 
-    private float speedModifier = 1f;
-    private Coroutine speedCoroutine;
-
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -31,65 +20,27 @@ public class PlayerController2D : MonoBehaviour
 
     private void Update()
     {
-        HandleInput();
-        if (!isRolling)
-            AnimateMovement();
+        // Read movement input
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
+        moveInput.Normalize();
 
-        if (Input.GetKeyDown(rollKeyCode) && Time.time > lastRollTime + rollCooldown)
-            StartCoroutine(PerformRoll());
+        bool isMoving = moveInput.sqrMagnitude > 0.01f;
+
+        // Track last horizontal direction for animation facing
+        if (moveInput.x > 0.1f)
+            lastHorizontalDir = 1f;
+        else if (moveInput.x < -0.1f)
+            lastHorizontalDir = -1f;
+
+        // Update animator
+        animator.SetInteger("move", isMoving ? 1 : 0);
+        animator.SetFloat("facing", lastHorizontalDir);
     }
 
     private void FixedUpdate()
     {
-        if (!isRolling)
-            Move();
-    }
-
-    private void HandleInput()
-    {
-        inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-    }
-
-    private void Move()
-    {
-        Vector2 movement = inputDirection * moveSpeed * speedModifier * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + movement);
-    }
-
-    private void AnimateMovement()
-    {
-        if (animator != null)
-            animator.SetBool("Run", inputDirection != Vector2.zero);
-    }
-
-    private IEnumerator PerformRoll()
-    {
-        isRolling = true;
-        lastRollTime = Time.time;
-        float timer = 0.2f;
-        Vector2 rollDir = inputDirection;
-        while (timer > 0f)
-        {
-            rb.MovePosition(rb.position + rollDir * rollForce * Time.fixedDeltaTime);
-            timer -= Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
-        }
-        isRolling = false;
-    }
-
-    public void ApplyTemporarySpeedModifier(float modifier, float duration)
-    {
-        if (speedCoroutine != null)
-            StopCoroutine(speedCoroutine);
-
-        speedCoroutine = StartCoroutine(TemporarySpeedModifierRoutine(modifier, duration));
-    }
-
-    private IEnumerator TemporarySpeedModifierRoutine(float modifier, float duration)
-    {
-        speedModifier = modifier;
-        yield return new WaitForSeconds(duration);
-        speedModifier = 1f;
-        speedCoroutine = null;
+        // Move the player
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 }
