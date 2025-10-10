@@ -190,6 +190,7 @@ MonoBehaviour:
   moveSpeed: 5
   attackCooldown: 1
   expDrop: 10
+  xpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
 --- !u!114 &7735975701133036650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   scaleDuration: 0.4
   scaleEase: 8
   hurtCooldown: 0.1
+  healthSlider: {fileID: 0}
 --- !u!114 &6293876349122534842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,3 +271,4 @@ MonoBehaviour:
   scaleDuration: 0.4
   scaleEase: 8
   hurtCooldown: 0.1
+  healthSlider: {fileID: 0}

@@ -32,6 +32,9 @@ public class HealthSystem : MonoBehaviour
     [Header("Hurt Settings")]
     public float hurtCooldown = 0.1f;
 
+    [Header("XPDrop")]
+    public GameObject XpOrbPrefab;
+
     [Header("UI")]
     public Slider healthSlider;
 
@@ -141,6 +144,7 @@ public class HealthSystem : MonoBehaviour
                 Destroy(gameObject);
             else
                 gameObject.SetActive(false);
+           
         });
     }
 

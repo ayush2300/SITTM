@@ -88,6 +88,7 @@ MonoBehaviour:
   scaleDuration: 0.4
   scaleEase: 8
   hurtCooldown: 0.1
+  healthSlider: {fileID: 0}
 --- !u!114 &1230729582092275700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +104,7 @@ MonoBehaviour:
   moveSpeed: 3
   attackCooldown: 1
   expDrop: 10
+  xpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
 --- !u!212 &4455393774987062212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -236,6 +238,7 @@ MonoBehaviour:
   scaleDuration: 0.4
   scaleEase: 8
   hurtCooldown: 0.1
+  healthSlider: {fileID: 0}
 --- !u!1 &6001087531730801353
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +324,7 @@ MonoBehaviour:
   scaleDuration: 0.4
   scaleEase: 8
   hurtCooldown: 0.1
+  healthSlider: {fileID: 0}
 --- !u!114 &6952006896896520023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +340,7 @@ MonoBehaviour:
   moveSpeed: 3
   attackCooldown: 1
   expDrop: 10
+  xpOrbPrefab: {fileID: 0}
 --- !u!212 &1129240058524930666
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ public class EnemyAI : MonoBehaviour
     private bool isDead = false;
     private NavMeshAgent agent;
 
-    public GameObject xpOrbPrefab;
 
     private void Awake()
     {
@@ -52,32 +51,19 @@ public class EnemyAI : MonoBehaviour
         // Move towards the player
         agent.SetDestination(target.position);
 
-        // Attack if close enough
-        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
-        if (distanceToPlayer <= agent.stoppingDistance && attackCooldownTimer <= 0f)
-        {
-            Attack();
-        }
+
     }
 
-    private void Attack()
-    {
-        attackCooldownTimer = attackCooldown;
-        var playerHealth = target.GetComponent<HealthSystem>();
-        if (playerHealth != null)
-        {
-            //playerHealth.Damage(damage);
-        }
-    }
 
     public void Die()
     {
+        Debug.Log("Enemy Dead");
         isDead = true;
 
-        // Drop XP orb
-        if (xpOrbPrefab != null)
+        //    Drop XP orb
+        if (XpOrbPrefab != null)
         {
-            GameObject xpOrb = Instantiate(xpOrbPrefab, transform.position, Quaternion.identity);
+            GameObject xpOrb = Instantiate(XpOrbPrefab, transform.position, Quaternion.identity);
             XpDrop orb = xpOrb.GetComponent<XpDrop>();
             if (orb != null)
             {
@@ -85,9 +71,9 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        // Disable agent and deactivate for pooling
+        //    Disable agent and deactivate for pooling
         if (agent != null)
-            agent.ResetPath();
+                agent.ResetPath();
 
         gameObject.SetActive(false);
     }
