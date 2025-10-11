@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce347d082874e2640aeb78b9b2dcc7bf, type: 3}
-  m_Name: PrismWeapon
+  m_Name: Bacteria
   m_EditorClassIdentifier: 
-  weaponName: PrismWeapon
+  weaponName: SolarSystem
   levels:
   - time:
-      coolDownTime: 5
+      coolDownTime: 1
       activeTime: 5
-    weaponLevelPrefab: {fileID: 7393424903972071204, guid: 9054883abdfb6554189503e901863aa5, type: 3}
+    weaponLevelPrefab: {fileID: 5562305457002169948, guid: c6720c861af1d3146a1379d40c618710, type: 3}

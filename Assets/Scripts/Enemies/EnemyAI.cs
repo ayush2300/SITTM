@@ -1,4 +1,5 @@
-﻿using UnityEditor.Experimental.GraphView;
+﻿using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -89,5 +90,37 @@ public class EnemyAI : MonoBehaviour
                 orb.xpAmount = expDrop;
             }
         }
+    }
+
+    public void Freez(float freezeTime)
+    {
+        // Only start a freeze if not already frozen
+        if (isDead || agent == null) return;
+
+        StartCoroutine(FreezeCoroutine(freezeTime));
+    }
+
+    private IEnumerator FreezeCoroutine(float freezeTime)
+    {
+        // Store current speed to restore later
+        float originalSpeed = agent.speed;
+
+        // Stop movement
+        agent.isStopped = true;
+        agent.speed = 0f;
+
+        // Optional: disable collision damage while frozen
+        bool originalCanDamage = canDamageOnCollision;
+        canDamageOnCollision = false;
+
+        // Wait for freezeTime
+        yield return new WaitForSeconds(freezeTime);
+
+        // Resume movement
+        agent.isStopped = false;
+        agent.speed = originalSpeed;
+
+        // Restore collision damage
+        canDamageOnCollision = originalCanDamage;
     }
 }

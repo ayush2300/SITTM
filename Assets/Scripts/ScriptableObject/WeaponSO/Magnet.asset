@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce347d082874e2640aeb78b9b2dcc7bf, type: 3}
-  m_Name: PrismWeapon
+  m_Name: Magnet
   m_EditorClassIdentifier: 
-  weaponName: PrismWeapon
+  weaponName: SolarSystem
   levels:
   - time:
       coolDownTime: 5
       activeTime: 5
-    weaponLevelPrefab: {fileID: 7393424903972071204, guid: 9054883abdfb6554189503e901863aa5, type: 3}
+    weaponLevelPrefab: {fileID: 1200271685182604513, guid: 0d02e1ba360daf34780c323c2ac838ff, type: 3}
