@@ -125,10 +125,10 @@ public class Skeleton2D : MonoBehaviour
 
 
 
-    public void Die()
-    {
-        isDead = true;
-        // Disable object, play death animation, etc.
-        gameObject.SetActive(false);
-    }
+    //public void Die()
+    //{
+    //    isDead = true;
+    //    // Disable object, play death animation, etc.
+    //    gameObject.SetActive(false);
+    //}
 }
