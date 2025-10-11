@@ -917,11 +917,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 2489805702288253110, guid: ab0d272f3bf55e64ca13026dda260b1a, type: 3}
   cardParent: {fileID: 591873682}
+  cardsToSpawn: 3
   allWeapons:
   - {fileID: 11400000, guid: 15d34c5fd85b23d489d54167eae1cadc, type: 2}
   - {fileID: 11400000, guid: 1c970e28238944646b163a961438d0bb, type: 2}
   - {fileID: 11400000, guid: fd41bddf12102fb42bfbb8a86459c2b3, type: 2}
-  cardsToSpawn: 3
+  allItems: []
 --- !u!114 &591873684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,16 +1029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008318045bea8094ca52bb9c5935634d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tier1EnemyPrefabs:
-  - {fileID: 5379114070179349195, guid: 8ded200727c9f50418002c167e896022, type: 3}
-  - {fileID: 4601090494470127176, guid: fe00ded5c8681ac478e9fa8d7a58bbdb, type: 3}
-  - {fileID: 9218378631689471632, guid: ae621db869d987e469a6e3501de5b5da, type: 3}
-  - {fileID: 697667846041065664, guid: f78110c58e9754440ba06ea8da038a17, type: 3}
-  tier2EnemyPrefabs:
-  - {fileID: 5022724565965594725, guid: 68445a0e1d4bb654d94b80dcae67d92b, type: 3}
-  poolSizePerEnemy: 10
-  spawnInterval: 2
+  spawnPhases: []
   spawnDistance: 0
+  poolParent: {fileID: 0}
 --- !u!1 &1250060828
 GameObject:
   m_ObjectHideFlags: 3
@@ -1732,6 +1726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Type7Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5120092947745695609, guid: 37ac3abc24821e7438fad0727253cd01, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8038624969643957177, guid: 37ac3abc24821e7438fad0727253cd01, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7897863
@@ -1829,6 +1827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Type6Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8981675966885894023, guid: 1abab739439ea6d409d561d8452c5de2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1885,6 +1887,10 @@ PrefabInstance:
     - target: {fileID: 6250279807404056957, guid: d7ae93770f3d15d4c90639bd677000ac, type: 3}
       propertyPath: m_Name
       value: Type3Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250279807404056957, guid: d7ae93770f3d15d4c90639bd677000ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1943,6 +1949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Type2Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8954462887439004055, guid: ce2419ec121d5444187f7115a9be7d75, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1959,6 +1969,10 @@ PrefabInstance:
     - target: {fileID: 3446410033500479508, guid: d52ea7ce1d6667442a7d1aeaa36048ea, type: 3}
       propertyPath: m_Name
       value: Type4Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446410033500479508, guid: d52ea7ce1d6667442a7d1aeaa36048ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679813561803086035, guid: d52ea7ce1d6667442a7d1aeaa36048ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2057,6 +2071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Type1Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5794273625820512663, guid: e1985fb9217c5dc4ba85f695ee048868, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2113,6 +2131,10 @@ PrefabInstance:
     - target: {fileID: 5649713546065076681, guid: 3ffd052e332017047aacd1c55a8913e6, type: 3}
       propertyPath: m_Name
       value: Type5Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649713546065076681, guid: 3ffd052e332017047aacd1c55a8913e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

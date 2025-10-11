@@ -38,21 +38,20 @@ public class WeaponManager : MonoBehaviour
             if (weapon.cooldownTimer > 0)
                 weapon.cooldownTimer -= Time.deltaTime;
 
-            // Active timer
+            // Active timer countdown
             if (weapon.instance.activeSelf && weapon.activeTimer > 0)
             {
                 weapon.activeTimer -= Time.deltaTime;
 
                 if (weapon.activeTimer <= 0)
                 {
-                    // Deactivate weapon
+                    // Deactivate weapon and start cooldown
                     weapon.instance.SetActive(false);
-                    // Start cooldown
                     weapon.cooldownTimer = weapon.cooldown;
                 }
             }
 
-            // Auto-reactivate after cooldown
+            // Reactivate after cooldown
             if (!weapon.instance.activeSelf && weapon.cooldownTimer <= 0f)
             {
                 weapon.instance.SetActive(true);
@@ -62,7 +61,7 @@ public class WeaponManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Adds a weapon dynamically from a WeaponSO at a given level
+    /// Adds a weapon dynamically from a WeaponSO at a given level.
     /// </summary>
     public void AddWeaponFromSO(WeaponSO weaponSO, int levelIndex)
     {
@@ -77,6 +76,10 @@ public class WeaponManager : MonoBehaviour
 
         var levelData = weaponSO.levels[levelIndex];
 
+        // Apply cooldown & active time modifiers
+        float modifiedCooldown = CooldownDecreaseItem.GetModifiedCooldown(levelData.time.coolDownTime);
+        float modifiedActiveTime = ActiveTimeIncrease.GetModifiedActiveTime(levelData.time.activeTime);
+
         GameObject weaponInstance = Instantiate(levelData.weaponLevelPrefab, transform.position, Quaternion.identity, transform);
         weaponInstance.SetActive(true);
 
@@ -85,24 +88,26 @@ public class WeaponManager : MonoBehaviour
             weaponSO = weaponSO,
             currentLevel = levelIndex,
             instance = weaponInstance,
-            cooldown = levelData.time.coolDownTime,
-            activeDuration = levelData.time.activeTime,
+            cooldown = modifiedCooldown,
+            activeDuration = modifiedActiveTime,
             cooldownTimer = 0f,
-            activeTimer = levelData.time.activeTime
+            activeTimer = modifiedActiveTime
         };
 
         activeWeapons.Add(activeWeapon);
     }
+
+    /// <summary>
+    /// Returns the current level of a weapon (or -1 if not owned).
+    /// </summary>
     public int GetWeaponLevel(WeaponSO weaponSO)
     {
         var activeWeapon = activeWeapons.Find(w => w.weaponSO == weaponSO);
-        if (activeWeapon != null)
-            return activeWeapon.currentLevel;
-        return -1; // weapon not owned
+        return activeWeapon != null ? activeWeapon.currentLevel : -1;
     }
 
     /// <summary>
-    /// Upgrade an existing weapon to the next level
+    /// Upgrades an existing weapon to the next level.
     /// </summary>
     public void UpgradeWeapon(WeaponSO weaponSO)
     {
@@ -119,22 +124,27 @@ public class WeaponManager : MonoBehaviour
         // Destroy old instance
         Destroy(activeWeapon.instance);
 
-        // Spawn new upgraded instance
+        // Spawn upgraded instance
         var newLevelData = weaponSO.levels[nextLevel];
+
+        // Apply modifiers again (in case item effects changed)
+        float modifiedCooldown = CooldownDecreaseItem.GetModifiedCooldown(newLevelData.time.coolDownTime);
+        float modifiedActiveTime = ActiveTimeIncrease.GetModifiedActiveTime(newLevelData.time.activeTime);
+
         GameObject newInstance = Instantiate(newLevelData.weaponLevelPrefab, transform.position, Quaternion.identity, transform);
         newInstance.SetActive(true);
 
         // Update weapon data
         activeWeapon.instance = newInstance;
         activeWeapon.currentLevel = nextLevel;
-        activeWeapon.cooldown = newLevelData.time.coolDownTime;
-        activeWeapon.activeDuration = newLevelData.time.activeTime;
+        activeWeapon.cooldown = modifiedCooldown;
+        activeWeapon.activeDuration = modifiedActiveTime;
         activeWeapon.cooldownTimer = 0f;
-        activeWeapon.activeTimer = newLevelData.time.activeTime;
+        activeWeapon.activeTimer = modifiedActiveTime;
     }
 
     /// <summary>
-    /// Check if player already has this weapon
+    /// Check if the player already owns this weapon.
     /// </summary>
     public bool HasWeapon(WeaponSO weaponSO)
     {
