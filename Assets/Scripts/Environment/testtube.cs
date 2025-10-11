@@ -123,7 +123,7 @@ public class InteractiveTiltingItem : MonoBehaviour
         hasTilted = true;
         transform.DOLocalRotate(targetRotationEuler, tiltDuration).SetEase(Ease.OutSine).OnComplete(() =>
         {
-            TryHitPlayer();
+            //TryHitPlayer();
 
             if (prefabToSpawn != null && tiltTarget != null)
             {
