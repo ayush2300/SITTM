@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DamageItem : MonoBehaviour
+public class Dustbin : MonoBehaviour
 {
     [Header("Damage Settings")]
     public int damageAmount = 10;
