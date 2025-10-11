@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: HealthRegenItem
   levels:
-  - itemPrefab: {fileID: 2487296512339465188, guid: 3e1c22d511f933b48a81d5c9431c8d10, type: 3}
+  - itemPrefab: {fileID: 2487296512339465188, guid: fad5edb2bde929947a04fc67549f88bd, type: 3}
+  - itemPrefab: {fileID: 2487296512339465188, guid: dd6bed855c0b7fb4a94308cd1842bc6a, type: 3}
+  - itemPrefab: {fileID: 2487296512339465188, guid: 76af13a1e79652441ac560e228f0eb34, type: 3}
+  - itemPrefab: {fileID: 2487296512339465188, guid: 3043e13631ef79143b1875bffbeee642, type: 3}
+  - itemPrefab: {fileID: 2487296512339465188, guid: e754468d6903bbc438b73204c9e0e652, type: 3}

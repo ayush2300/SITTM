@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: ActiveTImeIncreaseItem
   levels:
-  - itemPrefab: {fileID: 5521168302522034236, guid: cbd6d5f4bca953f428743d39decec4e7, type: 3}
+  - itemPrefab: {fileID: 5521168302522034236, guid: 3e72d80d9f683704c8b8612111fd0c6d, type: 3}
+  - itemPrefab: {fileID: 5521168302522034236, guid: 5b3f52170ce0f624189e91325fd0c1e1, type: 3}
+  - itemPrefab: {fileID: 5521168302522034236, guid: 026a031e03bde7742a15a62b8dc8a5e0, type: 3}
+  - itemPrefab: {fileID: 5521168302522034236, guid: c0634046002e36e4f87df5f18295933d, type: 3}
+  - itemPrefab: {fileID: 5521168302522034236, guid: 222980d9e65943d4c9b09d75771785d4, type: 3}
