@@ -29,10 +29,9 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
+  m_LocalScale: {x: 0.03666518, y: 0.03666518, z: 0.36665177}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1601449146039477669}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6388217902417778661
@@ -145,45 +144,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 3904308360467140003, guid: 8876f0a347b6b664fbb5c0368f14e80b, type: 3}
-  fallChance: 0.2
+  fallChance: 0.35
   chanceMultiplier: 0.005
   detectionRadius: 2
-  fallTarget: {fileID: 1601449146039477669}
+  fallTarget: {fileID: 0}
   fallDuration: 1
   arcHeight: 2.24
   popScale: 1.25
   popDuration: 0.5
   targetRotationEuler: {x: 0, y: 0, z: 240}
-  damage: 10
+  damage: 8
   destroyOnFall: 1
---- !u!1 &8195226210355576346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1601449146039477669}
-  m_Layer: 7
-  m_Name: 'fallpostin '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1601449146039477669
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8195226210355576346}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.2, y: -26, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1819604541013342421}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
