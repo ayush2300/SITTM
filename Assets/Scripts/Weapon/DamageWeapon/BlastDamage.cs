@@ -71,7 +71,7 @@ public class BlastDamage : MonoBehaviour
                 }
 
                 // Call the existing HealthSystem method
-                health.Damage(DamageItem.GetModifiedDamage(damageToDeal));
+                health.Damage(DamageItems.GetModifiedDamage(damageToDeal));
 
 
                 if (debug)

@@ -43,7 +43,7 @@ public class MagnetDamage : MonoBehaviour
                     HealthSystem hs = enemyCol.GetComponent<HealthSystem>();
                     if (hs != null)
                     {
-                        hs.Damage(DamageItem.GetModifiedDamage(damage));
+                        hs.Damage(DamageItems.GetModifiedDamage(damage));
                     }
                 }
             }

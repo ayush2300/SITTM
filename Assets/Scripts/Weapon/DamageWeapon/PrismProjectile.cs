@@ -126,7 +126,7 @@ public class PrismProjectile : MonoBehaviour
             HealthSystem enemy = other.gameObject.GetComponent<HealthSystem>();
             if (enemy != null)
             {
-                enemy.Damage(DamageItem.GetModifiedDamage(damage));
+                enemy.Damage(DamageItems.GetModifiedDamage(damage));
             }
         }
     }
@@ -137,7 +137,7 @@ public class PrismProjectile : MonoBehaviour
             HealthSystem enemy = other.gameObject.GetComponent<HealthSystem>();
             if (enemy != null)
             {
-                enemy.Damage(DamageItem.GetModifiedDamage(damage));
+                enemy.Damage(DamageItems.GetModifiedDamage(damage));
             }
         }
     }
