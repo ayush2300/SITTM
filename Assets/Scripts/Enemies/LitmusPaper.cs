@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class LitmusPaper2D : MonoBehaviour
 {
     [Header("Health and Color Stages")]
-    public int maxHealth = 100;
-    private int currentHealth;
+    private int maxHealth;
+    private int litmusHealth;
 
     [Tooltip("Colors representing alkaline, neutral, and acidic states.")]
     public Color alkalineColor = Color.blue;
@@ -25,10 +25,11 @@ public class LitmusPaper2D : MonoBehaviour
 
     private GameObject player;
     private HealthSystem playerHealth;
+    
 
     private void Start()
     {
-        currentHealth = maxHealth;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateColor();
 
@@ -37,7 +38,7 @@ public class LitmusPaper2D : MonoBehaviour
 
     private void UpdateColor()
     {
-        float healthRatio = (float)currentHealth / maxHealth;
+        float healthRatio = (float)litmusHealth / maxHealth;
 
         if (healthRatio > 0.66f)
             spriteRenderer.color = alkalineColor;
@@ -47,23 +48,22 @@ public class LitmusPaper2D : MonoBehaviour
             spriteRenderer.color = acidicColor;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        if (currentHealth <= 0) return;
+        //if (currentHealth <= 0) return;
 
-        currentHealth -= damage;
-        currentHealth = Mathf.Max(0, currentHealth);
+        //currentHealth -= damage;
+        //currentHealth = Mathf.Max(0, currentHealth);
 
         UpdateColor();
 
-        if (currentHealth == 0)
-        {
-            Die();
-        }
     }
 
     private void Update()
     {
+        maxHealth = gameObject.GetComponent<HealthSystem>().MaxHealth;
+        litmusHealth = gameObject.GetComponent<HealthSystem>().CurrentHealth;
+        TakeDamage();
         if (playerInContact)
         {
             playerDamageTimer -= Time.deltaTime;
@@ -107,9 +107,28 @@ public class LitmusPaper2D : MonoBehaviour
         }
     }
 
-    private void Die()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        // Add death effects here, e.g., animation, sound, disable gameobject
-        gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerInContact = true;
+            player = other.gameObject;
+            playerHealth = player.GetComponent<HealthSystem>();
+
+            playerDamageTimer = 0f;  // Start damaging immediately
+            currentDamagePerSecond = baseDamagePerSecond;
+        }
     }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerInContact = false;
+            player = null;
+            playerHealth = null;
+            currentDamagePerSecond = baseDamagePerSecond;
+        }
+    }
+
 }

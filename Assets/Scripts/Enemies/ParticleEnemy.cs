@@ -12,7 +12,6 @@ public class ParticleEnemy : MonoBehaviour
 {
     public ParticleType type;
     public float moveSpeed = 3f;
-    public int collisionDamage = 10;
     public int expDrop = 10;
     public GameObject atomPrefab;
     public float formationRadius = 1f;

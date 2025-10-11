@@ -4,7 +4,6 @@ public class MutatedRat2D : MonoBehaviour
 {
     [Header("Movement & Damage")]
     public float moveSpeed = 3.5f;
-    public int contactDamage = 15;
 
     [Header("Acid Spawning")]
     public GameObject acidParticlePrefab;   // Prefab for particle effect
@@ -64,25 +63,4 @@ public class MutatedRat2D : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (isDead) return;
-
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            var playerHS = collision.gameObject.GetComponent<HealthSystem>();
-            if (playerHS != null)
-            {
-                playerHS.Damage(contactDamage);
-            }
-            Die();
-        }
-    }
-
-    public void Die()
-    {
-        isDead = true;
-        gameObject.SetActive(false);
-    }
 }

@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7091748316972974557}
   - component: {fileID: 3384245573973631239}
-  - component: {fileID: 8079955765273336773}
   - component: {fileID: 1230729582092275700}
   - component: {fileID: 4455393774987062212}
   - component: {fileID: 7980777047355513651}
   - component: {fileID: 6022301853008481053}
   - component: {fileID: -5904573852011322737}
+  - component: {fileID: 3761545616782106416}
   m_Layer: 6
   m_Name: Skeleton
   m_TagString: Enemy
@@ -56,38 +56,6 @@ MonoBehaviour:
   attackRange: 5
   attackCooldown: 2
   throwPoint: {fileID: 7896511847740555964}
---- !u!114 &8079955765273336773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12792752347874169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  canDestroyOnDeath: 0
-  isPlayer: 0
-  allowRevive: 0
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onPostDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onDamageTaken:
-    m_PersistentCalls:
-      m_Calls: []
-  deathEffect: {fileID: 0}
-  jumpPower: 0.6
-  jumpNum: 1
-  jumpDuration: 0.45
-  scaleDuration: 0.4
-  scaleEase: 8
-  hurtCooldown: 0.1
 --- !u!114 &1230729582092275700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,8 +69,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  attackCooldown: 1
   expDrop: 10
+  canDamageOnCollision: 1
+  collisionDamage: 10
+  XpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
 --- !u!212 &4455393774987062212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -236,6 +206,42 @@ MonoBehaviour:
   scaleDuration: 0.4
   scaleEase: 8
   hurtCooldown: 0.1
+  healthSlider: {fileID: 0}
+--- !u!70 &3761545616782106416
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12792752347874169}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.24, y: 0.32}
+  m_Direction: 0
 --- !u!1 &6001087531730801353
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +327,7 @@ MonoBehaviour:
   scaleDuration: 0.4
   scaleEase: 8
   hurtCooldown: 0.1
+  healthSlider: {fileID: 0}
 --- !u!114 &6952006896896520023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,8 +341,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  attackCooldown: 1
   expDrop: 10
+  canDamageOnCollision: 0
+  collisionDamage: 0
+  XpOrbPrefab: {fileID: 0}
 --- !u!212 &1129240058524930666
 SpriteRenderer:
   m_ObjectHideFlags: 0

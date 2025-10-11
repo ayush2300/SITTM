@@ -7,15 +7,18 @@ public class WeaponSpawner : MonoBehaviour
     [Header("Spawner Settings")]
     public GameObject WeaponPrefab;  // Assign prefab with PrismWeapon attached
 
+    [Header("Spawn Offset")]
+    public Vector2 spawnOffset = Vector2.zero; // Offset from spawner position (X,Y)
+
     private void Start()
     {
         if (WeaponPrefab == null)
         {
-            Debug.LogWarning("PrismWeaponSpawner: No prefab assigned!");
+            Debug.LogWarning("WeaponSpawner: No prefab assigned!");
             return;
         }
 
-        // Spawn at this spawner's world position
-        Instantiate(WeaponPrefab, transform.position, Quaternion.identity);
+        Vector3 spawnPos = transform.position + new Vector3(spawnOffset.x, spawnOffset.y, 0f);
+        Instantiate(WeaponPrefab, spawnPos, Quaternion.identity);
     }
 }

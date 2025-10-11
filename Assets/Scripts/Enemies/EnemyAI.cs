@@ -1,19 +1,23 @@
-﻿using UnityEditor.Experimental.GraphView;
+﻿using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
     public float moveSpeed = 3f;
-    public float attackCooldown = 1f;
     public int expDrop = 10;
 
     private Transform target;
-    private float attackCooldownTimer = 0f;
     private bool isDead = false;
     private NavMeshAgent agent;
 
-    public GameObject xpOrbPrefab;
+    [Header("Collision Damage")]
+    public bool canDamageOnCollision;
+    public int collisionDamage;
+
+    [Header("XPDrop")]
+    public GameObject XpOrbPrefab;
 
     private void Awake()
     {
@@ -30,7 +34,6 @@ public class EnemyAI : MonoBehaviour
     {
         // Reset AI when re-activated from pool
         isDead = false;
-        attackCooldownTimer = 0f;
 
         // Make sure the agent is properly placed on the NavMesh
         if (agent != null && !agent.isOnNavMesh)
@@ -46,49 +49,78 @@ public class EnemyAI : MonoBehaviour
     {
         if (isDead || target == null || agent == null || !agent.isOnNavMesh) return;
 
-        if (attackCooldownTimer > 0f)
-            attackCooldownTimer -= Time.deltaTime;
-
         // Move towards the player
         agent.SetDestination(target.position);
 
-        // Attack if close enough
-        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
-        if (distanceToPlayer <= agent.stoppingDistance && attackCooldownTimer <= 0f)
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!canDamageOnCollision) return;
+
+
+        if(collision.gameObject.tag=="Player")
         {
-            Attack();
+            collision.gameObject.GetComponent<HealthSystem>().Damage(collisionDamage);
         }
+        gameObject.GetComponent<HealthSystem>().Die();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!canDamageOnCollision) return;
+
+
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<HealthSystem>().Damage(collisionDamage);
+        }
+        gameObject.GetComponent<HealthSystem>().Die();
     }
 
-    private void Attack()
-    {
-        attackCooldownTimer = attackCooldown;
-        var playerHealth = target.GetComponent<HealthSystem>();
-        if (playerHealth != null)
-        {
-            //playerHealth.Damage(damage);
-        }
-    }
 
-    public void Die()
+    public void SpawnXp()
     {
-        isDead = true;
-
-        // Drop XP orb
-        if (xpOrbPrefab != null)
+        //    Drop XP orb
+        if (XpOrbPrefab != null)
         {
-            GameObject xpOrb = Instantiate(xpOrbPrefab, transform.position, Quaternion.identity);
+            GameObject xpOrb = Instantiate(XpOrbPrefab, transform.position, Quaternion.identity);
             XpDrop orb = xpOrb.GetComponent<XpDrop>();
             if (orb != null)
             {
                 orb.xpAmount = expDrop;
             }
         }
+    }
 
-        // Disable agent and deactivate for pooling
-        if (agent != null)
-            agent.ResetPath();
+    public void Freez(float freezeTime)
+    {
+        // Only start a freeze if not already frozen
+        if (isDead || agent == null) return;
 
-        gameObject.SetActive(false);
+        StartCoroutine(FreezeCoroutine(freezeTime));
+    }
+
+    private IEnumerator FreezeCoroutine(float freezeTime)
+    {
+        // Store current speed to restore later
+        float originalSpeed = agent.speed;
+
+        // Stop movement
+        agent.isStopped = true;
+        agent.speed = 0f;
+
+        // Optional: disable collision damage while frozen
+        bool originalCanDamage = canDamageOnCollision;
+        canDamageOnCollision = false;
+
+        // Wait for freezeTime
+        yield return new WaitForSeconds(freezeTime);
+
+        // Resume movement
+        agent.isStopped = false;
+        agent.speed = originalSpeed;
+
+        // Restore collision damage
+        canDamageOnCollision = originalCanDamage;
     }
 }

@@ -3,83 +3,142 @@ using UnityEngine;
 
 public class PrismWeapon : MonoBehaviour
 {
-    [Header("Weapon Settings")]
+    [Header("Orbit Settings")]
+    public Transform target;
+    public float orbitDistance = 2f;
+    public float orbitSpeed = 60f;
+    public Vector3 orbitAxis = Vector3.forward;
+
+    [Header("Offset Settings")]
+    public Vector3 initialOffsetDirection = Vector3.right;
+
+    [Header("Shooting Settings")]
     public GameObject projectilePrefab;
-    public Transform prismCenter;
     public float projectileSpeed = 6f;
-    public float spawnOffset = 0.5f;
-    public float spawnDelay = 0.1f;
-    public float curveDelayStep = 0.2f;
-
-    [Range(1, 7)]
-    public int projectileCount = 7;    // assign in prefab (1 = single, 7 = rainbow)
-    public int cycles = 1;             // how many loops through 4 directions
-    public float spreadAngle = 30f;
+    [Range(1, 7)] public int range = 7;
+    public float spacing = 0.3f;
+    public float fireRate = 10f;
     public float bendAngle = -100f;
+    public float curveDelayStep = 0.02f;
 
-    // Rainbow colors
-    private Color[] rainbowColors = new Color[]
+    private readonly Color[] rainbowColors = new Color[]
     {
         Color.red,
-        new Color(1f, 0.5f, 0f), // Orange
+        new Color(1f, 0.5f, 0f),
         Color.yellow,
         Color.green,
         Color.blue,
-        new Color(0.29f, 0f, 0.51f), // Indigo
-        new Color(0.56f, 0f, 1f)      // Violet
+        new Color(0.29f, 0f, 0.51f),
+        new Color(0.56f, 0f, 1f)
     };
+
+    private Coroutine fireRoutine;
+    private bool isShooting = false;
 
     void Start()
     {
-        StartCoroutine(FireInCycles());
+        if (target == null && transform.parent != null)
+            target = transform.parent;
+
+        if (target != null)
+            transform.position = target.position + initialOffsetDirection.normalized * orbitDistance;
     }
 
-    IEnumerator FireInCycles()
+    void OnEnable()
     {
-        Vector2[] dirs = { Vector2.right, Vector2.down, Vector2.left, Vector2.up };
+        StartShooting();
+    }
 
-        for (int c = 0; c < cycles; c++)
+    void OnDisable()
+    {
+        StopShooting();
+    }
+
+    void Update()
+    {
+        if (target == null) return;
+
+        transform.RotateAround(target.position, orbitAxis, orbitSpeed * Time.deltaTime);
+    }
+
+    public void StartShooting()
+    {
+        if (isShooting) return;
+        isShooting = true;
+        fireRoutine = StartCoroutine(FireContinuously());
+    }
+
+    public void StopShooting()
+    {
+        if (!isShooting) return;
+        isShooting = false;
+        if (fireRoutine != null)
         {
-            foreach (var dir in dirs)
-            {
-                yield return StartCoroutine(FireVolley(dir));
-                yield return new WaitForSeconds(0.2f); // pause between directions
-            }
+            StopCoroutine(fireRoutine);
+            fireRoutine = null;
         }
-
-        Destroy(gameObject); // done after all cycles
     }
 
-    IEnumerator FireVolley(Vector2 baseDir)
+    IEnumerator FireContinuously()
     {
-        int count = Mathf.Clamp(projectileCount, 1, rainbowColors.Length);
-        float startAngle = -spreadAngle / 2f;
-        float step = (count > 1) ? spreadAngle / (count - 1) : 0f;
+        range = Mathf.Max(1, range);
+        float interval = (fireRate > 0f) ? (1f / fireRate) : 0.1f;
+
+        while (true)
+        {
+            FireOneShotVolley();
+            yield return new WaitForSeconds(interval);
+        }
+    }
+
+    void FireOneShotVolley()
+    {
+        if (projectilePrefab == null) return;
+
+        int count = Mathf.Max(1, range);
+        Vector3 basePos = transform.position;
+        Vector3 right = transform.right.normalized;
+        Vector3 up = transform.up.normalized;
 
         for (int i = 0; i < count; i++)
         {
-            float angle = startAngle + step * i;
-            Vector2 launchDir = Quaternion.Euler(0f, 0f, angle) * baseDir;
+            // Center the spacing around the middle
+            float offsetY = (i - (count - 1) * 0.5f) * spacing;
+            Vector3 spawnPos = basePos + up * offsetY;
 
-            Vector3 spawnPos = prismCenter.position + (Vector3)(baseDir.normalized * spawnOffset);
             GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
 
-            // Set projectile color (single or rainbow depending on count)
-            SpriteRenderer sr = proj.GetComponent<SpriteRenderer>();
+            // Assign rainbow color
+            Color colorToUse = rainbowColors[i % rainbowColors.Length];
+            var sr = proj.GetComponent<SpriteRenderer>();
             if (sr != null)
+                sr.color = colorToUse;
+            else
             {
-                sr.color = (projectileCount == 1) ? rainbowColors[0] : rainbowColors[i];
+                var mr = proj.GetComponent<MeshRenderer>();
+                if (mr != null && mr.material != null && mr.material.HasProperty("_Color"))
+                    mr.material.color = colorToUse;
             }
 
-            // Launch projectile
-            PrismProjectile prismProj = proj.GetComponent<PrismProjectile>();
+            // Launch logic
+            var prismProj = proj.GetComponent<PrismProjectile>();
             if (prismProj != null)
             {
                 prismProj.curveDelay += i * curveDelayStep;
-                prismProj.Launch(launchDir, projectileSpeed, bendAngle);
+                prismProj.Launch(right, projectileSpeed, bendAngle);
             }
-
-            yield return new WaitForSeconds(spawnDelay);
+            else
+            {
+                var rb2d = proj.GetComponent<Rigidbody2D>();
+                if (rb2d != null)
+                    rb2d.velocity = right * projectileSpeed;
+                else
+                {
+                    var rb = proj.GetComponent<Rigidbody>();
+                    if (rb != null)
+                        rb.velocity = right * projectileSpeed;
+                }
+            }
         }
     }
 }

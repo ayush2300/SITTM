@@ -14,19 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: 0
   enemiesToSpawn:
-  - enemyPrefab: {fileID: 7117651411527206627, guid: 190e50e4431018549a72760b6e5a32a5, type: 3}
-    minSpawnRate: 0.1
-    maxSpawnRate: 0.5
-    timeToIncrease: 60
-    poolSize: 100
-  - enemyPrefab: {fileID: 7117651411527206627, guid: 0b9ef65ac8301c2498035107fa7d0f57, type: 3}
-    minSpawnRate: 0.1
-    maxSpawnRate: 0.5
-    timeToIncrease: 60
-    poolSize: 100
-  - enemyPrefab: {fileID: 7117651411527206627, guid: b7e0dc40970839c43a6160d6b4f23a67, type: 3}
-    minSpawnRate: 0.1
-    maxSpawnRate: 0.5
+  - enemyPrefab: {fileID: 7677058516892065867, guid: 406104f61aca627489fe9dffb10f9173, type: 3}
+    minSpawnRate: 1
+    maxSpawnRate: 1
     timeToIncrease: 60
     poolSize: 100
   keepPreviousEnemiesAlive: 1

@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: -333062252967407297}
   - component: {fileID: 7735975701133036650}
   - component: {fileID: 6293876349122534842}
-  - component: {fileID: 3163874327820305264}
   m_Layer: 6
   m_Name: Slime
   m_TagString: Enemy
@@ -188,8 +187,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  attackCooldown: 1
   expDrop: 10
+  canDamageOnCollision: 1
+  collisionDamage: 10
+  XpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
 --- !u!114 &7735975701133036650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   scaleDuration: 0.4
   scaleEase: 8
   hurtCooldown: 0.1
+  healthSlider: {fileID: 0}
 --- !u!114 &6293876349122534842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,35 +239,3 @@ MonoBehaviour:
   slowAmount: 0.5
   slowDuration: 5
   damageOnCollision: 0
---- !u!114 &3163874327820305264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7677058516892065867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  canDestroyOnDeath: 1
-  isPlayer: 0
-  allowRevive: 0
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onPostDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onDamageTaken:
-    m_PersistentCalls:
-      m_Calls: []
-  deathEffect: {fileID: 0}
-  jumpPower: 0.6
-  jumpNum: 1
-  jumpDuration: 0.45
-  scaleDuration: 0.4
-  scaleEase: 8
-  hurtCooldown: 0.1

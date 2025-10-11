@@ -104,7 +104,7 @@ public class HealthSystem : MonoBehaviour
         UpdateHealthUI();
     }
 
-    private void Die()
+    public void Die()
     {
         if (isDead)
             return;
@@ -140,7 +140,11 @@ public class HealthSystem : MonoBehaviour
             if (isPlayer && canDestroyOnDeath)
                 Destroy(gameObject);
             else
+            {
                 gameObject.SetActive(false);
+                gameObject.GetComponent<EnemyAI>().SpawnXp();
+            }
+           
         });
     }
 
