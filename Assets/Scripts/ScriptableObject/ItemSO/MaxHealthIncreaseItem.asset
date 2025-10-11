@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: MaxHealthIncreaseItem
   levels:
-  - itemPrefab: {fileID: 8735038476278301767, guid: 52a902c83faec7f4cb91f1b8c2818705, type: 3}
+  - itemPrefab: {fileID: 8735038476278301767, guid: 325d038e5e9b3994b9eb9877167ab015, type: 3}
+  - itemPrefab: {fileID: 8735038476278301767, guid: a329602d44242ca4d88786c66db5926f, type: 3}
+  - itemPrefab: {fileID: 8735038476278301767, guid: 707d337059488604cb775d1f69aa2b19, type: 3}
+  - itemPrefab: {fileID: 8735038476278301767, guid: d5babc5e830274c4db70f08e30c6a1f6, type: 3}
+  - itemPrefab: {fileID: 8735038476278301767, guid: 400f6a75e227b084a8160738741f95cb, type: 3}
