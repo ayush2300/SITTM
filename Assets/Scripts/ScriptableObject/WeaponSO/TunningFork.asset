@@ -17,4 +17,4 @@ MonoBehaviour:
   - time:
       coolDownTime: 5
       activeTime: 3
-    weaponLevelPrefab: {fileID: 6666542989413108118, guid: 8aa0ff32ee5cfd74eb6a8b84a62da566, type: 3}
+    weaponLevelPrefab: {fileID: 7183316452551251781, guid: c7a3d79ea887632438690789ec1aa019, type: 3}
