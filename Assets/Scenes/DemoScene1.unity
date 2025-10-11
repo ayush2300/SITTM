@@ -5759,7 +5759,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 7.3142858, y: 7.3142858}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5817,7 +5817,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 7.3142858, y: 7.3142858}
-    newSize: {x: 10.24, y: 10.24}
+    newSize: {x: 7.3142858, y: 7.3142858}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -10288,12 +10288,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 2489805702288253110, guid: ab0d272f3bf55e64ca13026dda260b1a, type: 3}
   cardParent: {fileID: 591873682}
+  cardsToSpawn: 3
   allWeapons:
   - {fileID: 11400000, guid: 15d34c5fd85b23d489d54167eae1cadc, type: 2}
   - {fileID: 11400000, guid: 3f15c255c51dd6e4a829255e46648608, type: 2}
   - {fileID: 11400000, guid: e920ce0456a238b49ae322526dc085fb, type: 2}
   - {fileID: 11400000, guid: a3985a466b6af904fabeba758a025e61, type: 2}
-  cardsToSpawn: 3
+  - {fileID: 11400000, guid: a1236980f9e9cfc47809dabbd1c1ad0c, type: 2}
+  - {fileID: 11400000, guid: c3894e22135fe3e409d6cae554fb4da3, type: 2}
+  - {fileID: 11400000, guid: 4b8f1f8a28b27d74883821633385cb23, type: 2}
+  - {fileID: 11400000, guid: b91e8ff84aab57440b23b5766cd022c7, type: 2}
+  allItems:
+  - {fileID: 11400000, guid: f9774822f53571d4d81f50b3178cfff8, type: 2}
+  - {fileID: 11400000, guid: b8745a425eddd02468b59d08194c126d, type: 2}
+  - {fileID: 11400000, guid: 82316e0e52d6a6c4aa8bb492d39f2508, type: 2}
+  - {fileID: 11400000, guid: 94d684f0097a89344a046e55e1d25440, type: 2}
+  - {fileID: 11400000, guid: 004d9deb98b995948b50d21f11f2bdea, type: 2}
 --- !u!114 &591873684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10580,71 +10590,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &628825573
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2148986130981883437, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_Name
-      value: Pendulum
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148986130981883437, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2792584028712334268, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200705173164664287, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
 --- !u!1 &641801200
 GameObject:
   m_ObjectHideFlags: 0
@@ -12920,7 +12865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &772933858
 Transform:
   m_ObjectHideFlags: 0
@@ -16194,7 +16139,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 7.3142858, y: 7.3142858}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -16252,7 +16197,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 7.3142858, y: 7.3142858}
-    newSize: {x: 10.24, y: 10.24}
+    newSize: {x: 7.3142858, y: 7.3142858}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -20076,7 +20021,23 @@ PrefabInstance:
     - target: {fileID: 1047542070399320784, guid: a31d3eda6d885544789a234488df2c25, type: 3}
       propertyPath: startingWeapons.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 4b8f1f8a28b27d74883821633385cb23, type: 2}
+      objectReference: {fileID: 11400000, guid: a3985a466b6af904fabeba758a025e61, type: 2}
+    - target: {fileID: 1047542070399320784, guid: a31d3eda6d885544789a234488df2c25, type: 3}
+      propertyPath: startingWeapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e920ce0456a238b49ae322526dc085fb, type: 2}
+    - target: {fileID: 1047542070399320784, guid: a31d3eda6d885544789a234488df2c25, type: 3}
+      propertyPath: startingWeapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 15d34c5fd85b23d489d54167eae1cadc, type: 2}
+    - target: {fileID: 1191794303852628603, guid: a31d3eda6d885544789a234488df2c25, type: 3}
+      propertyPath: startingItems.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191794303852628603, guid: a31d3eda6d885544789a234488df2c25, type: 3}
+      propertyPath: startingItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 565aadbdccb650342a442593afb53088, type: 2}
     - target: {fileID: 2945827086528751042, guid: a31d3eda6d885544789a234488df2c25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.85
@@ -20207,7 +20168,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 7.3142858, y: 7.3142858}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -20265,7 +20226,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 7.3142858, y: 7.3142858}
-    newSize: {x: 10.24, y: 10.24}
+    newSize: {x: 7.3142858, y: 7.3142858}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -31365,7 +31326,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 7.3142858, y: 7.3142858}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -31423,7 +31384,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 7.3142858, y: 7.3142858}
-    newSize: {x: 10.24, y: 10.24}
+    newSize: {x: 7.3142858, y: 7.3142858}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -37752,7 +37713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2139050456
 Transform:
   m_ObjectHideFlags: 0
@@ -38002,7 +37963,6 @@ SceneRoots:
   - {fileID: 37117015}
   - {fileID: 2139050456}
   - {fileID: 772933858}
-  - {fileID: 628825573}
   - {fileID: 1227107512}
   - {fileID: 1858254262}
   - {fileID: 521013463}

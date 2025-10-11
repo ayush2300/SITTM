@@ -19,7 +19,7 @@ public class ProjectileDamage : MonoBehaviour
             HealthSystem enemy = other.gameObject.GetComponent<HealthSystem>();
             if (enemy != null)
             {
-                enemy.Damage(damage);
+                enemy.Damage(DamageItem.GetModifiedDamage(damage));
             }
             if (destroyOnCollision)
                 Destroy(gameObject);
@@ -32,7 +32,7 @@ public class ProjectileDamage : MonoBehaviour
             HealthSystem enemy = other.gameObject.GetComponent<HealthSystem>();
             if (enemy != null)
             {
-                enemy.Damage(damage);
+                enemy.Damage(DamageItem.GetModifiedDamage(damage));
             }
             if (destroyOnCollision)
                 Destroy(gameObject);

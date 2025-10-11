@@ -70,8 +70,18 @@ public class HealthSystem : MonoBehaviour
         }
 
         originalScale = transform.localScale;
-
         UpdateHealthUI();
+    }
+
+    private void Update()
+    {
+        // ? Player-only passive regen logic
+        if (isPlayer && !isDead && HealthRegenItem.IsActive())
+        {
+            float regenPerSec = HealthRegenItem.GetRegenAmountPerSecond(maxHealth);
+            float healAmount = regenPerSec * Time.deltaTime;
+            Heal(Mathf.RoundToInt(healAmount));
+        }
     }
 
     public void Damage(int damageAmount)
@@ -144,7 +154,6 @@ public class HealthSystem : MonoBehaviour
                 gameObject.SetActive(false);
                 gameObject.GetComponent<EnemyAI>().SpawnXp();
             }
-           
         });
     }
 
@@ -214,7 +223,6 @@ public class HealthSystem : MonoBehaviour
         isDead = false;
         transform.localScale = originalScale;
         gameObject.SetActive(true);
-
         UpdateHealthUI();
     }
 

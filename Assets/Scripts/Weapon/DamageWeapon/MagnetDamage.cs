@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Magnet : MonoBehaviour
+public class MagnetDamage : MonoBehaviour
 {
     [Header("Magnet Settings")]
     public float radius = 3f;              // detection radius
@@ -43,7 +43,7 @@ public class Magnet : MonoBehaviour
                     HealthSystem hs = enemyCol.GetComponent<HealthSystem>();
                     if (hs != null)
                     {
-                        hs.Damage(damage);
+                        hs.Damage(DamageItem.GetModifiedDamage(damage));
                     }
                 }
             }

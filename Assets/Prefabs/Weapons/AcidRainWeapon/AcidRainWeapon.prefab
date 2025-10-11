@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d109f15449b3c4485981d431207bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxLength: 17.2
-  boxBreadth: 9.26
+  boxLength: 24.4
+  boxBreadth: 13.4
   projectilePrefab: {fileID: 6799434797546762654, guid: fd84a25e73fed4c41b7a8bc5ae2c13ef, type: 3}
   projectileCount: 3
   spawnOnEnable: 1

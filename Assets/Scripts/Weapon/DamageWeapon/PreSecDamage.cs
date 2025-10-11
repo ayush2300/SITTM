@@ -41,7 +41,7 @@ public class PreSecDamage : MonoBehaviour
             int intDamage = Mathf.FloorToInt(damageBuffer[enemy]);
             if (intDamage > 0)
             {
-                enemy.Damage(intDamage);
+                enemy.Damage(DamageItem.GetModifiedDamage(intDamage));
                 damageBuffer[enemy] -= intDamage;
             }
         }
