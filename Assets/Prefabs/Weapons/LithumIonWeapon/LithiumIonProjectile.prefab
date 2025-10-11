@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57d78f5d71e830b4dbbda6abf6cfd1a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
     m_Bits: 64
   debug: 1
   fuseTime: 1.5
-  armedSprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  armedSprite: {fileID: 21300000, guid: 571984bc613b5e84d851e225ab55495c, type: 3}
 --- !u!58 &-5273408008772671482
 CircleCollider2D:
   m_ObjectHideFlags: 0

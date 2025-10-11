@@ -1,42 +1,73 @@
 using UnityEngine;
+using System.Collections;
 
 public class AcidDamage2D : MonoBehaviour
 {
     public int acidDamage = 5;
     public float lifetime = 3f;
+    public float damageInterval = 0.5f; // How often damage is applied
     public GameObject particleEffectPrefab;  // Assign particle prefab in inspector
     private GameObject spawnedEffect;
 
+    private Coroutine damageCoroutine;
+    private HealthSystem playerHealth;
+
     private void Start()
     {
-        // Spawn particle effect at this object's position and rotation
         if (particleEffectPrefab != null)
         {
             spawnedEffect = Instantiate(particleEffectPrefab, transform.position, transform.rotation);
-            // Optionally parent the particle effect to this object
             spawnedEffect.transform.SetParent(transform);
         }
-        Destroy(gameObject, lifetime); // Destroy after lifetime seconds
+        Destroy(gameObject, lifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            var health = other.GetComponent<HealthSystem>();
-            if (health != null)
+            playerHealth = other.GetComponent<HealthSystem>();
+            if (playerHealth != null && damageCoroutine == null)
             {
-                health.Damage(acidDamage);
+                damageCoroutine = StartCoroutine(DealContinuousDamage());
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (damageCoroutine != null)
+            {
+                StopCoroutine(damageCoroutine);
+                damageCoroutine = null;
+            }
+            playerHealth = null;
+        }
+    }
+
+    IEnumerator DealContinuousDamage()
+    {
+        while (true)
+        {
+            if (playerHealth != null && !playerHealth.IsDead)
+            {
+                playerHealth.Damage(acidDamage);
+            }
+            yield return new WaitForSeconds(damageInterval);
         }
     }
 
     private void OnDestroy()
     {
-        // Also destroy the particle effect when this object is destroyed
         if (spawnedEffect != null)
         {
             Destroy(spawnedEffect);
+        }
+        if (damageCoroutine != null)
+        {
+            StopCoroutine(damageCoroutine);
         }
     }
 }

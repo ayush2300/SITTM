@@ -118,6 +118,11 @@ public float fallChance = 0.4f;
     void DoArcFall()
     {
         if (fallTarget == null) return;
+
+        // Temporarily unparent to avoid inheriting parent's rotation
+        Transform originalParent = fallTarget.parent;
+        fallTarget.parent = null;
+
         Vector3 start = transform.position;
         Vector3 end = fallTarget.position;
         float tVal = 0;
@@ -133,8 +138,12 @@ public float fallChance = 0.4f;
         Sequence fallSeq = DOTween.Sequence();
         fallSeq.Join(moveTween);
         fallSeq.Join(rotateTween);
+
         fallSeq.OnComplete(() =>
         {
+            // Reparent back after rotation finishes
+            fallTarget.parent = originalParent;
+
             TryHitPlayer();
 
             if (prefabToSpawn != null && fallTarget != null)
@@ -145,6 +154,7 @@ public float fallChance = 0.4f;
             if (destroyOnFall) Destroy(gameObject);
         });
     }
+
 
     void TryHitPlayer()
     {

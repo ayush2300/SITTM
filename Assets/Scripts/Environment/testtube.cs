@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class InteractiveTiltingItem : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class InteractiveTiltingItem : MonoBehaviour
     [Header("Tilt & Animation")]
     public Transform tiltTarget;
     public float tiltDuration = 0.7f;
-    public Vector3 targetRotationEuler = new Vector3(45f, 45f, 0f); // Set tilt direction here
+    public Vector3 targetRotationEuler = new Vector3(45f, 45f, 0f);
 
     [Header("Damage Settings")]
     public int damage = 10;
@@ -26,15 +27,31 @@ public class InteractiveTiltingItem : MonoBehaviour
     [Header("Destroy")]
     public bool destroyOnTilt = true;
 
+    [Header("Reset Settings")]
+    [Tooltip("Time in seconds to wait after rotating back before allowing tilt again")]
+    public float resetInterval = 0.5f;
+
+    [Header("Sprite Settings")]
+    [Tooltip("Sprite to switch to when player enters detection radius")]
+    public Sprite spriteOnPlayerEnter;
+
+    private SpriteRenderer spriteRenderer;
+    private Sprite originalSprite;
+
     private bool hasTilted = false;
     private Quaternion originalRotation;
 
-    // Track if player was inside detection radius in previous frame
     private bool playerInsidePrevFrame = false;
 
     private void Awake()
     {
         originalRotation = transform.localRotation;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            originalSprite = spriteRenderer.sprite;
+        }
     }
 
     void OnDrawGizmos()
@@ -66,7 +83,25 @@ public class InteractiveTiltingItem : MonoBehaviour
             }
         }
 
-        // Trigger only on player entering detection radius (rising edge)
+        // Change sprite on player entering detection radius (rising edge)
+        if (playerInsideNow && !playerInsidePrevFrame)
+        {
+            if (spriteRenderer != null && spriteOnPlayerEnter != null)
+            {
+                spriteRenderer.sprite = spriteOnPlayerEnter;
+            }
+        }
+
+        // Optionally revert sprite on player exit
+        if (!playerInsideNow && playerInsidePrevFrame)
+        {
+            if (spriteRenderer != null && originalSprite != null)
+            {
+                spriteRenderer.sprite = originalSprite;
+            }
+        }
+
+        // Trigger tilt on player entering detection radius (rising edge)
         if (playerInsideNow && !playerInsidePrevFrame)
         {
             if (Random.value < tiltChance)
@@ -88,15 +123,31 @@ public class InteractiveTiltingItem : MonoBehaviour
         hasTilted = true;
         transform.DOLocalRotate(targetRotationEuler, tiltDuration).SetEase(Ease.OutSine).OnComplete(() =>
         {
-            TryHitPlayer();
+            //TryHitPlayer();
 
             if (prefabToSpawn != null && tiltTarget != null)
             {
                 Instantiate(prefabToSpawn, tiltTarget.position, Quaternion.identity);
             }
 
-            if (destroyOnTilt) Destroy(gameObject);
+            if (destroyOnTilt)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                transform.DOLocalRotateQuaternion(originalRotation, tiltDuration).SetEase(Ease.InSine).OnComplete(() =>
+                {
+                    StartCoroutine(ResetTiltAfterInterval());
+                });
+            }
         });
+    }
+
+    IEnumerator ResetTiltAfterInterval()
+    {
+        yield return new WaitForSeconds(resetInterval);
+        hasTilted = false;
     }
 
     void TryHitPlayer()

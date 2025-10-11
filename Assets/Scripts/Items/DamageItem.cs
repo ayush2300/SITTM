@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DamageItem : MonoBehaviour
+public class DamageItems : MonoBehaviour
 {
     [Header("Damage Boost Settings")]
     [Tooltip("Percent boost to total weapon damage. Example: 20 = +20% damage")]
