@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tuningForkPrefab: {fileID: 6666542989413108118, guid: 8aa0ff32ee5cfd74eb6a8b84a62da566, type: 3}
-  spawnOffset: {x: -5, y: 2, z: 0}
+  spawnOffset: {x: -6, y: 2.5, z: 0}

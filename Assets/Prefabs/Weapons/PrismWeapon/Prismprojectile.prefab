@@ -32,8 +32,7 @@ Transform:
   m_LocalPosition: {x: -1.0733987, y: -2.934815, z: 6.019083}
   m_LocalScale: {x: 0.11000001, y: 0.11000001, z: 0.11000001}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 8919342247257392411}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6824252343761254388
@@ -102,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curveDuration: 0.2
   damage: 50
-  lifeTime: 3
-  curveDelay: 1
+  lifeTime: 2
+  curveDelay: 0.5
 --- !u!58 &-4507238429904915992
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -252,77 +251,3 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!1001 &2463632943011760205
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 4493893754617096656}
-    m_Modifications:
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 12.829953
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 12.829953
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 12.829953
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8822187405165230804, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-      propertyPath: m_Name
-      value: Sparks flashing blue
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
---- !u!4 &8919342247257392411 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6482733338061950294, guid: fb66a85d95aa25e439cb3c7792564804, type: 3}
-  m_PrefabInstance: {fileID: 2463632943011760205}
-  m_PrefabAsset: {fileID: 0}
