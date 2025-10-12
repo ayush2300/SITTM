@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acecc4b9a1cbe6f41a8d41b7441be51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acidDamage: 5
+  acidDamage: 2
   lifetime: 3
+  damageInterval: 0.5
   particleEffectPrefab: {fileID: 7155335147208632822, guid: 97c43495f80a3244fad1301dfafbe252, type: 3}
 --- !u!212 &2305732577902538104
 SpriteRenderer:

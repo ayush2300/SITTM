@@ -206,7 +206,7 @@ MonoBehaviour:
   moveSpeed: 20
   expDrop: 10
   canDamageOnCollision: 1
-  collisionDamage: 10
+  collisionDamage: 3
   XpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
 --- !u!114 &1867706625461616748
 MonoBehaviour:
