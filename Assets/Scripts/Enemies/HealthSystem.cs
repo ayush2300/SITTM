@@ -41,6 +41,7 @@ public class HealthSystem : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 defaultScale;
     private Sequence hurtSeq;
+    private EnemyAI enemy;
 
     private static readonly int FlashAmountID = Shader.PropertyToID("_FlashAmount");
     private static readonly int ExposureID = Shader.PropertyToID("_Exposure");
@@ -56,6 +57,7 @@ public class HealthSystem : MonoBehaviour
 
     private void Awake()
     {
+        enemy = GetComponent<EnemyAI>();
         sr = GetComponentInChildren<SpriteRenderer>();
         if (sr)
         {
@@ -77,8 +79,12 @@ public class HealthSystem : MonoBehaviour
     private void OnEnable()
     {
         // Kill any tweens first
-        transform.DOKill(true); // kill and complete
-        hurtSeq?.Kill();
+        if(DOTween.IsTweening(transform))
+        {
+            transform.DOKill(true); // kill and complete
+            hurtSeq?.Kill();
+        }
+       
 
         // Reset scale before anything else
         transform.localScale = defaultScale;
@@ -133,9 +139,12 @@ public class HealthSystem : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
 
         // Kill ongoing tweens
-        transform.DOKill();
-        hurtSeq?.Kill();
-        transform.localScale = originalScale;
+        if(DOTween.IsTweening(transform))
+        {
+            transform.DOKill();
+            hurtSeq?.Kill();
+            transform.localScale = originalScale;
+        }
 
         Sequence deathSeq = DOTween.Sequence().SetUpdate(true);
         deathSeq.Join(transform.DOJump(transform.position + Vector3.up * 0.05f, jumpPower, jumpNum, jumpDuration).SetEase(Ease.OutQuad));
@@ -148,7 +157,10 @@ public class HealthSystem : MonoBehaviour
             if (isPlayer && canDestroyOnDeath)
                 Destroy(gameObject);
             else
+            {
                 gameObject.SetActive(false);
+                enemy.SpawnXp();
+            }
         });
     }
 
@@ -199,8 +211,12 @@ public class HealthSystem : MonoBehaviour
     public void ResetHealth()
     {
         // Kill any running tweens
-        transform.DOKill(true);
-        hurtSeq?.Kill();
+        if (DOTween.IsTweening(transform))
+        {
+
+            transform.DOKill(true);
+            hurtSeq?.Kill();
+        }
 
         isDead = false;
         currentHealth = maxHealth;

@@ -19,6 +19,8 @@ public class EnemySpawner : MonoBehaviour
     private Dictionary<EnemyPooler, float> spawnTimers = new Dictionary<EnemyPooler, float>();
     private Dictionary<EnemyPooler, float> elapsedPoolTime = new Dictionary<EnemyPooler, float>();
 
+    public GameObject EndPanel;
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -30,6 +32,10 @@ public class EnemySpawner : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
 
+        if(elapsedTime >= 900)
+        {
+            EndPanel.SetActive(true);
+        }
         // Check for next phase
         if (currentPhaseIndex + 1 < spawnPhases.Count &&
             elapsedTime >= spawnPhases[currentPhaseIndex + 1].startTime)

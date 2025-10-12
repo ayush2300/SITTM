@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour
     private void OnEnable()
     {
         // Reset enemy state for pooling
-        health.ResetHealth();
+       // health.ResetHealth();
 
         if (agent != null && !agent.isOnNavMesh)
         {

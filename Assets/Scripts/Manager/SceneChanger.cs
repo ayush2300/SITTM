@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     public string SceneName;
-    public float timerTOChange;
 
-    private void Update()
+    public void SceneChange()
     {
-        timerTOChange -= Time.deltaTime;
-        if(timerTOChange < 0 )
-            SceneManager.LoadScene( SceneName );
+        SceneManager.LoadScene(SceneName);
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
