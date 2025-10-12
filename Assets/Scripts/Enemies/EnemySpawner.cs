@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -104,6 +105,23 @@ public class EnemySpawner : MonoBehaviour
         float y = Random.Range(-camHeight / 2, camHeight / 2);
 
         Vector3 cameraPos = mainCamera.transform.position;
-        return new Vector3(cameraPos.x + x, cameraPos.y + y, 0f);
+        Vector3 randomPos = new Vector3(cameraPos.x + x, cameraPos.y + y, 0f);
+
+        // ✅ Try to find nearest NavMesh point
+        if (NavMesh.SamplePosition(randomPos, out NavMeshHit hit, 5f, NavMesh.AllAreas))
+        {
+            return hit.position;
+        }
+        else
+        {
+            // fallback: if no valid point found, try again slightly inside
+            randomPos.x = cameraPos.x + (side == 0 ? -camWidth / 2 : camWidth / 2);
+            if (NavMesh.SamplePosition(randomPos, out hit, 10f, NavMesh.AllAreas))
+                return hit.position;
+
+            // as a last resort, spawn at camera center (guaranteed valid NavMesh)
+            return cameraPos;
+        }
     }
+
 }
