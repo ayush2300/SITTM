@@ -15,6 +15,34 @@ MonoBehaviour:
   weaponName: LaserWeapon
   levels:
   - time:
-      coolDownTime: 5
+      coolDownTime: 6
       activeTime: 5
     weaponLevelPrefab: {fileID: 356355764091272799, guid: 4f6e00db7915f034391d069b34e46f6d, type: 3}
+  - time:
+      coolDownTime: 5.5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 356355764091272799, guid: c79769d5cac5d174796a85f60ebc1195, type: 3}
+  - time:
+      coolDownTime: 5.5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 356355764091272799, guid: 5c9baae7b5447024a908c31fc80365a1, type: 3}
+  - time:
+      coolDownTime: 5.5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 356355764091272799, guid: 84931a05b313f4c4c98d42d7b241d9db, type: 3}
+  - time:
+      coolDownTime: 5.5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 356355764091272799, guid: 77804f178e1f6874c8a07968db43683b, type: 3}
+  - time:
+      coolDownTime: 5.5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 356355764091272799, guid: f5f9c436fb202b64ba593b43400bba54, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 356355764091272799, guid: ddf298c102e891544a55b43fc30d8b4a, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 356355764091272799, guid: e27f151903661194d8b635110386d09d, type: 3}

@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 4430240617681670903}
   - component: {fileID: 6252981565762433506}
   - component: {fileID: 4722652420572384157}
+  - component: {fileID: 999204699700566763}
   m_Layer: 0
   m_Name: three-connected table
   m_TagString: Untagged
@@ -1081,6 +1082,22 @@ PolygonCollider2D:
       - {x: -6.0000005, y: -2.3500001}
       - {x: -5.9500003, y: -2.4}
   m_UseDelaunayMesh: 0
+--- !u!114 &999204699700566763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169822997712450740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &171007737529246421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1529,7 @@ GameObject:
   - component: {fileID: 9050274851780308137}
   - component: {fileID: 8158559983109185299}
   - component: {fileID: 1285535114389925534}
+  - component: {fileID: 9114982644979141255}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -1631,6 +1649,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &9114982644979141255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239196801562988985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &250048723255243161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2264,7 @@ GameObject:
   - component: {fileID: 2619301803897468687}
   - component: {fileID: 3011808582000788072}
   - component: {fileID: 8928339825179926962}
+  - component: {fileID: 250463924650501422}
   m_Layer: 0
   m_Name: Single tableR
   m_TagString: Untagged
@@ -2485,6 +2520,22 @@ PolygonCollider2D:
       - {x: -0.48800004, y: -1.636}
       - {x: -0.39600003, y: -1.6400001}
   m_UseDelaunayMesh: 0
+--- !u!114 &250463924650501422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358094495788409234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &403643140297623090
 GameObject:
   m_ObjectHideFlags: 0
@@ -4150,6 +4201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8655029628739997822}
   - component: {fileID: 8953556386485518234}
+  - component: {fileID: 326973657294086258}
   m_Layer: 0
   m_Name: blue strokes 02 (floor) (4)
   m_TagString: Untagged
@@ -4224,6 +4276,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &326973657294086258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785704500344142841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &789082129264693110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,6 +5059,7 @@ GameObject:
   - component: {fileID: 2148434443651597053}
   - component: {fileID: 1388759182571410904}
   - component: {fileID: 8041746507362472472}
+  - component: {fileID: 1744858972835700067}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -5110,6 +5179,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &1744858972835700067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948137805112212546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &987142244318769136
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,6 +5542,7 @@ GameObject:
   - component: {fileID: 7379402086091072531}
   - component: {fileID: 3954741218501593130}
   - component: {fileID: 1933273203663996030}
+  - component: {fileID: 4832176401965922847}
   m_Layer: 0
   m_Name: Two-connected table (3)
   m_TagString: Untagged
@@ -5754,6 +5840,22 @@ PolygonCollider2D:
       - {x: -0.028571429, y: 0.80714285}
       - {x: -0.021428572, y: 0.80714285}
   m_UseDelaunayMesh: 0
+--- !u!114 &4832176401965922847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038237582595017602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1057134826473186053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,6 +6035,7 @@ GameObject:
   - component: {fileID: 7439497751020138681}
   - component: {fileID: 2452646632619785918}
   - component: {fileID: 732519193670956443}
+  - component: {fileID: 8382106319092724443}
   m_Layer: 0
   m_Name: Single table (1)
   m_TagString: Untagged
@@ -6183,6 +6286,22 @@ PolygonCollider2D:
       - {x: -0.476, y: -1.6400001}
       - {x: -0.22000001, y: -1.636}
   m_UseDelaunayMesh: 0
+--- !u!114 &8382106319092724443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071610401811294337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1072132514323730273
 GameObject:
   m_ObjectHideFlags: 0
@@ -6278,6 +6397,7 @@ GameObject:
   - component: {fileID: 3249050122842533165}
   - component: {fileID: 8494038231206786412}
   - component: {fileID: 6586700638545030801}
+  - component: {fileID: 7392893305071131573}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -6397,6 +6517,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &7392893305071131573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073223938695334197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1077777476316691654
 GameObject:
   m_ObjectHideFlags: 0
@@ -8424,6 +8560,7 @@ GameObject:
   - component: {fileID: 8507523016513276621}
   - component: {fileID: 7241851198998193050}
   - component: {fileID: 2648664166244175200}
+  - component: {fileID: 7644517212423082875}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -8543,6 +8680,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &7644517212423082875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338822336344253517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1369715508044796121
 GameObject:
   m_ObjectHideFlags: 0
@@ -12137,6 +12290,7 @@ GameObject:
   - component: {fileID: 8536292422654916380}
   - component: {fileID: 4957641910761612039}
   - component: {fileID: 1057984081104473599}
+  - component: {fileID: 8413530188825260044}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -12256,6 +12410,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &8413530188825260044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746945314819418602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1749247700966008317
 GameObject:
   m_ObjectHideFlags: 0
@@ -12267,6 +12437,7 @@ GameObject:
   - component: {fileID: 1724478960459319400}
   - component: {fileID: 8657725830269368753}
   - component: {fileID: 1052831158639644265}
+  - component: {fileID: 2343860958222426479}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -12386,6 +12557,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &2343860958222426479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749247700966008317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1756568872405812546
 GameObject:
   m_ObjectHideFlags: 0
@@ -14791,6 +14978,7 @@ GameObject:
   - component: {fileID: 780458447252484828}
   - component: {fileID: 3223908506683841204}
   - component: {fileID: 6550214373093993627}
+  - component: {fileID: 8872465252573847804}
   m_Layer: 0
   m_Name: Two-connected table 1 (1)
   m_TagString: Untagged
@@ -15077,6 +15265,22 @@ PolygonCollider2D:
       - {x: 0.042857144, y: 0.85}
       - {x: 0.035714287, y: 0.80714285}
   m_UseDelaunayMesh: 0
+--- !u!114 &8872465252573847804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041756514819201143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2044805021495271214
 GameObject:
   m_ObjectHideFlags: 0
@@ -15592,6 +15796,7 @@ GameObject:
   - component: {fileID: 1829162424295040544}
   - component: {fileID: 5733666651616282405}
   - component: {fileID: 9195546877603279414}
+  - component: {fileID: 7826637964520674151}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -15711,6 +15916,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &7826637964520674151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182331266064242958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2206014676406649376
 GameObject:
   m_ObjectHideFlags: 0
@@ -16226,6 +16447,7 @@ GameObject:
   - component: {fileID: 4309018965303214976}
   - component: {fileID: 206051436926953634}
   - component: {fileID: 8058520339231778770}
+  - component: {fileID: 4764843820139860049}
   m_Layer: 0
   m_Name: test tube trap (2)
   m_TagString: Untagged
@@ -16345,6 +16567,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 10.24}
   m_EdgeRadius: 0
+--- !u!114 &4764843820139860049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293754906567071271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2310097935698696205
 GameObject:
   m_ObjectHideFlags: 0
@@ -16356,6 +16594,7 @@ GameObject:
   - component: {fileID: 3879150522750363471}
   - component: {fileID: 5978302516765734741}
   - component: {fileID: 8404592411519492149}
+  - component: {fileID: 1499697160584728591}
   m_Layer: 0
   m_Name: test tube trap (3)
   m_TagString: Untagged
@@ -16475,6 +16714,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 10.24}
   m_EdgeRadius: 0
+--- !u!114 &1499697160584728591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310097935698696205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2326752371433273883
 GameObject:
   m_ObjectHideFlags: 0
@@ -16738,6 +16993,7 @@ GameObject:
   - component: {fileID: 1908190367146098355}
   - component: {fileID: 2052508827044534472}
   - component: {fileID: 7189657330506392238}
+  - component: {fileID: 3819145085948675758}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -16857,6 +17113,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &3819145085948675758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349508187748154620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2354526125008619507
 GameObject:
   m_ObjectHideFlags: 0
@@ -17287,6 +17559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4981826313388270845}
   - component: {fileID: 3898112456758416988}
+  - component: {fileID: 6027082648293409808}
   m_Layer: 0
   m_Name: yellow strokes 02 (floor) (13)
   m_TagString: Untagged
@@ -17361,6 +17634,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6027082648293409808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405270057694926330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2406093896387197727
 GameObject:
   m_ObjectHideFlags: 0
@@ -17876,6 +18165,7 @@ GameObject:
   - component: {fileID: 8719535078684725603}
   - component: {fileID: 4170362185478661674}
   - component: {fileID: 2131554808243405532}
+  - component: {fileID: 6500348353210177153}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -17995,6 +18285,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &6500348353210177153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2478124577502758204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2492360583985346458
 GameObject:
   m_ObjectHideFlags: 0
@@ -23802,6 +24108,7 @@ GameObject:
   - component: {fileID: 1819819674058389825}
   - component: {fileID: 522194733224181942}
   - component: {fileID: 7940270443408897672}
+  - component: {fileID: 4618909215883891805}
   m_Layer: 0
   m_Name: Two-connected table 1
   m_TagString: Untagged
@@ -24088,6 +24395,22 @@ PolygonCollider2D:
       - {x: 0.042857144, y: 0.85}
       - {x: 0.035714287, y: 0.80714285}
   m_UseDelaunayMesh: 0
+--- !u!114 &4618909215883891805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3523954678757473386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3552419048838259430
 GameObject:
   m_ObjectHideFlags: 0
@@ -26955,6 +27278,7 @@ GameObject:
   - component: {fileID: 6169797616773916441}
   - component: {fileID: 5427633191380690533}
   - component: {fileID: 3498453622163168531}
+  - component: {fileID: 3623875457639704018}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -27074,6 +27398,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &3623875457639704018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005371790230050673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4018184387524115689
 GameObject:
   m_ObjectHideFlags: 0
@@ -29857,6 +30197,7 @@ GameObject:
   - component: {fileID: 8142081199325989951}
   - component: {fileID: 3476733958374327673}
   - component: {fileID: 8823734080147161439}
+  - component: {fileID: 8171258414689422620}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -29976,6 +30317,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &8171258414689422620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4520358514648716431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4537148797065238517
 GameObject:
   m_ObjectHideFlags: 0
@@ -29987,6 +30344,7 @@ GameObject:
   - component: {fileID: 32798111596357800}
   - component: {fileID: 7563572246589211574}
   - component: {fileID: 8590651749507098733}
+  - component: {fileID: 2127560285054187352}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -30106,6 +30464,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &2127560285054187352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537148797065238517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4550501558526057926
 GameObject:
   m_ObjectHideFlags: 0
@@ -30789,6 +31163,7 @@ GameObject:
   - component: {fileID: 7433957709633202378}
   - component: {fileID: 2628711150615028464}
   - component: {fileID: 1260892700670318025}
+  - component: {fileID: 5114130160328912855}
   m_Layer: 0
   m_Name: test tube trap
   m_TagString: Untagged
@@ -30908,6 +31283,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 10.24}
   m_EdgeRadius: 0
+--- !u!114 &5114130160328912855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593354164154887852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4598250955792850167
 GameObject:
   m_ObjectHideFlags: 0
@@ -31507,6 +31898,7 @@ GameObject:
   - component: {fileID: 6091710570424001028}
   - component: {fileID: 6648614257748593932}
   - component: {fileID: 8844432418020417122}
+  - component: {fileID: 9106502489681561551}
   m_Layer: 0
   m_Name: Single table
   m_TagString: Untagged
@@ -31757,6 +32149,22 @@ PolygonCollider2D:
       - {x: -0.476, y: -1.6400001}
       - {x: -0.22000001, y: -1.636}
   m_UseDelaunayMesh: 0
+--- !u!114 &9106502489681561551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630134226383969182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4630796572383524826
 GameObject:
   m_ObjectHideFlags: 0
@@ -31768,6 +32176,7 @@ GameObject:
   - component: {fileID: 6860986487897019642}
   - component: {fileID: 5539504541737620134}
   - component: {fileID: 3674861782124360123}
+  - component: {fileID: 7776083044922434981}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -31887,6 +32296,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &7776083044922434981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630796572383524826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4634294719434337382
 GameObject:
   m_ObjectHideFlags: 0
@@ -32066,6 +32491,7 @@ GameObject:
   - component: {fileID: 3070576138264389092}
   - component: {fileID: 524715638948857652}
   - component: {fileID: 8622207930956193836}
+  - component: {fileID: 1987492391191343224}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -32185,6 +32611,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &1987492391191343224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638098643911209592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4642658939111318498
 GameObject:
   m_ObjectHideFlags: 0
@@ -39641,6 +40083,7 @@ GameObject:
   - component: {fileID: 7593851388551187103}
   - component: {fileID: 2972042290888792907}
   - component: {fileID: 7980153749738953757}
+  - component: {fileID: 9168174373926274736}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -39760,6 +40203,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &9168174373926274736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840173007964424578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5842985871458459443
 GameObject:
   m_ObjectHideFlags: 0
@@ -39939,6 +40398,7 @@ GameObject:
   - component: {fileID: 3749000390997247505}
   - component: {fileID: 1865610717315247508}
   - component: {fileID: 7427400726105886184}
+  - component: {fileID: 6820884044983075124}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -40058,6 +40518,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &6820884044983075124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925185881961244085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5928784713232147671
 GameObject:
   m_ObjectHideFlags: 0
@@ -41369,6 +41845,7 @@ GameObject:
   - component: {fileID: 8840038670857025844}
   - component: {fileID: 9123999060532280739}
   - component: {fileID: 7291407847357710503}
+  - component: {fileID: 6679895651549799295}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -41488,6 +41965,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &6679895651549799295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111498949940977403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6115111266883153282
 GameObject:
   m_ObjectHideFlags: 0
@@ -43011,6 +43504,7 @@ GameObject:
   - component: {fileID: 8682194398638513437}
   - component: {fileID: 6030058752637697594}
   - component: {fileID: 4592137473897785193}
+  - component: {fileID: 2270278632654201699}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -43130,6 +43624,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &2270278632654201699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391817015475329832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6407422859865154101
 GameObject:
   m_ObjectHideFlags: 0
@@ -43729,6 +44239,7 @@ GameObject:
   - component: {fileID: 7239148407892210511}
   - component: {fileID: 977258665884094535}
   - component: {fileID: 4431093097698532610}
+  - component: {fileID: 5973423130034510600}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -43848,6 +44359,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &5973423130034510600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507956218227763226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6523878508428222305
 GameObject:
   m_ObjectHideFlags: 0
@@ -43859,6 +44386,7 @@ GameObject:
   - component: {fileID: 7902177092448385922}
   - component: {fileID: 2504806208569133207}
   - component: {fileID: 614856253896330236}
+  - component: {fileID: 2892650808465568857}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -43978,6 +44506,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &2892650808465568857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6523878508428222305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6551538977030784710
 GameObject:
   m_ObjectHideFlags: 0
@@ -45585,6 +46129,7 @@ GameObject:
   - component: {fileID: 3718910067306192792}
   - component: {fileID: 2646241036248920551}
   - component: {fileID: 5693115296947302420}
+  - component: {fileID: 4647401815605577795}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -45704,6 +46249,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &4647401815605577795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6798870585021440187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6801627176144138144
 GameObject:
   m_ObjectHideFlags: 0
@@ -47647,6 +48208,7 @@ GameObject:
   - component: {fileID: 4378726869907456148}
   - component: {fileID: 2001833006895838278}
   - component: {fileID: 4731886866766694238}
+  - component: {fileID: 3357104963495682856}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -47766,6 +48328,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &3357104963495682856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056998819059584496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7085989081190070390
 GameObject:
   m_ObjectHideFlags: 0
@@ -48953,6 +49531,7 @@ GameObject:
   - component: {fileID: 1616304050858875639}
   - component: {fileID: 7196965585473920977}
   - component: {fileID: 3205066796379459141}
+  - component: {fileID: 765665947425012760}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -49072,6 +49651,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &765665947425012760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318591925677326034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7332223604829191658
 GameObject:
   m_ObjectHideFlags: 0
@@ -50595,6 +51190,7 @@ GameObject:
   - component: {fileID: 7509360120330071382}
   - component: {fileID: 685619949112128394}
   - component: {fileID: 2539796138579698704}
+  - component: {fileID: 7907564611734915086}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -50714,6 +51310,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &7907564611734915086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578374735534247177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7588714881095749395
 GameObject:
   m_ObjectHideFlags: 0
@@ -52573,6 +53185,7 @@ GameObject:
   - component: {fileID: 6892032819940203821}
   - component: {fileID: 3275932526240159082}
   - component: {fileID: 3585870846246669222}
+  - component: {fileID: 4286387437722190176}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -52692,6 +53305,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &4286387437722190176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8014654741280917485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8022566883767952782
 GameObject:
   m_ObjectHideFlags: 0
@@ -53627,6 +54256,7 @@ GameObject:
   - component: {fileID: 2944625510478593165}
   - component: {fileID: 1913274450902228971}
   - component: {fileID: 1621332990340220615}
+  - component: {fileID: 253082184190873047}
   m_Layer: 0
   m_Name: test tube trap (1)
   m_TagString: Untagged
@@ -53746,6 +54376,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 10.24}
   m_EdgeRadius: 0
+--- !u!114 &253082184190873047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8160790029496902432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8167198341948523214
 GameObject:
   m_ObjectHideFlags: 0
@@ -54009,6 +54655,7 @@ GameObject:
   - component: {fileID: 3242175789015143524}
   - component: {fileID: 6443386087096250515}
   - component: {fileID: 6344825690783917420}
+  - component: {fileID: 1985393199659322207}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -54128,6 +54775,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &1985393199659322207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285501253939251215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8305431341948869918
 GameObject:
   m_ObjectHideFlags: 0
@@ -55147,6 +55810,7 @@ GameObject:
   - component: {fileID: 8844002627433839445}
   - component: {fileID: 6157773805653654341}
   - component: {fileID: 978675370420535216}
+  - component: {fileID: 6239073436180091969}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -55266,6 +55930,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &6239073436180091969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400105363938655174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8415930313500604239
 GameObject:
   m_ObjectHideFlags: 0
@@ -55697,6 +56377,7 @@ GameObject:
   - component: {fileID: 4633217532177382455}
   - component: {fileID: 6245693336912076652}
   - component: {fileID: 5629565599803479806}
+  - component: {fileID: 852000113741600604}
   m_Layer: 0
   m_Name: Single table (4)
   m_TagString: Untagged
@@ -55947,6 +56628,22 @@ PolygonCollider2D:
       - {x: -0.476, y: -1.6400001}
       - {x: -0.22000001, y: -1.636}
   m_UseDelaunayMesh: 0
+--- !u!114 &852000113741600604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481103624143505161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8499061156229865429
 GameObject:
   m_ObjectHideFlags: 0
@@ -57050,6 +57747,7 @@ GameObject:
   - component: {fileID: 1491686016977816310}
   - component: {fileID: 1421980945925709273}
   - component: {fileID: 8027414212529889584}
+  - component: {fileID: 3503707331672281853}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -57169,6 +57867,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &3503707331672281853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647939910430003822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8662784026717418714
 GameObject:
   m_ObjectHideFlags: 0
@@ -58104,6 +58818,7 @@ GameObject:
   - component: {fileID: 6023007852813204207}
   - component: {fileID: 6762423185403274354}
   - component: {fileID: 5686977650294671785}
+  - component: {fileID: 689062784917930984}
   m_Layer: 0
   m_Name: Two-connected table (1)
   m_TagString: Untagged
@@ -58401,6 +59116,22 @@ PolygonCollider2D:
       - {x: -0.028571429, y: 0.80714285}
       - {x: -0.021428572, y: 0.80714285}
   m_UseDelaunayMesh: 0
+--- !u!114 &689062784917930984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779700577472325472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8789645825322697064
 GameObject:
   m_ObjectHideFlags: 0
@@ -58496,6 +59227,7 @@ GameObject:
   - component: {fileID: 2413016168587333186}
   - component: {fileID: 7687523099659793252}
   - component: {fileID: 4538075866263803522}
+  - component: {fileID: 4919889110557395863}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -58615,6 +59347,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &4919889110557395863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8824731410027344813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8835313765264851460
 GameObject:
   m_ObjectHideFlags: 0
@@ -59169,6 +59917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5871031758008028828}
   - component: {fileID: 4429058681320683676}
+  - component: {fileID: 8416702036978626171}
   m_Layer: 0
   m_Name: green floor
   m_TagString: Untagged
@@ -59245,6 +59994,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8416702036978626171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9010629247957925754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0352a4d56abd42ad2fc69deb72448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 543.73315, y: 260.0123, z: 4}
+  m_Center: {x: 0, y: 0.20161438, z: -0.00000047683716}
+  m_Area: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &9014003761796913495
 GameObject:
   m_ObjectHideFlags: 0
@@ -59844,6 +60609,7 @@ GameObject:
   - component: {fileID: 7847458908318401878}
   - component: {fileID: 6819148466105058627}
   - component: {fileID: 7346623410516992521}
+  - component: {fileID: 6290088794076549494}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -59963,6 +60729,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &6290088794076549494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052525240325140135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &9052694942574049905
 GameObject:
   m_ObjectHideFlags: 0

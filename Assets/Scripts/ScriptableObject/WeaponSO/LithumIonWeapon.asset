@@ -15,6 +15,34 @@ MonoBehaviour:
   weaponName: LithiumIonWeapon
   levels:
   - time:
-      coolDownTime: 3
-      activeTime: 1
+      coolDownTime: 4
+      activeTime: 4
     weaponLevelPrefab: {fileID: 7638613402298008950, guid: ac527d2c94e47304b9c02894b6944065, type: 3}
+  - time:
+      coolDownTime: 4
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7638613402298008950, guid: 7cb8ed35b6bb75d48af3069618bb82e9, type: 3}
+  - time:
+      coolDownTime: 4
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7638613402298008950, guid: fefd36f64892358478834bf6e43e8f28, type: 3}
+  - time:
+      coolDownTime: 4
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7638613402298008950, guid: ec7384b39e3a69b48aab168b06f15192, type: 3}
+  - time:
+      coolDownTime: 4
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7638613402298008950, guid: df83d972c1d24a242b412ad8dddcd604, type: 3}
+  - time:
+      coolDownTime: 4
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7638613402298008950, guid: b1033de01c5c1be44b00ea73e4fff585, type: 3}
+  - time:
+      coolDownTime: 4
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7638613402298008950, guid: d13d9828fb86fc04dbc92a4526142a04, type: 3}
+  - time:
+      coolDownTime: 4
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7638613402298008950, guid: d3fe57f1c9bddae44a2ea57e8d4df06d, type: 3}

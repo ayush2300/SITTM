@@ -15,6 +15,38 @@ MonoBehaviour:
   weaponName: SolarSystem
   levels:
   - time:
-      coolDownTime: 3
-      activeTime: 8
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: 663c24ff9b10edd4f950f7ac9a1e78ff, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: 5706cd039f9c32846b0bdd5b7389bf88, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: a9b38df8b4ee5a14495e4d9eaf53dbb5, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 7.5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: 30db46b12c9a12e4eb5c25f60d569bf8, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 7.5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: c5e77ca122d966c4ba4f7c3faf68c22a, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 7.5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: 2fbe44fbc8055dc47b5836d1a7df0f3c, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 7.5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: b3b251c15270ef7449d2f26a11f1c695, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 9.5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: 7362ba37cc875dd4fafa7bf4cfb27f08, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 9.5
     weaponLevelPrefab: {fileID: 2201000893742412666, guid: ca1458103ae1acc4c9b64728376927db, type: 3}

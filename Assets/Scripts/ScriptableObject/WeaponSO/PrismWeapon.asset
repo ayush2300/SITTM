@@ -16,5 +16,29 @@ MonoBehaviour:
   levels:
   - time:
       coolDownTime: 5
-      activeTime: 5
+      activeTime: 4
     weaponLevelPrefab: {fileID: 7393424903972071204, guid: 9054883abdfb6554189503e901863aa5, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7393424903972071204, guid: 1d9449719d09d244c9c0a534146e0d36, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 4
+    weaponLevelPrefab: {fileID: 7393424903972071204, guid: 1fa0bef25db3e804a868429bc3d7f2c2, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 4.5
+    weaponLevelPrefab: {fileID: 7393424903972071204, guid: 03b20147e913ea64db7595f1a7122258, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 4.5
+    weaponLevelPrefab: {fileID: 7393424903972071204, guid: fff1bb7d3f8a00944852dfb9110a5884, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 7393424903972071204, guid: e08ce7e2b17bc554da842a5c428d28c8, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 7393424903972071204, guid: f736ffafaf272ef48b99278ceecb6d5e, type: 3}

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
-using OpenCover.Framework.Model;
 using UnityEngine;
 
 [System.Serializable] // ✅ makes it visible in Inspector

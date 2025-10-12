@@ -18,3 +18,31 @@ MonoBehaviour:
       coolDownTime: 5
       activeTime: 5
     weaponLevelPrefab: {fileID: 939387012340278055, guid: 1023f4fbc32d9be48b1ccc463831d4e9, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 939387012340278055, guid: 80d2164dcfcbb64479482efa314c2406, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 939387012340278055, guid: a3f8a02e5acceed4d96a4fe2c10ede58, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 939387012340278055, guid: 762126bb7161b7c4584969ca3b674963, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 939387012340278055, guid: c2ee4d24c8f001548be6ce095b503d71, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 939387012340278055, guid: 2f8cdf84730b2fe41a8b7deac99ddd01, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 939387012340278055, guid: 8c33bb50e89b9114183b6c619fde7eda, type: 3}
+  - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 939387012340278055, guid: 8c2d77b40827e4343be74b5891e92e7e, type: 3}
