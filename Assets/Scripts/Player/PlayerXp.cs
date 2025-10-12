@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro; // Required for TextMeshProUGUI
 
 public class PlayerXp : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerXp : MonoBehaviour
     [Header("UI")]
     public Slider xpBar; // Optional UI reference
     public float fillDuration = 0.5f; // Duration of smooth fill
+    public TextMeshProUGUI levelText; // NEW: display current level
 
     [Header("Card Spawner")]
     public CardSpawner cardSpawner;
@@ -22,6 +24,7 @@ public class PlayerXp : MonoBehaviour
     {
         if (xpBar != null)
             xpBar.value = 0f; // Start empty
+        UpdateLevelText();
     }
 
     public void AddXP(int amount)
@@ -53,6 +56,11 @@ public class PlayerXp : MonoBehaviour
         {
             xpBar.value = 0f;
         }
+
+        // Update level text
+        UpdateLevelText();
+
+        // Show card spawner if assigned
         if (cardSpawner != null)
         {
             cardSpawner.gameObject.SetActive(true); // activates panel and triggers OnEnable
@@ -66,5 +74,11 @@ public class PlayerXp : MonoBehaviour
             float targetValue = (float)currentXP / xpToNextLevel;
             xpBar.DOValue(targetValue, fillDuration).SetEase(Ease.OutCubic);
         }
+    }
+
+    private void UpdateLevelText()
+    {
+        if (levelText != null)
+            levelText.text = level.ToString();
     }
 }

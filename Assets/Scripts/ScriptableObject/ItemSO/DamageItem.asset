@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b754273d8decbc9468bdc9ac30ddf890, type: 3}
   m_Name: DamageItem
   m_EditorClassIdentifier: 
-  itemName: DamageItem
+  itemName: Damage Increase
   levels:
   - itemPrefab: {fileID: 4360923086910765533, guid: 037e63102cc473643a603983dd78df96, type: 3}
   - itemPrefab: {fileID: 4360923086910765533, guid: d7d78215816eaac4c93a8cfeac46f2c7, type: 3}

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro; // ✅ for TextMeshProUGUI
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class EnemySpawner : MonoBehaviour
     public float spawnDistance = 10f;
     public Transform poolParent;
 
+    [Header("UI")]
+    public TextMeshProUGUI timerText; // ✅ displays elapsed time
+    public GameObject EndPanel;
+
     private Camera mainCamera;
     private float elapsedTime = 0f;
     private int currentPhaseIndex = -1;
@@ -19,23 +24,26 @@ public class EnemySpawner : MonoBehaviour
     private Dictionary<EnemyPooler, float> spawnTimers = new Dictionary<EnemyPooler, float>();
     private Dictionary<EnemyPooler, float> elapsedPoolTime = new Dictionary<EnemyPooler, float>();
 
-    public GameObject EndPanel;
-
     void Start()
     {
         mainCamera = Camera.main;
         if (spawnPhases.Count > 0)
             ActivatePhase(0);
+
+        UpdateTimerUI();
     }
 
     void Update()
     {
         elapsedTime += Time.deltaTime;
+        UpdateTimerUI();
 
-        if(elapsedTime >= 900)
+        // End panel after 15 minutes (900 sec)
+        if (elapsedTime >= 901)
         {
             EndPanel.SetActive(true);
         }
+
         // Check for next phase
         if (currentPhaseIndex + 1 < spawnPhases.Count &&
             elapsedTime >= spawnPhases[currentPhaseIndex + 1].startTime)
@@ -67,6 +75,15 @@ public class EnemySpawner : MonoBehaviour
                 spawnTimers[pool] = interval;
             }
         }
+    }
+
+    void UpdateTimerUI()
+    {
+        if (timerText == null) return;
+
+        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60f);
+        timerText.text = $"{minutes:00}:{seconds:00}";
     }
 
     void ActivatePhase(int phaseIndex)
@@ -129,5 +146,4 @@ public class EnemySpawner : MonoBehaviour
             return cameraPos;
         }
     }
-
 }

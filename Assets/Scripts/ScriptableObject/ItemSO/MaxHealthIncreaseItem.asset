@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b754273d8decbc9468bdc9ac30ddf890, type: 3}
   m_Name: MaxHealthIncreaseItem
   m_EditorClassIdentifier: 
-  itemName: MaxHealthIncreaseItem
+  itemName: Max Health Increase
   levels:
   - itemPrefab: {fileID: 8735038476278301767, guid: 325d038e5e9b3994b9eb9877167ab015, type: 3}
   - itemPrefab: {fileID: 8735038476278301767, guid: a329602d44242ca4d88786c66db5926f, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b754273d8decbc9468bdc9ac30ddf890, type: 3}
   m_Name: CoolDownDecreaseItem
   m_EditorClassIdentifier: 
-  itemName: CoolDownDecreaseItem
+  itemName: 'Cool Down Decrease '
   levels:
   - itemPrefab: {fileID: 997292954101884441, guid: 078d01d9d25b3ee46a89f62380b1478d, type: 3}
   - itemPrefab: {fileID: 997292954101884441, guid: f1896f818f40cda42abfe7167de9d040, type: 3}

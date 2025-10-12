@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b754273d8decbc9468bdc9ac30ddf890, type: 3}
   m_Name: ActiveTimeIncreaseItem
   m_EditorClassIdentifier: 
-  itemName: ActiveTImeIncreaseItem
+  itemName: 'Active TIme Increase '
   levels:
   - itemPrefab: {fileID: 5521168302522034236, guid: 3e72d80d9f683704c8b8612111fd0c6d, type: 3}
   - itemPrefab: {fileID: 5521168302522034236, guid: 5b3f52170ce0f624189e91325fd0c1e1, type: 3}
