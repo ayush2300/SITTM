@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d06b78f1e04b84c9298b0cf706a286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 10
   expDrop: 10
   canDamageOnCollision: 1
   collisionDamage: 3
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 45
   canDestroyOnDeath: 0
   isPlayer: 0
   allowRevive: 0

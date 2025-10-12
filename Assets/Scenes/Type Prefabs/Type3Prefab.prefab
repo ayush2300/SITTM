@@ -1963,6 +1963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7457068568384416430}
   - component: {fileID: 5138811344246185377}
+  - component: {fileID: 1974394640748922536}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -2037,6 +2038,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1974394640748922536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349558138122087599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &351767096715129002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,6 +3570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6426118227211752316}
   - component: {fileID: 8954349900281636632}
+  - component: {fileID: 2830272211107083261}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -3628,6 +3645,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2830272211107083261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607889216926524088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &627187824865843878
 GameObject:
   m_ObjectHideFlags: 0
@@ -6277,6 +6309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8715119851437877513}
   - component: {fileID: 4240764677053067286}
+  - component: {fileID: 2174125846606401868}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -6351,6 +6384,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2174125846606401868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006025902721821728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &1042743177800100253
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,6 +6661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9115785055722662164}
   - component: {fileID: 1815536874962618667}
+  - component: {fileID: 444544491552445509}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -6687,6 +6736,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &444544491552445509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121181176563307883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &1137718315063248090
 GameObject:
   m_ObjectHideFlags: 0
@@ -9259,6 +9323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2939742310500268911}
   - component: {fileID: 2164077062848573381}
+  - component: {fileID: 147528575663956808}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -9333,6 +9398,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &147528575663956808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494032374570176372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &1499036689956409771
 GameObject:
   m_ObjectHideFlags: 0
@@ -10393,6 +10473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6353747879889486749}
   - component: {fileID: 3807534998946799729}
+  - component: {fileID: 3231272149550035579}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -10467,6 +10548,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3231272149550035579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620163511917114383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &1626764683412182820
 GameObject:
   m_ObjectHideFlags: 0
@@ -10662,6 +10758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7505518898841754143}
   - component: {fileID: 5338855453758597153}
+  - component: {fileID: 3230179881942997408}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -10736,6 +10833,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3230179881942997408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647785153640090640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &1659179993025712712
 GameObject:
   m_ObjectHideFlags: 0
@@ -10746,6 +10858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 397140147994988488}
   - component: {fileID: 7266528960732992151}
+  - component: {fileID: 1898625688560218340}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -10820,6 +10933,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1898625688560218340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659179993025712712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &1663291827674903854
 GameObject:
   m_ObjectHideFlags: 0
@@ -12697,6 +12825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 676071155278892605}
   - component: {fileID: 5588355812548184384}
+  - component: {fileID: 8908891067585646962}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -12771,6 +12900,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8908891067585646962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890739150303987028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &1899902622283680201
 GameObject:
   m_ObjectHideFlags: 0
@@ -12781,6 +12925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7295591240372937932}
   - component: {fileID: 2320046713684238591}
+  - component: {fileID: 8496270038974487004}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -12855,6 +13000,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8496270038974487004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899902622283680201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &1929486968617723956
 GameObject:
   m_ObjectHideFlags: 0
@@ -16109,6 +16269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7911972036109920877}
   - component: {fileID: 4171486579981623538}
+  - component: {fileID: 8938058890120954800}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -16183,6 +16344,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8938058890120954800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293302644071784105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &2329197790709608939
 GameObject:
   m_ObjectHideFlags: 0
@@ -32044,6 +32220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969913985082534354}
   - component: {fileID: 2831748575973573909}
+  - component: {fileID: 8756980567225588896}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -32118,6 +32295,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8756980567225588896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655962931626839346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &4658356354605230090
 GameObject:
   m_ObjectHideFlags: 0
@@ -38181,6 +38373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7630634959285011779}
   - component: {fileID: 4015741902190301822}
+  - component: {fileID: 8447193912196588400}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -38255,6 +38448,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8447193912196588400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548052385253820317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &5563637624340334173
 GameObject:
   m_ObjectHideFlags: 0
@@ -40927,6 +41135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3251778605842397091}
   - component: {fileID: 4890714930136246375}
+  - component: {fileID: 8745604689586945399}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -41001,6 +41210,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8745604689586945399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5969552919182444442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &5993325736296647514
 GameObject:
   m_ObjectHideFlags: 0
@@ -42855,6 +43079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3974839801249692593}
   - component: {fileID: 514300826433376849}
+  - component: {fileID: 8282796955253489855}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -42929,6 +43154,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8282796955253489855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6291836494394336313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &6294298021103296914
 GameObject:
   m_ObjectHideFlags: 0
@@ -44492,6 +44732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3686792081015015256}
   - component: {fileID: 7818881413620167017}
+  - component: {fileID: 3699372554523295616}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -44566,6 +44807,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3699372554523295616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508110069315758568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &6537984394071636633
 GameObject:
   m_ObjectHideFlags: 0
@@ -44660,6 +44916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7359073981338145193}
   - component: {fileID: 7688804899478239747}
+  - component: {fileID: 7767969662074878812}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -44734,6 +44991,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7767969662074878812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547873081673495600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &6583620671941944597
 GameObject:
   m_ObjectHideFlags: 0
@@ -48929,6 +49201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8043338443411131844}
   - component: {fileID: 6832122421210006575}
+  - component: {fileID: 6138358213665905005}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -49003,6 +49276,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6138358213665905005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236062151398900989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &7239376064614538279
 GameObject:
   m_ObjectHideFlags: 0
@@ -49685,6 +49973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4575896894684523702}
   - component: {fileID: 9167498843789722322}
+  - component: {fileID: 7461856255576242458}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -49759,6 +50048,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7461856255576242458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316766056568944187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &7323670292970001564
 GameObject:
   m_ObjectHideFlags: 0
@@ -51942,6 +52246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9062262978961358886}
   - component: {fileID: 4103505987446979696}
+  - component: {fileID: 6060011545453998804}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -52016,6 +52321,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6060011545453998804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606990378393948499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &7611293882499464116
 GameObject:
   m_ObjectHideFlags: 0
@@ -52362,6 +52682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3586157234841925681}
   - component: {fileID: 6671355556001039793}
+  - component: {fileID: 7475015189772869637}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -52436,6 +52757,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7475015189772869637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629603558488554918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &7664237680859462777
 GameObject:
   m_ObjectHideFlags: 0
@@ -54105,6 +54441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4159699982517870198}
   - component: {fileID: 2971432362595740929}
+  - component: {fileID: 8074724878383679257}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -54179,6 +54516,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8074724878383679257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913483777899581459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &7932332248749628349
 GameObject:
   m_ObjectHideFlags: 0
@@ -54777,6 +55129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1173717541662291931}
   - component: {fileID: 3431982707155061722}
+  - component: {fileID: 6670180418806628588}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -54851,6 +55204,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6670180418806628588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024888462048550486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &8030668827555388734
 GameObject:
   m_ObjectHideFlags: 0
@@ -55281,6 +55649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3037088927834966745}
   - component: {fileID: 7152026184952978397}
+  - component: {fileID: 2259725076294051451}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -55355,6 +55724,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2259725076294051451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106122271468170397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &8130822817096787504
 GameObject:
   m_ObjectHideFlags: 0
@@ -58196,6 +58580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 233876406867124561}
   - component: {fileID: 2052545144417959000}
+  - component: {fileID: 482643029697308887}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -58270,6 +58655,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &482643029697308887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455007799022123803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &8456475786183376215
 GameObject:
   m_ObjectHideFlags: 0
@@ -59456,6 +59856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7847509525071375919}
   - component: {fileID: 2372253449669240372}
+  - component: {fileID: 687838092075957531}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -59530,6 +59931,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &687838092075957531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670169756403762236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29476279a29e8bf4a9551a855f09c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  spawnChance: 0.3
+  prefabToSpawn: {fileID: 8604245700193426791, guid: 1d1ea0adb7d587c4a82ba04dc529d6e5, type: 3}
 --- !u!1 &8671494029595068917
 GameObject:
   m_ObjectHideFlags: 0

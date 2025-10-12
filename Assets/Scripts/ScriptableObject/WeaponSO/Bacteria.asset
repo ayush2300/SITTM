@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce347d082874e2640aeb78b9b2dcc7bf, type: 3}
   m_Name: Bacteria
   m_EditorClassIdentifier: 
-  weaponName: SolarSystem
+  weaponName: Bacteria
   levels:
   - time:
       coolDownTime: 3.5

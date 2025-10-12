@@ -10,7 +10,7 @@ public class TuningFork : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyAI>().Freez(freezeTime);
+            collision.gameObject.GetComponent<EnemyAI>().Freeze(freezeTime);
         }
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 561017459816956103}
   - component: {fileID: 1673288738089122336}
   - component: {fileID: 8438849726224143363}
+  - component: {fileID: 1170173700785934726}
   m_Layer: 6
   m_Name: Atom
   m_TagString: Enemy
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 7117651411527206627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.66026837}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1.181805, y: 1.181805, z: 1.181805}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -74,7 +75,7 @@ MonoBehaviour:
   moveSpeed: 3
   expDrop: 10
   canDamageOnCollision: 1
-  collisionDamage: 10
+  collisionDamage: 8
   XpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
 --- !u!212 &-5680870213639239265
 SpriteRenderer:
@@ -157,12 +158,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.71
 --- !u!114 &1673288738089122336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionRadius: 0.66
-  explosionDamage: 30
+  explosionDamage: 8
   explosionEffect: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
   proximityRadius: 0.98
 --- !u!114 &8438849726224143363
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
   canDestroyOnDeath: 0
   isPlayer: 0
   allowRevive: 0
@@ -212,3 +213,30 @@ MonoBehaviour:
   scaleEase: 8
   hurtCooldown: 0.1
   healthSlider: {fileID: 0}
+--- !u!50 &1170173700785934726
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117651411527206627}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -12,7 +12,6 @@ public class HealthSystem : MonoBehaviour
     [Header("Settings")]
     public bool canDestroyOnDeath = true;
     public bool isPlayer = false;
-    public bool allowRevive = false;
 
     [Header("Death / Damage Events")]
     public UnityEvent onDeath;
@@ -26,7 +25,7 @@ public class HealthSystem : MonoBehaviour
     public float jumpPower = 0.6f;
     public int jumpNum = 1;
     public float jumpDuration = 0.45f;
-    public float scaleDuration = 0.40f;
+    public float scaleDuration = 0.4f;
     public Ease scaleEase = Ease.InCubic;
 
     [Header("Hurt Settings")]
@@ -40,6 +39,7 @@ public class HealthSystem : MonoBehaviour
     private SpriteRenderer sr;
     private Material mat;
     private Vector3 originalScale;
+    private Vector3 defaultScale;
     private Sequence hurtSeq;
 
     private static readonly int FlashAmountID = Shader.PropertyToID("_FlashAmount");
@@ -56,8 +56,6 @@ public class HealthSystem : MonoBehaviour
 
     private void Awake()
     {
-        currentHealth = maxHealth;
-
         sr = GetComponentInChildren<SpriteRenderer>();
         if (sr)
         {
@@ -69,13 +67,28 @@ public class HealthSystem : MonoBehaviour
                 originalTintColor = mat.GetColor(TintColorID);
         }
 
-        originalScale = transform.localScale;
+        defaultScale = transform.localScale; // prefab scale
+        originalScale = defaultScale;
+
+        currentHealth = maxHealth;
         UpdateHealthUI();
     }
 
+    private void OnEnable()
+    {
+        // Kill any tweens first
+        transform.DOKill(true); // kill and complete
+        hurtSeq?.Kill();
+
+        // Reset scale before anything else
+        transform.localScale = defaultScale;
+
+        ResetHealth();
+    }
+
+
     private void Update()
     {
-        // ? Player-only passive regen logic
         if (isPlayer && !isDead && HealthRegenItem.IsActive())
         {
             float regenPerSec = HealthRegenItem.GetRegenAmountPerSecond(maxHealth);
@@ -86,18 +99,14 @@ public class HealthSystem : MonoBehaviour
 
     public void Damage(int damageAmount)
     {
-        if (isDead || damageAmount <= 0)
-            return;
+        if (isDead || damageAmount <= 0) return;
 
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(0, currentHealth);
-
         UpdateHealthUI();
 
         if (currentHealth <= 0)
-        {
             Die();
-        }
         else
         {
             PlayHurtEffect();
@@ -107,8 +116,7 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal(int healAmount)
     {
-        if (isDead || healAmount <= 0)
-            return;
+        if (isDead || healAmount <= 0) return;
 
         currentHealth = Mathf.Min(maxHealth, currentHealth + healAmount);
         UpdateHealthUI();
@@ -116,8 +124,7 @@ public class HealthSystem : MonoBehaviour
 
     public void Die()
     {
-        if (isDead)
-            return;
+        if (isDead) return;
 
         isDead = true;
         onDeath?.Invoke();
@@ -125,23 +132,14 @@ public class HealthSystem : MonoBehaviour
         if (deathEffect)
             Instantiate(deathEffect, transform.position, Quaternion.identity);
 
-        hurtSeq?.Kill();
+        // Kill ongoing tweens
         transform.DOKill();
+        hurtSeq?.Kill();
         transform.localScale = originalScale;
 
         Sequence deathSeq = DOTween.Sequence().SetUpdate(true);
-
-        deathSeq.Join(
-            transform
-                .DOJump(transform.position + Vector3.up * 0.05f, jumpPower, jumpNum, jumpDuration)
-                .SetEase(Ease.OutQuad)
-        );
-
-        deathSeq.Join(
-            transform
-                .DOScale(Vector3.zero, scaleDuration)
-                .SetEase(scaleEase)
-        );
+        deathSeq.Join(transform.DOJump(transform.position + Vector3.up * 0.05f, jumpPower, jumpNum, jumpDuration).SetEase(Ease.OutQuad));
+        deathSeq.Join(transform.DOScale(Vector3.zero, scaleDuration).SetEase(scaleEase));
 
         deathSeq.OnComplete(() =>
         {
@@ -150,10 +148,7 @@ public class HealthSystem : MonoBehaviour
             if (isPlayer && canDestroyOnDeath)
                 Destroy(gameObject);
             else
-            {
                 gameObject.SetActive(false);
-                gameObject.GetComponent<EnemyAI>().SpawnXp();
-            }
         });
     }
 
@@ -167,51 +162,35 @@ public class HealthSystem : MonoBehaviour
         hurtSeq?.Kill();
         sr.DOKill();
         transform.DOKill();
-
         transform.localScale = originalScale;
 
-        float tIn = 0.05f;
-        float hold = 0.05f;
-        float tOut = 0.14f;
+        float tIn = 0.05f, hold = 0.05f, tOut = 0.14f;
         float total = tIn + hold + tOut;
-
-        float flashPeak = 0.6f;
-        float exposurePeak = 1.15f;
+        float flashPeak = 0.6f, exposurePeak = 1.15f;
 
         sr.color = originalSpriteColor;
-
         hurtSeq = DOTween.Sequence().SetUpdate(true);
 
         if (mat.HasProperty(RedOverlayID))
         {
-            hurtSeq.Append(DOTween
-                .To(() => mat.GetFloat(RedOverlayID), v => mat.SetFloat(RedOverlayID, v), 1f, tIn));
+            hurtSeq.Append(DOTween.To(() => mat.GetFloat(RedOverlayID), v => mat.SetFloat(RedOverlayID, v), 1f, tIn));
             hurtSeq.AppendInterval(hold);
-            hurtSeq.Append(DOTween
-                .To(() => mat.GetFloat(RedOverlayID), v => mat.SetFloat(RedOverlayID, v), 0f, tOut));
+            hurtSeq.Append(DOTween.To(() => mat.GetFloat(RedOverlayID), v => mat.SetFloat(RedOverlayID, v), 0f, tOut));
         }
 
         if (mat.HasProperty(TintColorID))
         {
             Color hitTint = new Color(1f, 0.5f, 0.5f, 1f);
-            hurtSeq.Join(DOTween.To(() => mat.GetColor(TintColorID),
-                c => mat.SetColor(TintColorID, c), hitTint, tIn * 0.8f));
-            hurtSeq.Join(DOTween.To(() => mat.GetColor(TintColorID),
-                c => mat.SetColor(TintColorID, c), originalTintColor, tOut).SetDelay(tIn + hold));
+            hurtSeq.Join(DOTween.To(() => mat.GetColor(TintColorID), c => mat.SetColor(TintColorID, c), hitTint, tIn * 0.8f));
+            hurtSeq.Join(DOTween.To(() => mat.GetColor(TintColorID), c => mat.SetColor(TintColorID, c), originalTintColor, tOut).SetDelay(tIn + hold));
         }
 
         if (mat.HasProperty(FlashAmountID))
         {
-            hurtSeq.Join(DOTween
-                .To(() => mat.GetFloat(FlashAmountID), v => mat.SetFloat(FlashAmountID, v), flashPeak, tIn));
-            hurtSeq.Join(DOTween.To(() => mat.GetFloat(ExposureID),
-                v => mat.SetFloat(ExposureID, v), exposurePeak, tIn));
-
-            hurtSeq.Join(DOTween
-                .To(() => mat.GetFloat(FlashAmountID), v => mat.SetFloat(FlashAmountID, v), 0f, tOut)
-                .SetDelay(tIn + hold));
-            hurtSeq.Join(DOTween.To(() => mat.GetFloat(ExposureID),
-                v => mat.SetFloat(ExposureID, v), 1f, tOut).SetDelay(tIn + hold));
+            hurtSeq.Join(DOTween.To(() => mat.GetFloat(FlashAmountID), v => mat.SetFloat(FlashAmountID, v), flashPeak, tIn));
+            hurtSeq.Join(DOTween.To(() => mat.GetFloat(ExposureID), v => mat.SetFloat(ExposureID, v), exposurePeak, tIn));
+            hurtSeq.Join(DOTween.To(() => mat.GetFloat(FlashAmountID), v => mat.SetFloat(FlashAmountID, v), 0f, tOut).SetDelay(tIn + hold));
+            hurtSeq.Join(DOTween.To(() => mat.GetFloat(ExposureID), v => mat.SetFloat(ExposureID, v), 1f, tOut).SetDelay(tIn + hold));
         }
 
         hurtSeq.Join(transform.DOPunchScale(new Vector3(0.06f, 0.06f, 0f), total, vibrato: 0, elasticity: 0f));
@@ -219,12 +198,20 @@ public class HealthSystem : MonoBehaviour
 
     public void ResetHealth()
     {
-        currentHealth = maxHealth;
+        // Kill any running tweens
+        transform.DOKill(true);
+        hurtSeq?.Kill();
+
         isDead = false;
-        transform.localScale = originalScale;
+        currentHealth = maxHealth;
+
+        // Make sure the scale is correct
+        transform.localScale = defaultScale;
+
         gameObject.SetActive(true);
         UpdateHealthUI();
     }
+
 
     public void SetMaxHealth(int newMaxHealth, bool resetCurrentHealth = true)
     {
@@ -239,8 +226,6 @@ public class HealthSystem : MonoBehaviour
     private void UpdateHealthUI()
     {
         if (healthSlider != null)
-        {
             healthSlider.value = (float)currentHealth / maxHealth;
-        }
     }
 }

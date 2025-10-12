@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b32fa8c98016f488edca86b18e8365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 1
+  range: 2
   laserPrefab: {fileID: 440488741458358225, guid: 7ea7c2c16f5dffb47bb0d023272adcdc, type: 3}
   offsetRight: 3
   offsetLeft: 3

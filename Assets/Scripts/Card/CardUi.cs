@@ -1,19 +1,47 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class CardUI : MonoBehaviour
 {
+    [Header("UI References")]
     public TextMeshProUGUI titleText;
     public Button selectButton;
 
     private WeaponSO weaponData;
-    private ItemSO itemData; // ✅ New for items
+    private ItemSO itemData;
     private WeaponManager weaponManager;
     private ItemManager itemManager;
     private CardSpawner cardSpawner;
-
     private bool isWeaponCard;
+    private bool isInitialized;
+
+    private void Awake()
+    {
+        if (selectButton == null)
+            selectButton = GetComponent<Button>();
+    }
+
+    private void OnEnable()
+    {
+        // Rebind listeners if this card was reused from the pool
+        if (isInitialized)
+        {
+            selectButton.onClick.RemoveAllListeners();
+            selectButton.onClick.AddListener(OnCardClicked);
+        }
+
+        // ✅ Force EventSystem refresh to catch pooled UI
+        if (EventSystem.current != null)
+            EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    private void OnDisable()
+    {
+        // Avoid memory leaks when pooling
+        selectButton.onClick.RemoveAllListeners();
+    }
 
     // ✅ Initialize for Weapon
     public void InitializeWeapon(WeaponSO weapon, WeaponManager manager, CardSpawner spawner)
@@ -22,8 +50,11 @@ public class CardUI : MonoBehaviour
         weaponManager = manager;
         cardSpawner = spawner;
         isWeaponCard = true;
+        isInitialized = true;
 
         titleText.text = weapon.weaponName;
+
+        selectButton.onClick.RemoveAllListeners();
         selectButton.onClick.AddListener(OnCardClicked);
     }
 
@@ -34,8 +65,11 @@ public class CardUI : MonoBehaviour
         itemManager = manager;
         cardSpawner = spawner;
         isWeaponCard = false;
+        isInitialized = true;
 
         titleText.text = item.itemName;
+
+        selectButton.onClick.RemoveAllListeners();
         selectButton.onClick.AddListener(OnCardClicked);
     }
 
@@ -50,7 +84,6 @@ public class CardUI : MonoBehaviour
         }
         else
         {
-            // ✅ For items — if you have stacking or upgrades, handle it here
             itemManager?.AddItem(itemData);
         }
 

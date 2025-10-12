@@ -1,29 +1,37 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardSpawner : MonoBehaviour
 {
     [Header("Card Settings")]
-    public GameObject cardPrefab;
     public Transform cardParent;
     public int cardsToSpawn = 3;
 
     [Header("Weapon & Item Data")]
     public List<WeaponSO> allWeapons;
-    public List<ItemSO> allItems; // ✅ New list for items
+    public List<ItemSO> allItems;
 
     private WeaponManager weaponManager;
-    private ItemManager itemManager; // ✅ If you have a manager for items
+    private ItemManager itemManager;
+    private CardPooler cardPooler;
+
     private List<GameObject> spawnedCards = new List<GameObject>();
 
     void OnEnable()
     {
         weaponManager = FindObjectOfType<WeaponManager>();
-        itemManager = FindObjectOfType<ItemManager>(); // Optional, used if items need management
-        ClearOldCards();
-        SpawnRandomCards();
+        itemManager = FindObjectOfType<ItemManager>();
+        cardPooler = FindObjectOfType<CardPooler>();
 
-        // ✅ Freeze game time when panel is active
+        ClearOldCards();
+        StartCoroutine(SpawnNextFrame());
+    }
+
+    private System.Collections.IEnumerator SpawnNextFrame()
+    {
+        yield return null; // Wait one frame to avoid layout spikes
+        SpawnRandomCards();
         Time.timeScale = 0f;
     }
 
@@ -31,7 +39,7 @@ public class CardSpawner : MonoBehaviour
     {
         if ((allWeapons.Count == 0 && allItems.Count == 0) || cardsToSpawn <= 0) return;
 
-        // Create a temporary list for valid weapons
+        // Filter valid weapons
         List<WeaponSO> tempWeapons = new List<WeaponSO>();
         foreach (var weapon in allWeapons)
         {
@@ -41,56 +49,59 @@ public class CardSpawner : MonoBehaviour
                 if (currentLevel < weapon.levels.Count - 1)
                     tempWeapons.Add(weapon);
             }
-            else
-            {
-                tempWeapons.Add(weapon);
-            }
+            else tempWeapons.Add(weapon);
         }
 
-        // ✅ Pick 2 random weapons and 1 random item each time
         int weaponsToSpawn = Mathf.Min(2, tempWeapons.Count);
         int itemsToSpawn = Mathf.Min(1, allItems.Count);
 
-        List<GameObject> cards = new List<GameObject>();
+        HashSet<WeaponSO> usedWeapons = new HashSet<WeaponSO>();
+        HashSet<ItemSO> usedItems = new HashSet<ItemSO>();
 
-        // Spawn weapon cards
         for (int i = 0; i < weaponsToSpawn; i++)
         {
-            int randomIndex = Random.Range(0, tempWeapons.Count);
-            WeaponSO selectedWeapon = tempWeapons[randomIndex];
-            tempWeapons.RemoveAt(randomIndex);
+            WeaponSO selected = GetUniqueRandom(tempWeapons, usedWeapons);
+            if (selected == null) continue;
 
-            GameObject newCard = Instantiate(cardPrefab, cardParent);
-            cards.Add(newCard);
-
-            CardUI cardUI = newCard.GetComponent<CardUI>();
-            if (cardUI != null)
-                cardUI.InitializeWeapon(selectedWeapon, weaponManager, this);
+            GameObject card = cardPooler.GetCard(cardParent);
+            CardUI ui = card.GetComponent<CardUI>();
+            ui.InitializeWeapon(selected, weaponManager, this);
+            spawnedCards.Add(card);
         }
 
-        // Spawn item card
         for (int i = 0; i < itemsToSpawn; i++)
         {
-            int randomIndex = Random.Range(0, allItems.Count);
-            ItemSO selectedItem = allItems[randomIndex];
+            ItemSO selected = GetUniqueRandom(allItems, usedItems);
+            if (selected == null) continue;
 
-            GameObject newCard = Instantiate(cardPrefab, cardParent);
-            cards.Add(newCard);
-
-            CardUI cardUI = newCard.GetComponent<CardUI>();
-            if (cardUI != null)
-                cardUI.InitializeItem(selectedItem, itemManager, this);
+            GameObject card = cardPooler.GetCard(cardParent);
+            CardUI ui = card.GetComponent<CardUI>();
+            ui.InitializeItem(selected, itemManager, this);
+            spawnedCards.Add(card);
         }
+    }
 
-        spawnedCards = cards;
+    private T GetUniqueRandom<T>(List<T> list, HashSet<T> used)
+    {
+        if (list.Count == 0) return default;
+
+        int attempts = 0;
+        T selected;
+        do
+        {
+            selected = list[Random.Range(0, list.Count)];
+            attempts++;
+        }
+        while (used.Contains(selected) && attempts < 10);
+
+        used.Add(selected);
+        return selected;
     }
 
     public void OnCardSelected()
     {
         ClearOldCards();
         gameObject.SetActive(false);
-
-        // ✅ Resume game time when a card is selected
         Time.timeScale = 1f;
     }
 
@@ -98,7 +109,7 @@ public class CardSpawner : MonoBehaviour
     {
         foreach (var card in spawnedCards)
         {
-            Destroy(card);
+            cardPooler.ReturnCard(card);
         }
         spawnedCards.Clear();
     }

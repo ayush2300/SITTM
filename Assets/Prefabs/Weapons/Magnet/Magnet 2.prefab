@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2.67
-  damage: 7
+  damage: 12
   damageInterval: 0.5
   enemyLayer:
     serializedVersion: 2

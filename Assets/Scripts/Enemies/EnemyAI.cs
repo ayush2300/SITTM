@@ -4,23 +4,26 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float moveSpeed = 3f;
-    public int expDrop = 10;
-
-    private Transform target;
-    private bool isDead = false;
-    private NavMeshAgent agent;
 
     [Header("Collision Damage")]
-    public bool canDamageOnCollision;
-    public int collisionDamage;
+    public bool canDamageOnCollision = false;
+    public int collisionDamage = 10;
 
-    [Header("XPDrop")]
+    [Header("XP Drop")]
+    public int expDrop = 10;
     public GameObject XpOrbPrefab;
+
+    private Transform target;
+    private NavMeshAgent agent;
+    private HealthSystem health;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        health = GetComponent<HealthSystem>();
+
         if (agent != null)
         {
             agent.updateRotation = false;
@@ -31,14 +34,13 @@ public class EnemyAI : MonoBehaviour
 
     private void OnEnable()
     {
-        // Reset AI when re-activated from pool
-        isDead = false;
+        // Reset enemy state for pooling
+        health.ResetHealth();
 
-        // Make sure the agent is properly placed on the NavMesh
         if (agent != null && !agent.isOnNavMesh)
         {
             agent.enabled = true;
-            agent.Warp(transform.position); // force placement on NavMesh
+            agent.Warp(transform.position);
         }
 
         target = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -46,80 +48,69 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        if (isDead || target == null || agent == null || !agent.isOnNavMesh) return;
+        if (health.IsDead || target == null || agent == null || !agent.isOnNavMesh) return;
 
-        // Move towards the player
+        // Move towards player
         agent.SetDestination(target.position);
-
-
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!canDamageOnCollision) return;
-
-
-        if(collision.gameObject.tag=="Player")
-        {
-            collision.gameObject.GetComponent<HealthSystem>().Damage(collisionDamage);
-        }
-        gameObject.GetComponent<HealthSystem>().Die();
+        HandleCollision(collision.gameObject);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!canDamageOnCollision) return;
-
-
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<HealthSystem>().Damage(collisionDamage);
-        }
-        gameObject.GetComponent<HealthSystem>().Die();
+        HandleCollision(collision.gameObject);
     }
 
-
-    public void SpawnXp()
+    private void HandleCollision(GameObject other)
     {
-        //    Drop XP orb
-        if (XpOrbPrefab != null)
+        if (!canDamageOnCollision || health.IsDead) return;
+
+        if (other.CompareTag("Player"))
         {
-            GameObject xpOrb = Instantiate(XpOrbPrefab, transform.position, Quaternion.identity);
-            XpDrop orb = xpOrb.GetComponent<XpDrop>();
-            if (orb != null)
+            HealthSystem playerHealth = other.GetComponent<HealthSystem>();
+            if (playerHealth != null)
             {
-                orb.xpAmount = expDrop;
+                playerHealth.Damage(collisionDamage);
+
+                // Enemy dies after successfully hitting the player
+                health.Die();
+                SpawnXp();
             }
         }
     }
 
-    public void Freez(float freezeTime)
+    public void SpawnXp()
     {
-        // Only start a freeze if not already frozen
-        if (isDead || agent == null) return;
+        if (XpOrbPrefab == null) return;
 
+        GameObject xpOrb = Instantiate(XpOrbPrefab, transform.position, Quaternion.identity);
+        XpDrop orb = xpOrb.GetComponent<XpDrop>();
+        if (orb != null)
+            orb.xpAmount = expDrop;
+    }
+
+    public void Freeze(float freezeTime)
+    {
+        if (health.IsDead || agent == null) return;
         StartCoroutine(FreezeCoroutine(freezeTime));
     }
 
     private IEnumerator FreezeCoroutine(float freezeTime)
     {
-        // Store current speed to restore later
         float originalSpeed = agent.speed;
-
-        // Stop movement
         agent.isStopped = true;
         agent.speed = 0f;
 
-        // Optional: disable collision damage while frozen
         bool originalCanDamage = canDamageOnCollision;
         canDamageOnCollision = false;
 
-        // Wait for freezeTime
         yield return new WaitForSeconds(freezeTime);
 
-        // Resume movement
         agent.isStopped = false;
         agent.speed = originalSpeed;
-
-        // Restore collision damage
         canDamageOnCollision = originalCanDamage;
     }
 }

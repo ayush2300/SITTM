@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 75
   canDestroyOnDeath: 1
   isPlayer: 1
   allowRevive: 0

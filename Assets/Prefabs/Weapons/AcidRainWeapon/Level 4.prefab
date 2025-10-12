@@ -47,5 +47,5 @@ MonoBehaviour:
   boxLength: 24.4
   boxBreadth: 13.4
   projectilePrefab: {fileID: 6799434797546762654, guid: c4753b906807bfd498a9625a7a901244, type: 3}
-  projectileCount: 4
+  projectileCount: 6
   spawnOnEnable: 1

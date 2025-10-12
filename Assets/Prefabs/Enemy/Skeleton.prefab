@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   boneProjectilePrefab: {fileID: 4378682058645906929, guid: 928b57ab7bc594d4d91f9949ac698da1, type: 3}
-  attackRange: 5
+  attackRange: 3
   attackCooldown: 2
   throwPoint: {fileID: 7896511847740555964}
 --- !u!114 &1230729582092275700
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   expDrop: 10
-  canDamageOnCollision: 1
+  canDamageOnCollision: 0
   collisionDamage: 10
   XpOrbPrefab: {fileID: 6835560325603651991, guid: fc5d21bb0b85bd64b9e1eb3be3c019e4, type: 3}
 --- !u!212 &4455393774987062212
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff3ddee1dcecd0499cc220e9d0a097f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 60
   canDestroyOnDeath: 0
   isPlayer: 0
   allowRevive: 0
