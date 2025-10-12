@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab71951846ba7c04984a239ea7884ff2, type: 3}
+  m_Name: 14th Minute
+  m_EditorClassIdentifier: 
+  startTime: 0
+  enemiesToSpawn:
+  - enemyPrefab: {fileID: 12792752347874169, guid: d9449dfb5d871904084db87c3ae4fed3, type: 3}
+    minSpawnRate: 0.2
+    maxSpawnRate: 0.6
+    timeToIncrease: 60
+    poolSize: 50
+  - enemyPrefab: {fileID: 7677058516892065867, guid: 7f462e843f317f048b1a21968bff8e2e, type: 3}
+    minSpawnRate: 0.1
+    maxSpawnRate: 0.5
+    timeToIncrease: 60
+    poolSize: 50
+  - enemyPrefab: {fileID: 2913699253501788760, guid: e5147eaf5765b1b41b6e3f3a88e96b40, type: 3}
+    minSpawnRate: 0.05
+    maxSpawnRate: 0.2
+    timeToIncrease: 60
+    poolSize: 50
+  - enemyPrefab: {fileID: 7117651411527206627, guid: b7e0dc40970839c43a6160d6b4f23a67, type: 3}
+    minSpawnRate: 0.2
+    maxSpawnRate: 0.6
+    timeToIncrease: 60
+    poolSize: 50
+  - enemyPrefab: {fileID: 7117651411527206627, guid: 0b9ef65ac8301c2498035107fa7d0f57, type: 3}
+    minSpawnRate: 0.2
+    maxSpawnRate: 0.6
+    timeToIncrease: 60
+    poolSize: 50
+  - enemyPrefab: {fileID: 7117651411527206627, guid: 190e50e4431018549a72760b6e5a32a5, type: 3}
+    minSpawnRate: 0.2
+    maxSpawnRate: 0.6
+    timeToIncrease: 60
+    poolSize: 50
+  - enemyPrefab: {fileID: 7677058516892065867, guid: 406104f61aca627489fe9dffb10f9173, type: 3}
+    minSpawnRate: 0.2
+    maxSpawnRate: 0.6
+    timeToIncrease: 60
+    poolSize: 50
+  - enemyPrefab: {fileID: 2148986130981883437, guid: 1ff67f7bb2abc34409d2321779448f87, type: 3}
+    minSpawnRate: 0.05
+    maxSpawnRate: 0.1
+    timeToIncrease: 60
+    poolSize: 50
+  keepPreviousEnemiesAlive: 1
