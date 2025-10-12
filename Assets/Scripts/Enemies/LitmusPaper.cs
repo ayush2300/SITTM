@@ -1,17 +1,16 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class LitmusPaper2D : MonoBehaviour
 {
-    [Header("Health and Color Stages")]
+    [Header("Health and Sprite Stages")]
     private int maxHealth;
     private int litmusHealth;
 
-    [Tooltip("Colors representing alkaline, neutral, and acidic states.")]
-    public Color alkalineColor = Color.blue;
-    public Color neutralColor = Color.magenta;
-    public Color acidicColor = Color.red;
+    [Tooltip("Sprites representing alkaline, neutral, and acidic states.")]
+    public Sprite alkalineSprite;
+    public Sprite neutralSprite;
+    public Sprite acidicSprite;
 
     private SpriteRenderer spriteRenderer;
 
@@ -25,45 +24,41 @@ public class LitmusPaper2D : MonoBehaviour
 
     private GameObject player;
     private HealthSystem playerHealth;
-    
 
     private void Start()
     {
-
         spriteRenderer = GetComponent<SpriteRenderer>();
-        UpdateColor();
-
+        UpdateSprite();
         currentDamagePerSecond = baseDamagePerSecond;
     }
 
-    private void UpdateColor()
+    private void UpdateSprite()
     {
+        if (maxHealth <= 0) return;
+
         float healthRatio = (float)litmusHealth / maxHealth;
 
-        if (healthRatio > 0.66f)
-            spriteRenderer.color = alkalineColor;
-        else if (healthRatio > 0.33f)
-            spriteRenderer.color = neutralColor;
-        else
-            spriteRenderer.color = acidicColor;
+        if (healthRatio > 0.66f && alkalineSprite != null)
+            spriteRenderer.sprite = alkalineSprite;
+        else if (healthRatio > 0.33f && neutralSprite != null)
+            spriteRenderer.sprite = neutralSprite;
+        else if (acidicSprite != null)
+            spriteRenderer.sprite = acidicSprite;
     }
 
     public void TakeDamage()
     {
-        //if (currentHealth <= 0) return;
-
-        //currentHealth -= damage;
-        //currentHealth = Mathf.Max(0, currentHealth);
-
-        UpdateColor();
-
+        UpdateSprite();
     }
 
     private void Update()
     {
-        maxHealth = gameObject.GetComponent<HealthSystem>().MaxHealth;
-        litmusHealth = gameObject.GetComponent<HealthSystem>().CurrentHealth;
+        var hs = gameObject.GetComponent<HealthSystem>();
+        maxHealth = hs.MaxHealth;
+        litmusHealth = hs.CurrentHealth;
+
         TakeDamage();
+
         if (playerInContact)
         {
             playerDamageTimer -= Time.deltaTime;
@@ -77,7 +72,6 @@ public class LitmusPaper2D : MonoBehaviour
         }
         else
         {
-            // Reset damage timer and damage per second if player leaves
             playerDamageTimer = 0f;
             currentDamagePerSecond = baseDamagePerSecond;
         }
@@ -91,7 +85,7 @@ public class LitmusPaper2D : MonoBehaviour
             player = other.gameObject;
             playerHealth = player.GetComponent<HealthSystem>();
 
-            playerDamageTimer = 0f;  // Start damaging immediately
+            playerDamageTimer = 0f;
             currentDamagePerSecond = baseDamagePerSecond;
         }
     }
@@ -115,7 +109,7 @@ public class LitmusPaper2D : MonoBehaviour
             player = other.gameObject;
             playerHealth = player.GetComponent<HealthSystem>();
 
-            playerDamageTimer = 0f;  // Start damaging immediately
+            playerDamageTimer = 0f;
             currentDamagePerSecond = baseDamagePerSecond;
         }
     }
@@ -130,5 +124,4 @@ public class LitmusPaper2D : MonoBehaviour
             currentDamagePerSecond = baseDamagePerSecond;
         }
     }
-
 }

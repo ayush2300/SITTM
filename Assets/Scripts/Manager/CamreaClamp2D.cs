@@ -1,7 +1,8 @@
 using UnityEngine;
 using Cinemachine;
 
-public class CameraClamp2D : MonoBehaviour
+[DefaultExecutionOrder(1000)] // ensures this runs after Cinemachine updates
+public class CameraClampFixed2D : MonoBehaviour
 {
     [Header("Clamp Settings")]
     public float minY = -14f;
@@ -11,28 +12,24 @@ public class CameraClamp2D : MonoBehaviour
     public float minX = float.NegativeInfinity;
     public float maxX = float.PositiveInfinity;
 
-    public CinemachineVirtualCamera vcam;
-    private Transform followTarget;
+    private Camera mainCam;
+    private CinemachineBrain brain;
 
     void Start()
     {
-        vcam = GetComponent<CinemachineVirtualCamera>();
-        if (vcam != null)
-            followTarget = vcam.Follow;
+        mainCam = Camera.main;
+        brain = mainCam != null ? mainCam.GetComponent<CinemachineBrain>() : null;
     }
 
     void LateUpdate()
     {
-        if (followTarget == null) return;
+        if (mainCam == null) return;
 
-        Vector3 pos = followTarget.position;
+        Vector3 camPos = mainCam.transform.position;
 
-        // Clamp Y
-        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+        camPos.y = Mathf.Clamp(camPos.y, minY, maxY);
+        camPos.x = Mathf.Clamp(camPos.x, minX, maxX);
 
-        // Optional: Clamp X
-        pos.x = Mathf.Clamp(pos.x, minX, maxX);
-
-        followTarget.position = pos;
+        mainCam.transform.position = camPos;
     }
 }

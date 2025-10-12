@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab71951846ba7c04984a239ea7884ff2, type: 3}
   m_Name: 9th Minute
   m_EditorClassIdentifier: 
-  startTime: 0
+  startTime: 9
   enemiesToSpawn:
   - enemyPrefab: {fileID: 12792752347874169, guid: d9449dfb5d871904084db87c3ae4fed3, type: 3}
     minSpawnRate: 0.2
