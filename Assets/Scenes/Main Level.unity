@@ -905,6 +905,8 @@ MonoBehaviour:
   poolParent: {fileID: 544647157}
   timerText: {fileID: 1510725371}
   EndPanel: {fileID: 1745902948}
+  debugMode: 1
+  debugStartTime: 900
 --- !u!1001 &575439589
 PrefabInstance:
   m_ObjectHideFlags: 0

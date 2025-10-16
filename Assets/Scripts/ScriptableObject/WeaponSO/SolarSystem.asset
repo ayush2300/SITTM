@@ -16,6 +16,10 @@ MonoBehaviour:
   levels:
   - time:
       coolDownTime: 5
+      activeTime: 9.5
+    weaponLevelPrefab: {fileID: 2201000893742412666, guid: ca1458103ae1acc4c9b64728376927db, type: 3}
+  - time:
+      coolDownTime: 5
       activeTime: 5
     weaponLevelPrefab: {fileID: 2201000893742412666, guid: 663c24ff9b10edd4f950f7ac9a1e78ff, type: 3}
   - time:
@@ -46,7 +50,3 @@ MonoBehaviour:
       coolDownTime: 5
       activeTime: 9.5
     weaponLevelPrefab: {fileID: 2201000893742412666, guid: 7362ba37cc875dd4fafa7bf4cfb27f08, type: 3}
-  - time:
-      coolDownTime: 5
-      activeTime: 9.5
-    weaponLevelPrefab: {fileID: 2201000893742412666, guid: ca1458103ae1acc4c9b64728376927db, type: 3}

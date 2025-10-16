@@ -16,6 +16,11 @@ public class EnemySpawner : MonoBehaviour
     public TextMeshProUGUI timerText; // ✅ displays elapsed time
     public GameObject EndPanel;
 
+    [Header("Debug Settings")]
+    public bool debugMode = false;           // ✅ enables debug time mode
+    [Range(0f, 900f)]
+    public float debugStartTime = 0f;        // ✅ start elapsed time manually in seconds
+
     private Camera mainCamera;
     private float elapsedTime = 0f;
     private int currentPhaseIndex = -1;
@@ -27,15 +32,32 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+
+        // ✅ Apply debug starting time if enabled
+        elapsedTime = debugMode ? debugStartTime : 0f;
+
         if (spawnPhases.Count > 0)
-            ActivatePhase(0);
+        {
+            // ✅ Find which phase we should start at based on debugStartTime
+            int startPhase = 0;
+            for (int i = 0; i < spawnPhases.Count; i++)
+            {
+                if (elapsedTime >= spawnPhases[i].startTime)
+                    startPhase = i;
+            }
+
+            ActivatePhase(startPhase);
+        }
 
         UpdateTimerUI();
     }
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
+        // ✅ Skip normal time progression if debug mode is paused or controlled externally
+        if (!debugMode)
+            elapsedTime += Time.deltaTime;
+
         UpdateTimerUI();
 
         // End panel after 15 minutes (900 sec)
@@ -44,14 +66,14 @@ public class EnemySpawner : MonoBehaviour
             EndPanel.SetActive(true);
         }
 
-        // Check for next phase
+        // ✅ Check for next phase
         if (currentPhaseIndex + 1 < spawnPhases.Count &&
             elapsedTime >= spawnPhases[currentPhaseIndex + 1].startTime)
         {
             ActivatePhase(currentPhaseIndex + 1);
         }
 
-        // Spawn enemies for each pool
+        // ✅ Handle enemy spawning
         foreach (var pool in currentPools)
         {
             if (!spawnTimers.ContainsKey(pool))
@@ -62,7 +84,6 @@ public class EnemySpawner : MonoBehaviour
 
             elapsedPoolTime[pool] += Time.deltaTime;
 
-            // Compute current spawn rate
             var data = pool.EnemyData;
             float t = Mathf.Clamp01(elapsedPoolTime[pool] / data.timeToIncrease);
             float currentSpawnRate = Mathf.Lerp(data.minSpawnRate, data.maxSpawnRate, t);
@@ -91,7 +112,7 @@ public class EnemySpawner : MonoBehaviour
         currentPhaseIndex = phaseIndex;
         var phase = spawnPhases[phaseIndex];
 
-        // Clear old pools if not keeping previous enemies alive
+        // ✅ Clear old pools if not keeping previous enemies alive
         if (!phase.keepPreviousEnemiesAlive)
         {
             foreach (var pool in currentPools)
@@ -102,13 +123,15 @@ public class EnemySpawner : MonoBehaviour
             elapsedPoolTime.Clear();
         }
 
-        // Create pools for new enemies
+        // ✅ Create pools for new enemies
         foreach (var enemyData in phase.enemiesToSpawn)
         {
             EnemyPooler pool = new EnemyPooler(enemyData.enemyPrefab, enemyData.poolSize, poolParent);
             pool.EnemyData = enemyData;
             currentPools.Add(pool);
         }
+
+        Debug.Log($"[EnemySpawner] Activated Phase {phaseIndex} at {elapsedTime:F1}s");
     }
 
     void SpawnFromPool(EnemyPooler pool)
@@ -137,12 +160,10 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            // fallback: if no valid point found, try again slightly inside
             randomPos.x = cameraPos.x + (side == 0 ? -camWidth / 2 : camWidth / 2);
             if (NavMesh.SamplePosition(randomPos, out hit, 10f, NavMesh.AllAreas))
                 return hit.position;
 
-            // as a last resort, spawn at camera center (guaranteed valid NavMesh)
             return cameraPos;
         }
     }

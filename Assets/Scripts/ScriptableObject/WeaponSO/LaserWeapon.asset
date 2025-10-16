@@ -15,6 +15,10 @@ MonoBehaviour:
   weaponName: Laser
   levels:
   - time:
+      coolDownTime: 5
+      activeTime: 5
+    weaponLevelPrefab: {fileID: 356355764091272799, guid: e27f151903661194d8b635110386d09d, type: 3}
+  - time:
       coolDownTime: 6
       activeTime: 5
     weaponLevelPrefab: {fileID: 356355764091272799, guid: 4f6e00db7915f034391d069b34e46f6d, type: 3}
@@ -42,7 +46,3 @@ MonoBehaviour:
       coolDownTime: 5
       activeTime: 5
     weaponLevelPrefab: {fileID: 356355764091272799, guid: ddf298c102e891544a55b43fc30d8b4a, type: 3}
-  - time:
-      coolDownTime: 5
-      activeTime: 5
-    weaponLevelPrefab: {fileID: 356355764091272799, guid: e27f151903661194d8b635110386d09d, type: 3}

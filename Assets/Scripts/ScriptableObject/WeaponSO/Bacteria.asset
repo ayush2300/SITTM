@@ -15,6 +15,10 @@ MonoBehaviour:
   weaponName: Bacteria
   levels:
   - time:
+      coolDownTime: 2.6
+      activeTime: 1
+    weaponLevelPrefab: {fileID: 5562305457002169948, guid: a4227035078c79d4a82626bb91300935, type: 3}
+  - time:
       coolDownTime: 3.5
       activeTime: 1
     weaponLevelPrefab: {fileID: 5562305457002169948, guid: c6720c861af1d3146a1379d40c618710, type: 3}
@@ -42,7 +46,3 @@ MonoBehaviour:
       coolDownTime: 2.9
       activeTime: 1
     weaponLevelPrefab: {fileID: 5562305457002169948, guid: 42b2356e651f1414daa5ca89c14785a9, type: 3}
-  - time:
-      coolDownTime: 2.6
-      activeTime: 1
-    weaponLevelPrefab: {fileID: 5562305457002169948, guid: a4227035078c79d4a82626bb91300935, type: 3}

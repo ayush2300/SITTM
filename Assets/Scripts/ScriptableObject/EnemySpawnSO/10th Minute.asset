@@ -44,4 +44,4 @@ MonoBehaviour:
     maxSpawnRate: 0.6
     timeToIncrease: 60
     poolSize: 50
-  keepPreviousEnemiesAlive: 1
+  keepPreviousEnemiesAlive: 0

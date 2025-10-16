@@ -11472,6 +11472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7440548644138309029}
   - component: {fileID: 2184158459008064097}
+  - component: {fileID: 6797045182690436371}
   m_Layer: 0
   m_Name: hex tile 02 (2)
   m_TagString: Untagged
@@ -11546,6 +11547,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6797045182690436371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758843360859309398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2809253987335657921
 GameObject:
   m_ObjectHideFlags: 0
@@ -12696,6 +12713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959298238724971145}
   - component: {fileID: 5728223438839938941}
+  - component: {fileID: 6844097749849545685}
   m_Layer: 0
   m_Name: hex tile 03 (2)
   m_TagString: Untagged
@@ -12770,6 +12788,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6844097749849545685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012299578517389163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3029510338751237938
 GameObject:
   m_ObjectHideFlags: 0
@@ -13672,6 +13706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2782995770287050954}
   - component: {fileID: 9002529571617709760}
+  - component: {fileID: 7774409053360213399}
   m_Layer: 0
   m_Name: hex tile 04 (2)
   m_TagString: Untagged
@@ -13746,6 +13781,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7774409053360213399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131576598557949904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3154226130715466764
 GameObject:
   m_ObjectHideFlags: 0
@@ -14176,6 +14227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4246746692475025587}
   - component: {fileID: 830281774225389960}
+  - component: {fileID: 1684709909600251533}
   m_Layer: 0
   m_Name: hex tile 03
   m_TagString: Untagged
@@ -14250,6 +14302,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1684709909600251533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3242578614226993622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3302948669325178880
 GameObject:
   m_ObjectHideFlags: 0
@@ -14980,6 +15048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6140496926530634543}
   - component: {fileID: 439237650385459934}
+  - component: {fileID: 6357503832498990056}
   m_Layer: 0
   m_Name: hex tile 06
   m_TagString: Untagged
@@ -15054,6 +15123,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6357503832498990056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3431038952800430221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3454118287674208978
 GameObject:
   m_ObjectHideFlags: 0
@@ -15515,6 +15600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7061147702629260165}
   - component: {fileID: 4849390428461027706}
+  - component: {fileID: 1265811468491441488}
   m_Layer: 0
   m_Name: green floor
   m_TagString: Untagged
@@ -15591,6 +15677,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1265811468491441488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575710908403093645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3577276406359105692
 GameObject:
   m_ObjectHideFlags: 0
@@ -23689,6 +23791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6260633853672445062}
   - component: {fileID: 2738512769315897278}
+  - component: {fileID: 1191324261303758933}
   m_Layer: 0
   m_Name: hex tile 02
   m_TagString: Untagged
@@ -23763,6 +23866,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1191324261303758933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779337905091182724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5794273625820512663
 GameObject:
   m_ObjectHideFlags: 0
@@ -27999,6 +28118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7860871630221181649}
   - component: {fileID: 5478827944180500683}
+  - component: {fileID: 5691582056978938157}
   m_Layer: 0
   m_Name: hex tile 03 (1)
   m_TagString: Untagged
@@ -28073,6 +28193,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5691582056978938157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893179532358300525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6905276622922938043
 GameObject:
   m_ObjectHideFlags: 0
@@ -28419,6 +28555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1001673002341643182}
   - component: {fileID: 1564046782506851991}
+  - component: {fileID: 4197176943383146768}
   m_Layer: 0
   m_Name: hex tile 04 (1)
   m_TagString: Untagged
@@ -28493,6 +28630,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4197176943383146768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950466807635395433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6950691275850452208
 GameObject:
   m_ObjectHideFlags: 0
@@ -29269,6 +29422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3074481895701290913}
   - component: {fileID: 3726174362439896438}
+  - component: {fileID: 8380434969481376406}
   m_Layer: 0
   m_Name: hex tile 01 (1)
   m_TagString: Untagged
@@ -29343,6 +29497,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8380434969481376406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066024954752055511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7069404512524045202
 GameObject:
   m_ObjectHideFlags: 0
@@ -34322,6 +34492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8211642306095108811}
   - component: {fileID: 5925017632127105034}
+  - component: {fileID: 3212131907712772864}
   m_Layer: 0
   m_Name: hex tile 05
   m_TagString: Untagged
@@ -34396,6 +34567,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3212131907712772864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288458128523711466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8291789765058880042
 GameObject:
   m_ObjectHideFlags: 0
@@ -37632,6 +37819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8451759203058623279}
   - component: {fileID: 5722748361704103040}
+  - component: {fileID: 1245892230937361055}
   m_Layer: 0
   m_Name: hex tile 02 (1)
   m_TagString: Untagged
@@ -37706,6 +37894,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1245892230937361055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8952686726037533761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8955499164991836572
 GameObject:
   m_ObjectHideFlags: 0

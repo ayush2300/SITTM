@@ -15,6 +15,10 @@ MonoBehaviour:
   weaponName: Magnet
   levels:
   - time:
+      coolDownTime: 2
+      activeTime: 2
+    weaponLevelPrefab: {fileID: 1200271685182604513, guid: 6138088b3e5b8dd478464b50901bb613, type: 3}
+  - time:
       coolDownTime: 3
       activeTime: 2
     weaponLevelPrefab: {fileID: 1200271685182604513, guid: 0d02e1ba360daf34780c323c2ac838ff, type: 3}
@@ -42,7 +46,3 @@ MonoBehaviour:
       coolDownTime: 2
       activeTime: 2
     weaponLevelPrefab: {fileID: 1200271685182604513, guid: 602fbd58efedec748aaefd1bfdaf9ae5, type: 3}
-  - time:
-      coolDownTime: 2
-      activeTime: 2
-    weaponLevelPrefab: {fileID: 1200271685182604513, guid: 6138088b3e5b8dd478464b50901bb613, type: 3}
