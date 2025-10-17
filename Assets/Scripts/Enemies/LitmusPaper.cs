@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class LitmusPaper2D : MonoBehaviour
+public class LitmusPaper2D : BaseEnemy
 {
     [Header("Health and Sprite Stages")]
     private int maxHealth;
@@ -77,41 +77,24 @@ public class LitmusPaper2D : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void DoDamageToPlayerOnCollision(Collision2D player)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInContact = true;
-            player = other.gameObject;
-            playerHealth = player.GetComponent<HealthSystem>();
+        base.DoDamageToPlayerOnCollision(player);
 
-            playerDamageTimer = 0f;
-            currentDamagePerSecond = baseDamagePerSecond;
-        }
+        Debug.Log("Damaging Player From Litmus");
+        playerInContact = true;
+        this.player = player.gameObject;
+        playerHealth = this.player.GetComponent<HealthSystem>();
+
+        playerDamageTimer = 0f;
+        currentDamagePerSecond = baseDamagePerSecond;
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    protected override void TakeDamageToSelfOnCollision(Collision2D player)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInContact = false;
-            player = null;
-            playerHealth = null;
-            currentDamagePerSecond = baseDamagePerSecond;
-        }
-    }
+        base.TakeDamageToSelfOnCollision(player);
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            playerInContact = true;
-            player = other.gameObject;
-            playerHealth = player.GetComponent<HealthSystem>();
-
-            playerDamageTimer = 0f;
-            currentDamagePerSecond = baseDamagePerSecond;
-        }
+        Destroy(gameObject);
     }
 
     private void OnCollisionExit2D(Collision2D other)
